@@ -10,6 +10,7 @@ TagManager:
   - YellowDot
   - DotDestroyer
   - BeatSpot
+  - NoZoneForPlayer
   layers:
   - Default
   - TransparentFX
@@ -17,9 +18,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - PlayArea
+  - Dots
+  - Player
   - 
   - 
   - 
