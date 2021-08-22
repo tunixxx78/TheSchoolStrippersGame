@@ -57,6 +57,7 @@ public class MovingDots : MonoBehaviour
 
             if (hit2D.collider.CompareTag("BlueDot"))
             {
+                ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
                 
@@ -70,6 +71,7 @@ public class MovingDots : MonoBehaviour
 
             if (hit2D.collider.CompareTag("RedDot"))
             {
+                ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
 
@@ -83,6 +85,7 @@ public class MovingDots : MonoBehaviour
 
             if (hit2D.collider.CompareTag("GreenDot"))
             {
+                ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
 
@@ -96,6 +99,7 @@ public class MovingDots : MonoBehaviour
 
             if (hit2D.collider.CompareTag("YellowDot"))
             {
+                ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
 
