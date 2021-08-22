@@ -135,8 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f9d85d0df9845d680a71588e5cd461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1.5
   dotAnimator: {fileID: 7117914797039513585}
+  text: {fileID: 6400361334901089165, guid: 59343fa2022fa4886927fe3dbc82e0d1, type: 3}
 --- !u!95 &7117914797039513585
 Animator:
   serializedVersion: 3
