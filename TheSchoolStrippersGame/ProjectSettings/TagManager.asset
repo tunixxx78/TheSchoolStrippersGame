@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - RedDot
+  - GreenDot
+  - BlueDot
+  - YellowDot
+  - DotDestroyer
+  - BeatSpot
   layers:
   - Default
   - TransparentFX
