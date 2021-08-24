@@ -797,7 +797,7 @@ GameObject:
   - component: {fileID: 1179868706}
   m_Layer: 0
   m_Name: DotDestroyerLarge
-  m_TagString: DotDestroyer
+  m_TagString: DotDestroyerLarge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -893,7 +893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255222270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: 4.44, z: 0}
+  m_LocalPosition: {x: -7, y: 0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   - {fileID: 1844501179443422870, guid: 5342131c40b464ed4ab85a0b868319bd, type: 3}
   - {fileID: 8815609850948773225, guid: 5a9597a08e21b4b14a8619ff1a95fd42, type: 3}
   startTimeBtwSpawns: 2
-  decrreaseTime: -1
+  decrreaseTime: 0
   minTime: 0.65
 --- !u!4 &1624467291
 Transform:

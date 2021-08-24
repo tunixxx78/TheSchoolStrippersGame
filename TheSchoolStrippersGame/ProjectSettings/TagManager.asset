@@ -11,6 +11,7 @@ TagManager:
   - DotDestroyer
   - BeatSpot
   - NoZoneForPlayer
+  - DotDestroyerLarge
   layers:
   - Default
   - TransparentFX

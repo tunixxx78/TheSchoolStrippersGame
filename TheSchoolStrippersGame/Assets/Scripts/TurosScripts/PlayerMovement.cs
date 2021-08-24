@@ -40,4 +40,12 @@ public class PlayerMovement : MonoBehaviour
             isMoving = false;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("BlueDot"))
+        {
+            FindObjectOfType<MovingDots>().BlueDotIsClicked();
+        }
+    }
 }

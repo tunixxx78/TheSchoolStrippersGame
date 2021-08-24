@@ -12,7 +12,7 @@ public class MovingDots : MonoBehaviour
     private void Update()
     {
         transform.Translate(Vector2.right * -speed * Time.deltaTime);
-        DotIsClicked();
+        BlueDotIsClicked();
     }
 
     public void DotIsBeatSpoted()
@@ -23,6 +23,12 @@ public class MovingDots : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("DotDestroyer"))
+        {
+            dotAnimator.SetTrigger("DotDeath");
+            ScoringSystem.theScore -= 1;
+            Destroy(this.gameObject, 2f);
+        }
+        if (collision.tag == "DotDestroyerLarge")
         {
             dotAnimator.SetTrigger("DotDeath");
             Destroy(this.gameObject, 2f);
@@ -44,6 +50,26 @@ public class MovingDots : MonoBehaviour
         if (collision.tag == "BeatSpot")
         {
             onBeatSpot = false;
+        }
+    }
+
+    public void BlueDotIsClicked()
+    {
+        Debug.Log("Täällä ollaan!");
+
+        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("BlueDot"))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+
+            if (hit2D.collider.CompareTag("BlueDot"))
+            {
+                ScoringSystem.theScore += 1;
+                Destroy(this.gameObject, 0.1f);
+                Instantiate(text, transform.position, Quaternion.identity);
+
+            }
         }
     }
 
