@@ -12,6 +12,8 @@ TagManager:
   - BeatSpot
   - NoZoneForPlayer
   - DotDestroyerLarge
+  - Obstacle
+  - ObstacleDestroyer
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - PlayArea
   - Dots
   - Player
-  - 
+  - Obstacle
   - 
   - 
   - 
