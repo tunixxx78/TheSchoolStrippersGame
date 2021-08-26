@@ -22,8 +22,9 @@ public class ButtonHandler : MonoBehaviour
     public void PauseButton()
     {
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
-        GameObject.Find("DotSpawner").GetComponent<DotSpawner>().enabled = false;
-        GameObject.Find("CollectingDotsSpawner").GetComponent<DotSpawner>().enabled = false;
+        GameObject.Find("Spawners").transform.GetChild(0).GetComponent<DotSpawner>().enabled = false;
+        GameObject.Find("Spawners").transform.GetChild(1).GetComponent<DotSpawner>().enabled = false;
+        
 
         //GameObject.Find("BlueDot(Clone)").GetComponent<MovingDots>().enabled = false;
         //GameObject.Find("YellowDot(Clone)").GetComponent<MovingDots>().enabled = false;

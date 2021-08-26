@@ -10,6 +10,8 @@ public class Combo : MonoBehaviour
     private int currentHealth;
     public event Action<float> OnHealthPctChanged = delegate { };
 
+    private GameObject score;
+
     private void OnEnable()
     {
         currentHealth = maxHealth;
@@ -24,6 +26,8 @@ public class Combo : MonoBehaviour
     }
     void Update()
     {
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScoringSystem>();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ModifyHealth(-1);
