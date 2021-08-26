@@ -13,6 +13,10 @@ public class MovingDots : MonoBehaviour
     {
         transform.Translate(Vector2.right * -speed * Time.deltaTime);
         BlueDotIsClicked();
+        RedDotIsClicked();
+        GreenDotIsClicked();
+        YellowDotIsClicked();
+
     }
 
     public void DotIsBeatSpoted()
@@ -55,7 +59,7 @@ public class MovingDots : MonoBehaviour
 
     public void BlueDotIsClicked()
     {
-        Debug.Log("Täällä ollaan!");
+        Debug.Log("SININEN!");
 
         if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("BlueDot"))
         {
@@ -73,23 +77,10 @@ public class MovingDots : MonoBehaviour
         }
     }
 
-    public void DotIsClicked()
+    public void RedDotIsClicked()
     {
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
-
-            if (hit2D.collider.CompareTag("BlueDot"))
-            {
-                ScoringSystem.theScore += 1;
-                Destroy(this.gameObject, 0.1f);
-                Instantiate(text, transform.position, Quaternion.identity);
-                
-            }
-        }
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true)
+        Debug.Log("PUNAINEN!");
+        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("RedDot"))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -103,7 +94,12 @@ public class MovingDots : MonoBehaviour
 
             }
         }
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true)
+    }
+
+    public void GreenDotIsClicked()
+    {
+        Debug.Log("VIHREÄ!");
+        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("GreenDot"))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -117,7 +113,13 @@ public class MovingDots : MonoBehaviour
 
             }
         }
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true)
+    }
+
+    public void YellowDotIsClicked()
+    {
+        Debug.Log("KELTAINEN!");
+
+        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("YellowDot"))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
