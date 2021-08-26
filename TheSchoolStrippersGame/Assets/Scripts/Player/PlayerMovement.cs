@@ -47,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.collider.CompareTag("Obstacle"))
         {
             Player.transform.position = reSpawnPoint.transform.position;
+            isMoving = false;
         }
     }
 
