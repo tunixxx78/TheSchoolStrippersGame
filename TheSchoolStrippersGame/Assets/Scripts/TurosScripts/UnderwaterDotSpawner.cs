@@ -10,10 +10,6 @@ public class UnderwaterDotSpawner : MonoBehaviour
     [SerializeField] float spawnRate = 10f;
     bool canSpawn = true;
 
-    private void Start()
-    {
-        //StartCoroutine(SpawnObjects());
-    }
 
     private void Update()
     {
