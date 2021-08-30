@@ -16,10 +16,10 @@ public class UnderwaterDots : MonoBehaviour
 
     private void Update()
     {
-        BlueDotIsClicked();
-        RedDotIsClicked();
-        GreenDotIsClicked();
-        YellowDotIsClicked();
+        //BlueDotIsClicked();
+        //RedDotIsClicked();
+        //GreenDotIsClicked();
+        //YellowDotIsClicked();
     }
 
     public void DotIsBeatSpoted()
@@ -33,7 +33,7 @@ public class UnderwaterDots : MonoBehaviour
         {
             dotAnimator.SetTrigger("DotDeath");
             ScoringSystem.theScore -= 1; 
-            GameObject.Find("PlayerScore").GetComponent<Combo>().StartComboBar();
+            //GameObject.Find("PlayerScore").GetComponent<Combo>().StartComboBar();
             Destroy(this.gameObject, 2f);
         }
         if (collision.tag == "DotDestroyerLarge")

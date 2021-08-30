@@ -30,7 +30,7 @@ public class MovingDots : MonoBehaviour
         {
             dotAnimator.SetTrigger("DotDeath");
             ScoringSystem.theScore -= 1;
-            GameObject.Find("PlayerScore").GetComponent<Combo>().StartComboBar();
+            //GameObject.Find("PlayerScore").GetComponent<Combo>().StartComboBar();
             Destroy(this.gameObject, 2f);
         }
         if (collision.tag == "DotDestroyerLarge")
@@ -75,7 +75,7 @@ public class MovingDots : MonoBehaviour
                 Instantiate(text, transform.position, Quaternion.identity);
 
                 // tässä combobar
-                GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
+                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
             }
         }
     }
@@ -95,7 +95,7 @@ public class MovingDots : MonoBehaviour
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
                 // tässä combobar
-                GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
+                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
             }
         }
     }
@@ -115,7 +115,7 @@ public class MovingDots : MonoBehaviour
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
                 // tässä combobar
-                GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
+                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
             }
         }
     }
@@ -136,7 +136,7 @@ public class MovingDots : MonoBehaviour
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
                 // tässä combobar
-                GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
+                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
             }
         }
     }
