@@ -40,7 +40,6 @@ public class UnderwaterDotSpawner : MonoBehaviour
             pos = new Vector2(screenX, screenY);
 
             Instantiate(toSpawn, pos, toSpawn.transform.rotation);
-
             canSpawn = false;
         }
         yield return new WaitForSeconds(spawnRate);

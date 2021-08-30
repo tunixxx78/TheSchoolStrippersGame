@@ -14,7 +14,8 @@ public class DotSpawner : MonoBehaviour
         {
             int rand = Random.Range(0, dots.Length);
 
-            Instantiate(dots[rand], transform.position, Quaternion.identity);
+            var dot = Instantiate(dots[rand], transform.position, Quaternion.identity);
+            dot.transform.parent = GameObject.Find("Spawn").transform;
             timeBtwSpawns = startTimeBtwSpawns;
 
             if(startTimeBtwSpawns > minTime)
