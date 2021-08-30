@@ -2,15 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Combo : MonoBehaviour
 {
     [SerializeField]
-    private int maxHealth = 4;
+    private int maxHealth = 3;
     private int currentHealth;
     public event Action<float> OnHealthPctChanged = delegate { };
-
-    private GameObject score;
+    private int attackCounter = 0;
 
     private void OnEnable()
     {
@@ -26,16 +26,50 @@ public class Combo : MonoBehaviour
     }
     void Update()
     {
-        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScoringSystem>();
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ModifyHealth(-1);
-        }
-        if(currentHealth <= 0)
-        {
-            Debug.Log("Voitit pelin");
+            Debug.Log(currentHealth);
         }
 
+        if(currentHealth <= 0)
+        {
+            Attack();
+            Debug.Log("Attack!!!");
+            ModifyHealth(+3);
+        }
     }
+
+    public void ComboBar()
+    {
+        ModifyHealth(-1);
+    }
+    public void StartComboBar()
+    {
+        ModifyHealth(+1);
+    }
+
+    public void Attack()
+    {
+        GameObject.Find("attack").GetComponent<Animator>().SetBool("attack", true);
+        StartCoroutine(BoolToFalse());
+        attackCounter += 1;
+        StartCoroutine(WinGame());
+    }
+
+    public IEnumerator BoolToFalse()
+    {
+        yield return new WaitForSeconds(1f);
+        GameObject.Find("attack").GetComponent<Animator>().SetBool("attack", false);
+    }
+
+    public IEnumerator WinGame()
+    {
+        if(attackCounter == 4)
+        {
+            yield return new WaitForSeconds(1f);
+            SceneManager.LoadScene("WinScene");
+        }
+    }
+
 }

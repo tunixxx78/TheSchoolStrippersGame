@@ -8,6 +8,7 @@ public class DotSpawnPoint : MonoBehaviour
 
     private void Start()
     {
-        Instantiate(dot, transform.position, Quaternion.identity);
+        var spawn = Instantiate(dot, transform.position, Quaternion.identity);
+        spawn.transform.parent = GameObject.Find("Spawn1").transform;
     }
 }
