@@ -17,6 +17,8 @@ public class MovingDots : MonoBehaviour
         GreenDotIsClicked();
         YellowDotIsClicked();
 
+
+
     }
 
     public void DotIsBeatSpoted()

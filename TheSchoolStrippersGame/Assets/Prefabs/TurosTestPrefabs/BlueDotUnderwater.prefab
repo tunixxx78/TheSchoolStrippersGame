@@ -154,6 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9039418aeab064ded96ef680f5450161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 5
+  lifetime: 7
   dotAnimator: {fileID: 6401028781971001795}
   text: {fileID: 0}

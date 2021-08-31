@@ -1585,14 +1585,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8e4953672364955b95943b83614d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberToSpawn: 6
+  numberToSpawn: 1
   spawnPool:
   - {fileID: 6401028781971001801, guid: 30d11509fcc094047bd77b13987f3328, type: 3}
   - {fileID: 5745521244881118306, guid: 6ffd6cea2f7414d7a9810fc789c78b4d, type: 3}
   - {fileID: 4318838012702400140, guid: b5c1aa99a80ea42bf828e67c643e325e, type: 3}
   - {fileID: 8720534454817245521, guid: 09e320a8302e3433a8ccd46183a8df69, type: 3}
   quad: {fileID: 771596045}
-  spawnRate: 5
+  spawnRate: 1
 --- !u!1 &1255222270
 GameObject:
   m_ObjectHideFlags: 0
@@ -2007,7 +2007,7 @@ MonoBehaviour:
   - {fileID: 1415399577883082719, guid: 5a3adeca45e5349abb01a49bb7d3ad63, type: 3}
   - {fileID: 8826798557508913893, guid: 5342131c40b464ed4ab85a0b868319bd, type: 3}
   - {fileID: 1350548179282820873, guid: 5a9597a08e21b4b14a8619ff1a95fd42, type: 3}
-  startTimeBtwSpawns: 5
+  startTimeBtwSpawns: 10
   decrreaseTime: 0
   minTime: 0.65
 --- !u!4 &1624467291
