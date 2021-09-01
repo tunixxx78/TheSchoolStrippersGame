@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class MovingDots : MonoBehaviour
 {
-    [SerializeField] float speed = 2f;
+    
     [SerializeField] Animator dotAnimator;
     private bool onBeatSpot = false;
     [SerializeField] GameObject text;
+    DotSpawner dotSpawner;
+
+    private void Start()
+    {
+        dotSpawner = FindObjectOfType<DotSpawner>();
+        dotAnimator.speed = (dotAnimator.speed / 2f) * dotSpawner.beatTempoForLevel;
+    }
 
     private void Update()
     {
-        transform.Translate(Vector2.right * -speed * Time.deltaTime);
+
+        transform.Translate(Vector2.right * -dotSpawner.beatTempoForLevel * Time.deltaTime);
         BlueDotIsClicked();
         RedDotIsClicked();
         GreenDotIsClicked();
