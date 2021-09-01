@@ -11,7 +11,7 @@ public class DotSpawner : MonoBehaviour
 
     private void Start()
     {
-        beatTempoForLevel = beatTempoForLevel / 60f;
+       beatTempoForLevel = beatTempoForLevel /50f;
     }
     private void Update()
     {
