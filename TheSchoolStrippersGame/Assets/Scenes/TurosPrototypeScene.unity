@@ -1307,7 +1307,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 860904061}
-  speed: 50
+  speed: 100
+  paralyzedSpeed: 5
+  normalSpeed: 100
+  hasHitObstacle: 0
   reSpawnPoint: {fileID: 777685887}
 --- !u!50 &860904061
 Rigidbody2D:

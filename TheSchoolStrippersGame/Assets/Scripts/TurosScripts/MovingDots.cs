@@ -9,11 +9,13 @@ public class MovingDots : MonoBehaviour
     private bool onBeatSpot = false;
     [SerializeField] GameObject text;
     DotSpawner dotSpawner;
+    public PlayerMovement playerMovement;
 
     private void Start()
     {
         dotSpawner = FindObjectOfType<DotSpawner>();
         dotAnimator.speed = (dotAnimator.speed / 2f) * dotSpawner.beatTempoForLevel;
+        playerMovement.hasHitObstacle = false;
     }
 
     private void Update()

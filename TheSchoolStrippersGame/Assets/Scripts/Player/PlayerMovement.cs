@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Rigidbody2D Player;
-    [SerializeField] float speed = 5f;
+    [SerializeField] float speed = 5f, paralyzedSpeed = 1f, normalSpeed = 5f;
     Vector3 targetPosition;
     bool isMoving = false;
+    public bool hasHitObstacle = false;
     [SerializeField] GameObject reSpawnPoint;
 
     private void Update()
@@ -20,6 +21,10 @@ public class PlayerMovement : MonoBehaviour
         if (isMoving)
         {
             MovePlayer();
+        }
+        if (hasHitObstacle)
+        {
+            StartCoroutine(SlowDownPlayer());
         }
     }
 
@@ -42,15 +47,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Obstacle"))
-        {
-            Player.transform.position = reSpawnPoint.transform.position;
-            isMoving = false;
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("BlueDot"))
@@ -69,5 +65,19 @@ public class PlayerMovement : MonoBehaviour
         {
             FindObjectOfType<UnderwaterDots>().YellowDotIsClicked();
         }
+        if (collision.CompareTag("Obstacle"))
+        {
+            hasHitObstacle = true;
+        }
+    }
+
+    public IEnumerator SlowDownPlayer()
+    {
+        speed = paralyzedSpeed;
+        yield return new WaitForSeconds(4);
+
+        speed = normalSpeed;
+        hasHitObstacle = false;
+
     }
 }
