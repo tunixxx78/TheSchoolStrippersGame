@@ -6,29 +6,48 @@ public class MovingDots : MonoBehaviour
 {
     
     [SerializeField] Animator dotAnimator;
-    private bool onBeatSpot = false;
+    public bool onBeatSpot = false;
     [SerializeField] GameObject text;
     DotSpawner dotSpawner;
     public PlayerMovement playerMovement;
+    private bool playerIsParalized;
+    public Combo combo;
+    private bool scoreCanBeReduced = true;
 
     private void Start()
     {
         dotSpawner = FindObjectOfType<DotSpawner>();
         dotAnimator.speed = (dotAnimator.speed / 2f) * dotSpawner.beatTempoForLevel;
-        playerMovement.hasHitObstacle = false;
+        playerMovement = FindObjectOfType<PlayerMovement>();
+        combo = FindObjectOfType<Combo>();
+        
     }
 
     private void Update()
     {
 
         transform.Translate(Vector2.right * -dotSpawner.beatTempoForLevel * Time.deltaTime);
-        BlueDotIsClicked();
-        RedDotIsClicked();
-        GreenDotIsClicked();
-        YellowDotIsClicked();
 
+        if (playerMovement.hasHitObstacle == false)
+        {
+            BlueDotIsClicked();
+            RedDotIsClicked();
+            GreenDotIsClicked();
+            YellowDotIsClicked();
+        }
+        if (ScoringSystem.theScore <= 0)
+        {
+            ScoreCanNotBeRedused();
+        }
+        if (ScoringSystem.theScore >= 0)
+        {
+            scoreCanBeReduced = true;
+        }
+    }
 
-
+    private void ScoreCanNotBeRedused()
+    {
+        scoreCanBeReduced = false;
     }
 
     public void DotIsBeatSpoted()
@@ -41,8 +60,15 @@ public class MovingDots : MonoBehaviour
         if (collision.CompareTag("DotDestroyer"))
         {
             dotAnimator.SetTrigger("DotDeath");
-            ScoringSystem.theScore -= 1;
+            if(scoreCanBeReduced == true)
+            {
+                ScoringSystem.theScore -= 1;
+            }
+            
+            
+           
             //GameObject.Find("PlayerScore").GetComponent<Combo>().StartComboBar();
+            combo.StartComboBar();
             Destroy(this.gameObject, 2f);
         }
         if (collision.tag == "DotDestroyerLarge")
@@ -88,6 +114,7 @@ public class MovingDots : MonoBehaviour
 
                 // tässä combobar
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
+                combo.ComboBar();
             }
         }
     }
@@ -108,6 +135,7 @@ public class MovingDots : MonoBehaviour
                 Instantiate(text, transform.position, Quaternion.identity);
                 // tässä combobar
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
+                combo.ComboBar();
             }
         }
     }
@@ -128,6 +156,7 @@ public class MovingDots : MonoBehaviour
                 Instantiate(text, transform.position, Quaternion.identity);
                 // tässä combobar
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
+                combo.ComboBar();
             }
         }
     }
@@ -149,6 +178,7 @@ public class MovingDots : MonoBehaviour
                 Instantiate(text, transform.position, Quaternion.identity);
                 // tässä combobar
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
+                combo.ComboBar();
             }
         }
     }

@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Rigidbody2D Player;
-    [SerializeField] float speed = 5f, paralyzedSpeed = 1f, normalSpeed = 5f;
+    [SerializeField] float speed = 5f, paralyzedSpeed = 1f, normalSpeed = 5f, paralysedTime = 4f;
     Vector3 targetPosition;
     bool isMoving = false;
     public bool hasHitObstacle = false;
     [SerializeField] GameObject reSpawnPoint;
+    public MovingDots movingDots;
+
+    
 
     private void Update()
     {
@@ -49,22 +52,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("BlueDot"))
-        {
-            FindObjectOfType<UnderwaterDots>().BlueDotIsClicked();
-        }
-        if (collision.CompareTag("RedDot"))
-        {
-            FindObjectOfType<UnderwaterDots>().RedDotIsClicked();
-        }
-        if (collision.CompareTag("GreenDot"))
-        {
-            FindObjectOfType<UnderwaterDots>().GreenDotIsClicked();
-        }
-        if (collision.CompareTag("YellowDot"))
-        {
-            FindObjectOfType<UnderwaterDots>().YellowDotIsClicked();
-        }
+        
+            if (collision.CompareTag("BlueDot"))
+            {
+                FindObjectOfType<UnderwaterDots>().BlueDotIsClicked();
+            }
+            if (collision.CompareTag("RedDot"))
+            {
+                FindObjectOfType<UnderwaterDots>().RedDotIsClicked();
+            }
+            if (collision.CompareTag("GreenDot"))
+            {
+                FindObjectOfType<UnderwaterDots>().GreenDotIsClicked();
+            }
+            if (collision.CompareTag("YellowDot"))
+            {
+                FindObjectOfType<UnderwaterDots>().YellowDotIsClicked();
+            }
+
+        
         if (collision.CompareTag("Obstacle"))
         {
             hasHitObstacle = true;
@@ -74,7 +80,8 @@ public class PlayerMovement : MonoBehaviour
     public IEnumerator SlowDownPlayer()
     {
         speed = paralyzedSpeed;
-        yield return new WaitForSeconds(4);
+        
+        yield return new WaitForSeconds(paralysedTime);
 
         speed = normalSpeed;
         hasHitObstacle = false;

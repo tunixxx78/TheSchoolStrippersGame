@@ -76,7 +76,7 @@ public class UnderwaterDots : MonoBehaviour
                 ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
-                GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
+                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
             }
         }
     }
@@ -95,7 +95,7 @@ public class UnderwaterDots : MonoBehaviour
                 ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
-                GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
+                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
 
             }
         }
@@ -115,7 +115,7 @@ public class UnderwaterDots : MonoBehaviour
                 ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
-                GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
+                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
             }
         }
     }
@@ -135,7 +135,7 @@ public class UnderwaterDots : MonoBehaviour
                 ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
-                GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
+                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
             }
         }
     }
