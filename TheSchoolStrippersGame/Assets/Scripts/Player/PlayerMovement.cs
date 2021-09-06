@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Rigidbody2D Player;
-    [SerializeField] float speed = 5f, paralyzedSpeed = 1f, normalSpeed = 5f, paralysedTime = 4f;
-    Vector3 targetPosition;
+    [SerializeField] float speed = 5f, paralysedTime = 4f;
+    Vector2 targetPosition;
     bool isMoving = false;
     public bool hasHitObstacle = false;
     [SerializeField] GameObject reSpawnPoint;
     public MovingDots movingDots;
-
+    public LayerMask NoGoZone;
     
 
     private void Update()
@@ -31,20 +31,28 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OutOfBounds()
+    {
+
+    }
+
     private void SetTargetPosition()
     {
-        targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        targetPosition.z = transform.position.z;
+        if (Input.GetMouseButtonDown(0))
+        {
+            targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 
-        isMoving = true;
+            isMoving = true;
+        }
+        
     }
 
     private void MovePlayer()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        Player.MovePosition(targetPosition);
 
-        if(transform.position == targetPosition)
+        if(Player.position == targetPosition)
         {
             isMoving = false;
         }
@@ -74,16 +82,18 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Obstacle"))
         {
             hasHitObstacle = true;
+            
         }
     }
 
     public IEnumerator SlowDownPlayer()
     {
-        speed = paralyzedSpeed;
+        Debug.Log("OOOOSUUUUMAAAAA");
+        Player.constraints = RigidbodyConstraints2D.FreezeAll;
         
         yield return new WaitForSeconds(paralysedTime);
 
-        speed = normalSpeed;
+        Player.constraints = RigidbodyConstraints2D.None;
         hasHitObstacle = false;
 
     }

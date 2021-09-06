@@ -35,11 +35,11 @@ public class MovingDots : MonoBehaviour
             GreenDotIsClicked();
             YellowDotIsClicked();
         }
-        if (ScoringSystem.theScore <= 0)
+        if (ScoringSystem.theScore == 0)
         {
             ScoreCanNotBeRedused();
         }
-        if (ScoringSystem.theScore >= 0)
+        if (ScoringSystem.theScore > 0)
         {
             scoreCanBeReduced = true;
         }
