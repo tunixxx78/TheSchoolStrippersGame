@@ -13,6 +13,8 @@ public class MovingDots : MonoBehaviour
     private bool playerIsParalized;
     public Combo combo;
     private bool scoreCanBeReduced = true;
+    public UnderwaterDots underwaterDots;
+    public UnderwaterDotSpawner underwaterDotSpawner;
 
     private void Start()
     {
@@ -20,7 +22,8 @@ public class MovingDots : MonoBehaviour
         dotAnimator.speed = (dotAnimator.speed / 2f) * dotSpawner.beatTempoForLevel;
         playerMovement = FindObjectOfType<PlayerMovement>();
         combo = FindObjectOfType<Combo>();
-        
+        underwaterDots = FindObjectOfType<UnderwaterDots>();
+        underwaterDotSpawner = FindObjectOfType<UnderwaterDotSpawner>();
     }
 
     private void Update()
@@ -59,14 +62,18 @@ public class MovingDots : MonoBehaviour
     {
         if (collision.CompareTag("DotDestroyer"))
         {
+            
             dotAnimator.SetTrigger("DotDeath");
             if(scoreCanBeReduced == true)
             {
                 ScoringSystem.theScore -= 1;
+                //underwaterDots.DestroyAllDots();
+                //underwaterDotSpawner.SpawnUnderwaterObjects();
             }
             
-            
-           
+
+
+
             //GameObject.Find("PlayerScore").GetComponent<Combo>().StartComboBar();
             combo.StartComboBar();
             Destroy(this.gameObject, 2f);
@@ -111,6 +118,7 @@ public class MovingDots : MonoBehaviour
                 ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
+                //underwaterDots.DestroyAllDots();
 
                 // tässä combobar
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
@@ -133,6 +141,7 @@ public class MovingDots : MonoBehaviour
                 ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
+                //underwaterDots.DestroyAllDots();
                 // tässä combobar
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
                 combo.ComboBar();
@@ -154,6 +163,7 @@ public class MovingDots : MonoBehaviour
                 ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
+                //underwaterDots.DestroyAllDots();
                 // tässä combobar
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
                 combo.ComboBar();
@@ -176,6 +186,7 @@ public class MovingDots : MonoBehaviour
                 ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
+                //underwaterDots.DestroyAllDots();
                 // tässä combobar
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
                 combo.ComboBar();

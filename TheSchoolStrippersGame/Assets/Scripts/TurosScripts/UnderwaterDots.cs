@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnderwaterDots : MonoBehaviour
 {
-    [SerializeField] float lifetime = 2f;
+    public float lifetime = 2f;
     [SerializeField] Animator dotAnimator;
     private bool onBeatSpot = false;
     [SerializeField] GameObject text;
@@ -16,15 +16,18 @@ public class UnderwaterDots : MonoBehaviour
 
     private void Update()
     {
-        //BlueDotIsClicked();
-        //RedDotIsClicked();
-        //GreenDotIsClicked();
-        //YellowDotIsClicked();
+       
     }
 
     public void DotIsBeatSpoted()
     {
         onBeatSpot = true;
+    }
+
+    public void DestroyAllDots()
+    {
+            Destroy(this.gameObject);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -9,16 +9,36 @@ public class PlayerMovement : MonoBehaviour
     Vector2 targetPosition;
     bool isMoving = false;
     public bool hasHitObstacle = false;
-    [SerializeField] GameObject reSpawnPoint;
+    [SerializeField] GameObject quad;
     public MovingDots movingDots;
-    public LayerMask NoGoZone;
-    
+    public UnderwaterDots underwaterDots;
+    public UnderwaterDotSpawner underwaterDotSpawner;
+    float screenMinX, screenMaxX, screenMinY, screenMaxY;
+    Vector2 pos;
 
+    private void Start()
+    {
+        MeshCollider c = quad.GetComponent<MeshCollider>();
+        float screenMinX, screenMaxX, screenMinY, screenMaxY;
+
+        Vector2 pos;
+
+        screenMinX = c.bounds.min.x;
+        screenMaxX = c.bounds.max.x;
+        screenMinY = c.bounds.min.y;
+        screenMaxY = c.bounds.max.y;
+
+        pos = new Vector2(screenMaxX - screenMinX, screenMaxY - screenMinY);
+
+        underwaterDots = FindObjectOfType<UnderwaterDots>();
+        underwaterDotSpawner = FindObjectOfType<UnderwaterDotSpawner>();
+        //underwaterDotSpawner.SpawnUnderwaterObjects();
+    }
     private void Update()
     {
         if(Input.GetMouseButton(0))
         {
-            SetTargetPosition();
+                SetTargetPosition();   
         }
 
         if (isMoving)
@@ -29,12 +49,9 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(SlowDownPlayer());
         }
+        
     }
 
-    private void OutOfBounds()
-    {
-
-    }
 
     private void SetTargetPosition()
     {
@@ -55,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
         if(Player.position == targetPosition)
         {
             isMoving = false;
+            //Player.constraints = RigidbodyConstraints2D.None;
         }
     }
 
@@ -81,9 +99,25 @@ public class PlayerMovement : MonoBehaviour
         
         if (collision.CompareTag("Obstacle"))
         {
-            hasHitObstacle = true;
-            
+            hasHitObstacle = true; 
         }
+        /*if (collision.CompareTag("NoZoneForPlayer"))
+        {
+            Player.isKinematic = false;
+            Player.gravityScale = 1;
+        }
+        if (collision.CompareTag("BackToWater"))
+        {
+            Player.isKinematic = true;
+            Player.gravityScale = 0;
+            //Player.constraints = RigidbodyConstraints2D.FreezePositionY;
+        }*/
+
+    }
+  
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        
     }
 
     public IEnumerator SlowDownPlayer()
@@ -97,4 +131,5 @@ public class PlayerMovement : MonoBehaviour
         hasHitObstacle = false;
 
     }
+    
 }
