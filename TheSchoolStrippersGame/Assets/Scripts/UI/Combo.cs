@@ -36,17 +36,24 @@ public class Combo : MonoBehaviour
         {
             Attack();
             Debug.Log("Attack!!!");
-            ModifyHealth(+3);
+            currentHealth = maxHealth;
         }
+        Debug.Log(currentHealth);
     }
 
     public void ComboBar()
     {
-        ModifyHealth(-1);
+        if (currentHealth > 0)
+        {
+            ModifyHealth(-1);
+        }
     }
     public void StartComboBar()
     {
-        ModifyHealth(+1);
+        if (currentHealth < 3)
+        {
+            ModifyHealth(+1);
+        }
     }
 
     public void Attack()
