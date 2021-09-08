@@ -1,0 +1,405 @@
+fileFormatVersion: 2
+guid: a50b764f49fe6f441974dfcfa48c6d18
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 2
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 200
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 2
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: backroundPlant3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 984
+      y: 4
+      width: 408
+      height: 591
+    spriteID: ef1f29da380a42c4d8149dfffce1b019
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -132, y: -398}
+  - name: backroundPlant2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 984
+      y: 603
+      width: 233
+      height: 598
+    spriteID: 3cc3fc6fa8ed71943a38ca166629f3b1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 138, y: 205}
+  - name: backroundPlant1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 972
+      height: 1545
+    spriteID: 96552eb9acac50143abbb8e4bf3fc930
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -567, y: -374}
+  - name: purpleBush
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1557
+      width: 451
+      height: 441
+    spriteID: d287f4efbc176ef42bad83f8c3d939e2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -194, y: 1555}
+  - name: plant
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 984
+      y: 1209
+      width: 216
+      height: 635
+    spriteID: 71164e8aedf50af4eb0c8f1f4c784cf5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 970, y: 1200}
+  - name: orangeplant
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 463
+      y: 1557
+      width: 272
+      height: 218
+    spriteID: 1667f3db3c3afab44acc6985ee962d1b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -217, y: 1517}
+  - name: orangeplant_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 463
+      y: 1783
+      width: 195
+      height: 244
+    spriteID: 1260512a8bf54f74b800793bffdfdafd
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -511, y: 1748}
+  - name: orangeplant_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 984
+      y: 1852
+      width: 97
+      height: 164
+    spriteID: c112a46a0f52c954a96221446f40a763
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -209, y: 1822}
+  - name: orangeplant_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 743
+      y: 1557
+      width: 138
+      height: 207
+    spriteID: c83c8100710b75d488807866512cf3b5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -546, y: 1530}
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 2048
+  importedTextureHeight: 2048
+  documentSize: {x: 2048, y: 2048}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 2048
+  textureActualHeight: 2048
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: backroundPlant3
+    spriteName: backroundPlant3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ef1f29da380a42c4d8149dfffce1b019
+    layerID: 8
+    mosaicPosition: {x: 984, y: 4}
+  - name: backroundPlant2
+    spriteName: backroundPlant2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3cc3fc6fa8ed71943a38ca166629f3b1
+    layerID: 9
+    mosaicPosition: {x: 984, y: 603}
+  - name: backroundPlant1
+    spriteName: backroundPlant1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 96552eb9acac50143abbb8e4bf3fc930
+    layerID: 5
+    mosaicPosition: {x: 4, y: 4}
+  - name: purpleBush
+    spriteName: purpleBush
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d287f4efbc176ef42bad83f8c3d939e2
+    layerID: 10
+    mosaicPosition: {x: 4, y: 1557}
+  - name: plant
+    spriteName: plant
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 71164e8aedf50af4eb0c8f1f4c784cf5
+    layerID: 3
+    mosaicPosition: {x: 984, y: 1209}
+  - name: orangeplant
+    spriteName: orangeplant
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1667f3db3c3afab44acc6985ee962d1b
+    layerID: 11
+    mosaicPosition: {x: 463, y: 1557}
+  - name: orangeplant
+    spriteName: orangeplant_1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1260512a8bf54f74b800793bffdfdafd
+    layerID: 12
+    mosaicPosition: {x: 463, y: 1783}
+  - name: orangeplant
+    spriteName: orangeplant_2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c112a46a0f52c954a96221446f40a763
+    layerID: 13
+    mosaicPosition: {x: 984, y: 1852}
+  - name: orangeplant
+    spriteName: orangeplant_3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c83c8100710b75d488807866512cf3b5
+    layerID: 6
+    mosaicPosition: {x: 743, y: 1557}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: Foliage - spritesheet Texture
+  prefabAssetName: Foliage - spritesheet Prefab
+  spriteLibAssetName: Foliage - spritesheet Sprite Lib
+  secondarySpriteTextures: []
