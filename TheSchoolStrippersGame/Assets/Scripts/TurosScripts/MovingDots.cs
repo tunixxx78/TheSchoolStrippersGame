@@ -29,6 +29,7 @@ public class MovingDots : MonoBehaviour
     private void Update()
     {
 
+        //transform.Translate(Vector2.right * -3.6f * Time.deltaTime);
         transform.Translate(Vector2.right * -dotSpawner.beatTempoForLevel * Time.deltaTime);
 
         if (playerMovement.hasHitObstacle == false)
