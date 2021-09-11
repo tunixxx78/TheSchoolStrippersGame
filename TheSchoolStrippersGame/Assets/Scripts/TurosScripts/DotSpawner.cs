@@ -37,7 +37,7 @@ public class DotSpawner : MonoBehaviour
     public void SpawnedNote()
     {
         Debug.Log("Pallo on Spawnattu!");
-        float beat = beatTempoForLevel;
+        //float beat = beatTempoForLevel;
     }
 
     

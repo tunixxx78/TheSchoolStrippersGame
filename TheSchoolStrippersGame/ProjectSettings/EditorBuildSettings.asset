@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelSelection.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TurosPrototypeScene.unity
     guid: ec883a2b6d7af4540ad905044cc5baba
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 040de20ed88b04630a32e3717c102f5a
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: c0fabfb1d51f5d1478d8f065a6bf5faa

@@ -17,6 +17,10 @@ public class MovingObstacles : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        if (collision.CompareTag("ObstacleDestroyer"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
