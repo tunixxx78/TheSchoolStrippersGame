@@ -93,7 +93,9 @@ public class UnderwaterDotSpawner : MonoBehaviour
             screenY = Random.Range(c.bounds.min.y, c.bounds.max.y);
             pos = new Vector2(screenX, screenY);
 
-            Instantiate(spawnPool[i], pos, Quaternion.identity);
+            //var spawnPoint = spawnPool[i];
+            var spawnPoint = Instantiate(spawnPool[i], pos, Quaternion.identity);
+            spawnPoint.transform.SetParent(GameObject.Find("DotSpawnPoint").transform);
             canSpawn = false;
         }
 

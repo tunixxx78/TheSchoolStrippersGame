@@ -106,7 +106,7 @@ public class MovingDots : MonoBehaviour
 
     public void BlueDotIsClicked()
     {
-        Debug.Log("SININEN!");
+        //Debug.Log("SININEN!");
 
         if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("BlueDot"))
         {
@@ -125,6 +125,15 @@ public class MovingDots : MonoBehaviour
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
                 combo.ComboBar();
             }
+        }
+        // lisäsin tänne testipätkän --------------------------------------------------------------------------------
+        else if (Input.GetMouseButtonDown(0) && !onBeatSpot == true && CompareTag("BlueDot"))
+        {
+            Destroy(GameObject.FindGameObjectWithTag("BlueDot"));
+            Destroy(GameObject.FindGameObjectWithTag("RedDot"));
+            Destroy(GameObject.FindGameObjectWithTag("YellowDot"));
+            Destroy(GameObject.FindGameObjectWithTag("GreenDot"));
+
         }
     }
 

@@ -67,7 +67,7 @@ public class UnderwaterDots : MonoBehaviour
     public void BlueDotIsClicked()
     {
         Debug.Log("SININEN!");
-
+        
         if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("BlueDot"))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -80,7 +80,20 @@ public class UnderwaterDots : MonoBehaviour
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
-            }
+            }           
+        }
+        // lisäsin tänne testipätkän --------------------------------------------------------------------------------
+        else if (Input.GetMouseButtonDown(0) && !onBeatSpot == true && CompareTag("BlueDot"))
+        {
+            Destroy(GameObject.Find("DotSpawnPoint").transform.GetChild(0));
+            Destroy(GameObject.Find("DotSpawnPoint").transform.GetChild(1));
+            Destroy(GameObject.Find("DotSpawnPoint").transform.GetChild(2));
+            Destroy(GameObject.Find("DotSpawnPoint").transform.GetChild(3));
+            //    Destroy(GameObject.FindGameObjectWithTag("BlueDot"));
+            //    Destroy(GameObject.FindGameObjectWithTag("RedDot"));
+            //    Destroy(GameObject.FindGameObjectWithTag("YellowDot"));
+            //    Destroy(GameObject.FindGameObjectWithTag("GreenDot"));
+            GameObject.Find("Spawners").transform.GetChild(2).GetComponent<UnderwaterDotSpawner>().SpawnAllUnderwaterObjects();
         }
     }
 

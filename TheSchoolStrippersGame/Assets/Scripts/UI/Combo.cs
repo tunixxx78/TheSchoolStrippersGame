@@ -2,57 +2,59 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Combo : MonoBehaviour
 {
-    [SerializeField]
-    private int maxHealth = 3;
-    private int currentHealth;
-    public event Action<float> OnHealthPctChanged = delegate { };
     private int attackCounter = 0;
 
-    private void OnEnable()
-    {
-        currentHealth = maxHealth;
-    }
+    public int maximum;
+    public int current;
+    public Image mask;
 
-    public void ModifyHealth(int amount)
+    public void ModifyHealth()
     {
-        currentHealth += amount;
-
-        float currentHealthPct = (float)currentHealth / (float)maxHealth;
-        OnHealthPctChanged(currentHealthPct);
+        Debug.Log("hhaloo");
+        float fillAmount = (float)current / (float)maximum;
+        mask.fillAmount = fillAmount;
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ModifyHealth(-1);
-            Debug.Log(currentHealth);
+            current++;
+            ModifyHealth();
         }
 
-        if(currentHealth <= 0)
+        if (current >= 3)
         {
             Attack();
             Debug.Log("Attack!!!");
-            currentHealth = maxHealth;
+            current = 0;
+            current -= 3;
         }
-        Debug.Log(currentHealth);
+        if (current < 0)
+        {
+            current = 0;
+        }
+        Debug.Log(current);
     }
 
     public void ComboBar()
     {
-        if (currentHealth > 0)
+        if (current < 3)
         {
-            ModifyHealth(-1);
+            current++;
+            ModifyHealth();
         }
     }
     public void StartComboBar()
     {
-        if (currentHealth < 3)
+        if (current > 0)
         {
-            ModifyHealth(+1);
+            current--;
+            ModifyHealth();
         }
     }
 
