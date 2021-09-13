@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        MeshCollider c = quad.GetComponent<MeshCollider>();
+        /*MeshCollider c = quad.GetComponent<MeshCollider>();
         float screenMinX, screenMaxX, screenMinY, screenMaxY;
 
         Vector2 pos;
@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         screenMaxY = c.bounds.max.y;
 
         pos = new Vector2(screenMaxX - screenMinX, screenMaxY - screenMinY);
-
+        */
         underwaterDots = FindObjectOfType<UnderwaterDots>();
         underwaterDotSpawner = FindObjectOfType<UnderwaterDotSpawner>();
         //underwaterDotSpawner.SpawnUnderwaterObjects();
@@ -56,14 +56,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void SetTargetPosition()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
+        //if (Input.GetMouseButtonDown(0))
+        //{
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+
+            if(hit2D.collider.CompareTag("PlayArea")|| hit2D.collider.CompareTag("BlueDot") || hit2D.collider.CompareTag("RedDot") || hit2D.collider.CompareTag("YellowDot") || hit2D.collider.CompareTag("GreenDot"))
+            {
                 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 
                 isMoving = true;
+            }
             
-        }
+            
+        //}
         
     }
 
