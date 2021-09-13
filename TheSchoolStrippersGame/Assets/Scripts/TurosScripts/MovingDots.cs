@@ -127,14 +127,14 @@ public class MovingDots : MonoBehaviour
             }
         }
         // lisäsin tänne testipätkän --------------------------------------------------------------------------------
-        else if (Input.GetMouseButtonDown(0) && !onBeatSpot == true && CompareTag("BlueDot"))
+        /*else if (Input.GetMouseButtonDown(0) && !onBeatSpot == true && CompareTag("BlueDot"))
         {
             Destroy(GameObject.FindGameObjectWithTag("BlueDot"));
             Destroy(GameObject.FindGameObjectWithTag("RedDot"));
             Destroy(GameObject.FindGameObjectWithTag("YellowDot"));
             Destroy(GameObject.FindGameObjectWithTag("GreenDot"));
 
-        }
+        }*/
     }
 
     public void RedDotIsClicked()

@@ -95,7 +95,7 @@ public class UnderwaterDotSpawner : MonoBehaviour
 
             //var spawnPoint = spawnPool[i];
             var spawnPoint = Instantiate(spawnPool[i], pos, Quaternion.identity);
-            spawnPoint.transform.SetParent(GameObject.Find("DotSpawnPoint").transform);
+            //spawnPoint.transform.SetParent(GameObject.Find("DotSpawnPoint").transform);
             canSpawn = false;
         }
 

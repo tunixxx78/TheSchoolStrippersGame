@@ -83,7 +83,7 @@ public class UnderwaterDots : MonoBehaviour
             }           
         }
         // lisäsin tänne testipätkän --------------------------------------------------------------------------------
-        else if (Input.GetMouseButtonDown(0) && !onBeatSpot == true && CompareTag("BlueDot"))
+        /*else if (Input.GetMouseButtonDown(0) && !onBeatSpot == true && CompareTag("BlueDot"))
         {
             Destroy(GameObject.Find("DotSpawnPoint").transform.GetChild(0));
             Destroy(GameObject.Find("DotSpawnPoint").transform.GetChild(1));
@@ -94,7 +94,7 @@ public class UnderwaterDots : MonoBehaviour
             //    Destroy(GameObject.FindGameObjectWithTag("YellowDot"));
             //    Destroy(GameObject.FindGameObjectWithTag("GreenDot"));
             GameObject.Find("Spawners").transform.GetChild(2).GetComponent<UnderwaterDotSpawner>().SpawnAllUnderwaterObjects();
-        }
+        }*/
     }
 
     public void RedDotIsClicked()

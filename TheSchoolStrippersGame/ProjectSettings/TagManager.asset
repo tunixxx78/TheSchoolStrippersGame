@@ -15,6 +15,7 @@ TagManager:
   - Obstacle
   - ObstacleDestroyer
   - BackToWater
+  - PlayArea
   layers:
   - Default
   - TransparentFX

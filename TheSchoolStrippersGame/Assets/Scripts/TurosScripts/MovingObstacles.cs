@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovingObstacles : MonoBehaviour
 {
     [SerializeField] float speed = 2f, speedSlow = 1f;
+    [SerializeField] float speedBurstDuration = 1f, normalSpeedDuration = 1f;
     bool isSwimmingFast = true;
     bool isSimmingSlow = false;
 
@@ -47,7 +48,7 @@ public class MovingObstacles : MonoBehaviour
     {
         transform.Translate(Vector2.right * -speed * Time.deltaTime);
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(speedBurstDuration);
 
         isSwimmingFast = false;
         isSimmingSlow = true;
@@ -58,7 +59,7 @@ public class MovingObstacles : MonoBehaviour
     {
         transform.Translate(Vector2.right * -speedSlow * Time.deltaTime);
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(normalSpeedDuration);
 
         isSimmingSlow = false;
         isSwimmingFast = true;

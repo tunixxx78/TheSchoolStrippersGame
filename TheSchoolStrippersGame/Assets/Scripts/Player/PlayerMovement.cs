@@ -50,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(SlowDownPlayer());
         }
         
+
     }
 
 
@@ -57,10 +58,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 
-            isMoving = true;
+                isMoving = true;
+            
         }
         
     }
@@ -72,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
         if(Player.position == targetPosition)
         {
             isMoving = false;
-            //Player.constraints = RigidbodyConstraints2D.None;
+            
         }
     }
 
