@@ -12,10 +12,13 @@ public class Combo : MonoBehaviour
     public int maximum;
     public int current;
     public Image mask;
-
+    private void Start()
+    {
+        mask.fillAmount = 0;
+    }
     public void ModifyHealth()
     {
-        Debug.Log("hhaloo");
+        
         float fillAmount = (float)current / (float)maximum;
         mask.fillAmount = fillAmount;
     }
@@ -30,9 +33,9 @@ public class Combo : MonoBehaviour
         if (current >= 3)
         {
             Attack();
-            Debug.Log("Attack!!!");
             current = 0;
-            current -= 3;
+            ModifyHealth();
+            //current -= 3;
         }
         if (current < 0)
         {

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   color:
     m_OverrideState: 1
@@ -140,7 +140,7 @@ MonoBehaviour:
     min: 0
   scatter:
     m_OverrideState: 1
-    m_Value: 0.064
+    m_Value: 0.075
     min: 0
     max: 1
   clamp:
@@ -163,10 +163,10 @@ MonoBehaviour:
     max: 16
   dirtTexture:
     m_OverrideState: 0
-    m_Value: {fileID: 2800000, guid: ca90d215742acce48bf1654655628b5a, type: 3}
+    m_Value: {fileID: 2800000, guid: 1123840597b21004b9acc92d9e95b110, type: 3}
   dirtIntensity:
     m_OverrideState: 0
-    m_Value: 6.39
+    m_Value: 0.73
     min: 0
 --- !u!114 &4080227465072922839
 MonoBehaviour:
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
   m_Name: WhiteBalance
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
