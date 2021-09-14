@@ -16,6 +16,10 @@ TagManager:
   - ObstacleDestroyer
   - BackToWater
   - PlayArea
+  - BlueDotU
+  - RedDotU
+  - GreenDotU
+  - YellowDotU
   layers:
   - Default
   - TransparentFX

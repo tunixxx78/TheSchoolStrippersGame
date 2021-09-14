@@ -9,27 +9,13 @@ public class PlayerMovement : MonoBehaviour
     Vector2 targetPosition;
     bool isMoving = false;
     public bool hasHitObstacle = false;
-    [SerializeField] GameObject quad;
     public MovingDots movingDots;
     public UnderwaterDots underwaterDots;
     public UnderwaterDotSpawner underwaterDotSpawner;
-    float screenMinX, screenMaxX, screenMinY, screenMaxY;
-    Vector2 pos;
 
     private void Start()
     {
-        /*MeshCollider c = quad.GetComponent<MeshCollider>();
-        float screenMinX, screenMaxX, screenMinY, screenMaxY;
-
-        Vector2 pos;
-
-        screenMinX = c.bounds.min.x;
-        screenMaxX = c.bounds.max.x;
-        screenMinY = c.bounds.min.y;
-        screenMaxY = c.bounds.max.y;
-
-        pos = new Vector2(screenMaxX - screenMinX, screenMaxY - screenMinY);
-        */
+        
         underwaterDots = FindObjectOfType<UnderwaterDots>();
         underwaterDotSpawner = FindObjectOfType<UnderwaterDotSpawner>();
         //underwaterDotSpawner.SpawnUnderwaterObjects();
@@ -88,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        /*
             if (collision.CompareTag("BlueDot"))
             {
                 FindObjectOfType<UnderwaterDots>().BlueDotIsClicked();
@@ -105,23 +91,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 FindObjectOfType<UnderwaterDots>().YellowDotIsClicked();
             }
-
+        */
         
         if (collision.CompareTag("Obstacle"))
         {
             hasHitObstacle = true; 
         }
-        /*if (collision.CompareTag("NoZoneForPlayer"))
-        {
-            Player.isKinematic = false;
-            Player.gravityScale = 1;
-        }
-        if (collision.CompareTag("BackToWater"))
-        {
-            Player.isKinematic = true;
-            Player.gravityScale = 0;
-            //Player.constraints = RigidbodyConstraints2D.FreezePositionY;
-        }*/
 
     }
   

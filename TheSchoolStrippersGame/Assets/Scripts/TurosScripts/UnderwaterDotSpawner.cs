@@ -24,7 +24,8 @@ public class UnderwaterDotSpawner : MonoBehaviour
     {
         if(canSpawn == true)
         {
-            StartCoroutine(SpawnAllUnderwaterObjects());
+            //StartCoroutine(SpawnAllUnderwaterObjects());
+            SpawnUnderwaterObjectsNow();
         }
     }
 
@@ -102,5 +103,25 @@ public class UnderwaterDotSpawner : MonoBehaviour
         yield return new WaitForSeconds(7);
 
         canSpawn = true;
+    }
+
+    public void SpawnUnderwaterObjectsNow()
+    {
+        MeshCollider c = quad.GetComponent<MeshCollider>();
+
+        float screenX, screenY;
+
+        Vector2 pos;
+
+        for (int i = 0; i < spawnPool.Count; i++)
+        {
+            screenX = Random.Range(c.bounds.min.x, c.bounds.max.x);
+            screenY = Random.Range(c.bounds.min.y, c.bounds.max.y);
+            pos = new Vector2(screenX, screenY);
+
+            var spawnPoint = Instantiate(spawnPool[i], pos, Quaternion.identity);
+
+            canSpawn = false;
+        }
     }
 }

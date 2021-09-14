@@ -8,29 +8,39 @@ public class UnderwaterDots : MonoBehaviour
     [SerializeField] Animator dotAnimator;
     private bool onBeatSpot = false;
     [SerializeField] GameObject text;
+    bool canDestroyAllDots = false;
 
     private void Start()
     {
-        Destroy(this.gameObject, lifetime);
+        //Destroy(this.gameObject, lifetime);
     }
 
     private void Update()
     {
-       
+        if (canDestroyAllDots == true)
+        {
+            Destroy(this.gameObject);
+        }
+        canDestroyAllDots = false;
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            DestroyAllDots();
+        }
     }
 
-    public void DotIsBeatSpoted()
+    /*public void DotIsBeatSpoted()
     {
         onBeatSpot = true;
-    }
+    }*/
 
     public void DestroyAllDots()
     {
-            Destroy(this.gameObject);
+        canDestroyAllDots = true;   
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("DotDestroyer"))
         {
@@ -64,7 +74,7 @@ public class UnderwaterDots : MonoBehaviour
         }
     }
 
-    public void BlueDotIsClicked()
+    /*public void BlueDotIsClicked()
     {
         Debug.Log("SININEN!");
         
@@ -95,8 +105,8 @@ public class UnderwaterDots : MonoBehaviour
             //    Destroy(GameObject.FindGameObjectWithTag("GreenDot"));
             GameObject.Find("Spawners").transform.GetChild(2).GetComponent<UnderwaterDotSpawner>().SpawnAllUnderwaterObjects();
         }*/
-    }
-
+    //}
+    /*
     public void RedDotIsClicked()
     {
         Debug.Log("PUNAINEN!");
@@ -154,7 +164,7 @@ public class UnderwaterDots : MonoBehaviour
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
             }
         }
-    }
+    }*/
 
     
 }

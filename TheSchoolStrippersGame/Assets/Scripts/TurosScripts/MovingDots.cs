@@ -49,6 +49,11 @@ public class MovingDots : MonoBehaviour
         }
     }
 
+    void DestroyEverything()
+    {
+        FindObjectOfType<UnderwaterDots>().DestroyAllDots();
+    }
+
     private void ScoreCanNotBeRedused()
     {
         scoreCanBeReduced = false;
@@ -65,25 +70,29 @@ public class MovingDots : MonoBehaviour
         {
             
             dotAnimator.SetTrigger("DotDeath");
+
             if(scoreCanBeReduced == true)
             {
                 ScoringSystem.theScore -= 1;
-                //underwaterDots.DestroyAllDots();
-                //underwaterDotSpawner.SpawnUnderwaterObjects();
             }
-            
+
+            Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
+            Destroy(GameObject.FindGameObjectWithTag("RedDotU"));
+            Destroy(GameObject.FindGameObjectWithTag("YellowDotU"));
+            Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
 
 
+            underwaterDotSpawner.SpawnUnderwaterObjectsNow();
 
-            //GameObject.Find("PlayerScore").GetComponent<Combo>().StartComboBar();
             combo.StartComboBar();
+
             Destroy(this.gameObject, 2f);
         }
-        if (collision.tag == "DotDestroyerLarge")
-        {
-            dotAnimator.SetTrigger("DotDeath");
-            Destroy(this.gameObject, 2f);
-        }
+            if (collision.tag == "DotDestroyerLarge")
+            {
+                dotAnimator.SetTrigger("DotDeath");
+                Destroy(this.gameObject, 2f);
+            }
         
     }
 
@@ -114,11 +123,18 @@ public class MovingDots : MonoBehaviour
 
             RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
 
-            if (hit2D.collider.CompareTag("BlueDot"))
+            if (hit2D.collider.CompareTag("BlueDotU"))
             {
                 ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
+
+                Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
+                Destroy(GameObject.FindGameObjectWithTag("RedDotU"));
+                Destroy(GameObject.FindGameObjectWithTag("YellowDotU"));
+                Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
+
+                underwaterDotSpawner.SpawnUnderwaterObjectsNow();
                 //underwaterDots.DestroyAllDots();
 
                 // tässä combobar
@@ -146,11 +162,17 @@ public class MovingDots : MonoBehaviour
 
             RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
 
-            if (hit2D.collider.CompareTag("RedDot"))
+            if (hit2D.collider.CompareTag("RedDotU"))
             {
                 ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
+                Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
+                Destroy(GameObject.FindGameObjectWithTag("RedDotU"));
+                Destroy(GameObject.FindGameObjectWithTag("YellowDotU"));
+                Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
+
+                underwaterDotSpawner.SpawnUnderwaterObjectsNow();
                 //underwaterDots.DestroyAllDots();
                 // tässä combobar
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
@@ -168,11 +190,17 @@ public class MovingDots : MonoBehaviour
 
             RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
 
-            if (hit2D.collider.CompareTag("GreenDot"))
+            if (hit2D.collider.CompareTag("GreenDotU"))
             {
                 ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
+                Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
+                Destroy(GameObject.FindGameObjectWithTag("RedDotU"));
+                Destroy(GameObject.FindGameObjectWithTag("YellowDotU"));
+                Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
+
+                underwaterDotSpawner.SpawnUnderwaterObjectsNow();
                 //underwaterDots.DestroyAllDots();
                 // tässä combobar
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
@@ -191,11 +219,17 @@ public class MovingDots : MonoBehaviour
 
             RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
 
-            if (hit2D.collider.CompareTag("YellowDot"))
+            if (hit2D.collider.CompareTag("YellowDotU"))
             {
                 ScoringSystem.theScore += 1;
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
+                Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
+                Destroy(GameObject.FindGameObjectWithTag("RedDotU"));
+                Destroy(GameObject.FindGameObjectWithTag("YellowDotU"));
+                Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
+
+                underwaterDotSpawner.SpawnUnderwaterObjectsNow();
                 //underwaterDots.DestroyAllDots();
                 // tässä combobar
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
