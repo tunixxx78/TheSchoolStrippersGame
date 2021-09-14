@@ -4154,10 +4154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53beec047c699eb46981446f1b9d86c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  shipWrecked: {fileID: 0}
-  shipWrecked1: {fileID: 0}
-  shipWrecked2: {fileID: 0}
+  fullHealthShip: {fileID: 0}
+  damagedShip: {fileID: 0}
+  badlyDamagedShip: {fileID: 0}
+  destroyedShip: {fileID: 0}
 --- !u!1 &1043106989
 GameObject:
   m_ObjectHideFlags: 0

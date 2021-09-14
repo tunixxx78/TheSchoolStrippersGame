@@ -5,30 +5,28 @@ using UnityEngine;
 public class DestroyShip : MonoBehaviour
 {
     [SerializeField]
-    private SpriteRenderer spriteRenderer;
+    private GameObject fullHealthShip;
     [SerializeField]
-    private Sprite shipWrecked;
+    private GameObject damagedShip;
     [SerializeField]
-    private Sprite shipWrecked1;
+    private GameObject badlyDamagedShip;
     [SerializeField]
-    private Sprite shipWrecked2;
-
-    void Start()
-    {
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-    }
+    private GameObject destroyedShip;
 
     void ChangeSpritetoWrecked()
     {
-        spriteRenderer.sprite = shipWrecked;
+        Destroy(fullHealthShip);
+        damagedShip.gameObject.SetActive(true);
     }
     void ChangeSpritetoWrecked1()
     {
-        spriteRenderer.sprite = shipWrecked1;
+        Destroy(damagedShip);
+        badlyDamagedShip.gameObject.SetActive(true);
     }
     void ChangeSpritetoWrecked2()
     {
-        spriteRenderer.sprite = shipWrecked2;
+        Destroy(badlyDamagedShip);
+        destroyedShip.gameObject.SetActive(true);
     }
 
     void Update()
