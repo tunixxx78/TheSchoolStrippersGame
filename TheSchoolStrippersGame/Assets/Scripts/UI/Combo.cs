@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Combo : MonoBehaviour
 {
-    private int attackCounter = 0;
+    public int attackCounter = 0;
 
     public int maximum;
     public int current;
