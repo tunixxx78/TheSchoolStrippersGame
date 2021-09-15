@@ -72,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: 1482263689
+  m_SortingLayer: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 0.12559894, g: 0.7169812, b: 0.037201855, a: 1}
   m_FlipX: 0
@@ -135,9 +135,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f9d85d0df9845d680a71588e5cd461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
   dotAnimator: {fileID: 7117914797039513585}
+  onBeatSpot: 0
   text: {fileID: 6400361334901089165, guid: 59343fa2022fa4886927fe3dbc82e0d1, type: 3}
+  playerMovement: {fileID: 0}
+  combo: {fileID: 0}
+  underwaterDots: {fileID: 0}
+  underwaterDotSpawner: {fileID: 0}
 --- !u!95 &7117914797039513585
 Animator:
   serializedVersion: 3
