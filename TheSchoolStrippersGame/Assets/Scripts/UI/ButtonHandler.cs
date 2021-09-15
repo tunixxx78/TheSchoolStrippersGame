@@ -9,7 +9,17 @@ public class ButtonHandler : MonoBehaviour
     {
         SceneManager.LoadScene("LevelSelection");
     }
-    
+
+    public void TryAgainButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void QuitGame()
     {
         Application.Quit();
