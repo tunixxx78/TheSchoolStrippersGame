@@ -12,16 +12,18 @@ public class Combo : MonoBehaviour
     public int maximum;
     public int current;
     public Image mask;
+
+    DestroyShip shipScript;
+
+    private void Awake()
+    {
+        shipScript = FindObjectOfType<DestroyShip>();
+    }
     private void Start()
     {
         mask.fillAmount = 0;
     }
-    public void ModifyHealth()
-    {
-        
-        float fillAmount = (float)current / (float)maximum;
-        mask.fillAmount = fillAmount;
-    }
+   
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -35,13 +37,16 @@ public class Combo : MonoBehaviour
             Attack();
             current = 0;
             ModifyHealth();
-            //current -= 3;
+            
         }
-        if (current < 0)
-        {
-            current = 0;
-        }
-        Debug.Log(current);
+        
+    }
+
+    public void ModifyHealth()
+    {
+
+        float fillAmount = (float)current / (float)maximum;
+        mask.fillAmount = fillAmount;
     }
 
     public void ComboBar()
@@ -63,9 +68,11 @@ public class Combo : MonoBehaviour
 
     public void Attack()
     {
-        GameObject.Find("attack").GetComponent<Animator>().SetBool("attack", true);
-        StartCoroutine(BoolToFalse());
         attackCounter += 1;
+
+        //damage the ship through DestroyShip script
+        shipScript.DamageShip(attackCounter);
+        
         StartCoroutine(WinGame());
     }
 

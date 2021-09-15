@@ -16,8 +16,11 @@ public class MovingDots : MonoBehaviour
     public UnderwaterDots underwaterDots;
     public UnderwaterDotSpawner underwaterDotSpawner;
 
+    
+
     private void Start()
     {
+        
         dotSpawner = FindObjectOfType<DotSpawner>();
         dotAnimator.speed = (dotAnimator.speed / 2f) * dotSpawner.beatTempoForLevel;
         playerMovement = FindObjectOfType<PlayerMovement>();
@@ -140,6 +143,8 @@ public class MovingDots : MonoBehaviour
                 // tässä combobar
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
                 combo.ComboBar();
+
+                
             }
         }
         // lisäsin tänne testipätkän --------------------------------------------------------------------------------
@@ -155,7 +160,7 @@ public class MovingDots : MonoBehaviour
 
     public void RedDotIsClicked()
     {
-        Debug.Log("PUNAINEN!");
+        //Debug.Log("PUNAINEN!");
         if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("RedDot"))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -177,13 +182,15 @@ public class MovingDots : MonoBehaviour
                 // tässä combobar
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
                 combo.ComboBar();
+
+                
             }
         }
     }
 
     public void GreenDotIsClicked()
     {
-        Debug.Log("VIHREÄ!");
+        //Debug.Log("VIHREÄ!");
         if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("GreenDot"))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -205,13 +212,15 @@ public class MovingDots : MonoBehaviour
                 // tässä combobar
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
                 combo.ComboBar();
+
+                
             }
         }
     }
 
     public void YellowDotIsClicked()
     {
-        Debug.Log("KELTAINEN!");
+        //Debug.Log("KELTAINEN!");
 
         if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("YellowDot"))
         {
@@ -234,6 +243,8 @@ public class MovingDots : MonoBehaviour
                 // tässä combobar
                 //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
                 combo.ComboBar();
+
+                
             }
         }
     }

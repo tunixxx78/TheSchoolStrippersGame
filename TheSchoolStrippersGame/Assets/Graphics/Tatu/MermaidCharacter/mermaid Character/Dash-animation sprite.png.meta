@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 9c2ce1dc85fe60d4f9963c33f379536f
+guid: ecc8369eaac6e1447acea11339bb9a71
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2104501861922142838
-    second: Lightning Sheet_1
+      213: 4942833641431122101
+    second: Dash-animation sprite_0
   - first:
-      213: -7283785249774546417
-    second: Lightning Sheet_2
+      213: -4716370175554711126
+    second: Dash-animation sprite_1
   - first:
-      213: -8197997805279256217
-    second: Lightning Sheet_3
+      213: 4521630879140350785
+    second: Dash-animation sprite_2
   - first:
-      213: 1447290411529305487
-    second: Lightning Sheet_4
+      213: 1945753525442685384
+    second: Dash-animation sprite_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +32,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -44,9 +44,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 2
     aniso: 1
-    mipBias: 0
+    mipBias: -1
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -58,7 +58,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -80,7 +80,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -92,7 +92,43 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,85 +139,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lightning Sheet_1
+      name: Dash-animation sprite_0
       rect:
         serializedVersion: 2
-        x: 76
-        y: 1090
-        width: 493
-        height: 906
+        x: 39
+        y: 807
+        width: 508
+        height: 202
       alignment: 9
-      pivot: {x: 0.53391033, y: 0.048757657}
+      pivot: {x: 0.7936468, y: 0.4730584}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67a74051b41b43d10800000000000000
-      internalID: 2104501861922142838
+      spriteID: 5b04a553209789440800000000000000
+      internalID: 4942833641431122101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lightning Sheet_2
+      name: Dash-animation sprite_1
       rect:
         serializedVersion: 2
-        x: 603
-        y: 1081
-        width: 732
-        height: 925
+        x: 38
+        y: 550
+        width: 512
+        height: 239
       alignment: 9
-      pivot: {x: 0.435637, y: 0.05966942}
+      pivot: {x: 0.7800733, y: 0.5197473}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0255fe08ebcaea90800000000000000
-      internalID: -7283785249774546417
+      spriteID: aa190d050561c8eb0800000000000000
+      internalID: -4716370175554711126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lightning Sheet_3
+      name: Dash-animation sprite_2
       rect:
         serializedVersion: 2
-        x: 24
-        y: 18
-        width: 1216
-        height: 952
+        x: 29
+        y: 319
+        width: 541
+        height: 223
       alignment: 9
-      pivot: {x: 0.47726902, y: 0.060898244}
+      pivot: {x: 0.766424, y: 0.505552}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 761e5e25e6cda3e80800000000000000
-      internalID: -8197997805279256217
+      spriteID: 14b0994f35f00ce30800000000000000
+      internalID: 4521630879140350785
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lightning Sheet_4
+      name: Dash-animation sprite_3
       rect:
         serializedVersion: 2
-        x: 1264
-        y: 12
-        width: 383
-        height: 958
+        x: 0
+        y: 77
+        width: 591
+        height: 249
       alignment: 9
-      pivot: {x: 0.48412734, y: 0.065318815}
+      pivot: {x: 0.7498927, y: 0.5231484}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8d780216fec51410800000000000000
-      internalID: 1447290411529305487
+      spriteID: 8c9a978b584b00b10800000000000000
+      internalID: 1945753525442685384
       vertices: []
       indices: 
       edges: []

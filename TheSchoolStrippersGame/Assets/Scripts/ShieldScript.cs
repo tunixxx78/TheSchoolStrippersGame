@@ -6,9 +6,16 @@ public class ShieldScript : MonoBehaviour
 {
     [SerializeField]
     Vector2 impulseForce;
+
+    Rigidbody2D rb;
+
+    private void Awake()
+    {
+        rb = this.GetComponent<Rigidbody2D>();
+    }
     public void ActivateShield()
     {
-        Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
+        
         this.gameObject.transform.parent = null;
         
         rb.simulated = true;

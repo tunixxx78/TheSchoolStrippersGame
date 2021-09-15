@@ -142,6 +142,7 @@ MonoBehaviour:
   combo: {fileID: 0}
   underwaterDots: {fileID: 0}
   underwaterDotSpawner: {fileID: 0}
+  expandingCircleFX: {fileID: 5132984704434036656, guid: d919297cba08e744faed03efa40f74df, type: 3}
 --- !u!95 &7117914797039513585
 Animator:
   serializedVersion: 3

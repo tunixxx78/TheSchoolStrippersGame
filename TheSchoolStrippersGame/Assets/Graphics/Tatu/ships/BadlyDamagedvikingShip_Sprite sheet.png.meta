@@ -1,0 +1,540 @@
+fileFormatVersion: 2
+guid: 064f75c98f4827148a86949a61467a8e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6527384194786977337
+    second: badlyDamagedvikingShip_Sail
+  - first:
+      213: 195584981433909097
+    second: DamagedvikingShip_Mast1
+  - first:
+      213: 3882769947011474425
+    second: DamagedvikingShip_Mast2
+  - first:
+      213: -465767055591590021
+    second: vikingShip_shield1
+  - first:
+      213: 7280503113407219060
+    second: vikingShip_shield2
+  - first:
+      213: 4937158080168502669
+    second: vikingShip_shield3
+  - first:
+      213: 8143161724450102656
+    second: badlyDamagedVikingShip_hull
+  - first:
+      213: 7697623016379647599
+    second: BadlyDamagedvikingShip_piece
+  - first:
+      213: 8003744161993603499
+    second: BadlyDamagedvikingShip_piece2
+  - first:
+      213: -6890080894112591530
+    second: Sail_particle1
+  - first:
+      213: 4597433398072833511
+    second: Sail_particle2
+  - first:
+      213: -8058042114776366833
+    second: Sail_particle3
+  - first:
+      213: 6851554022140247472
+    second: plankParticle1
+  - first:
+      213: -1350450062918619577
+    second: plankParticle2
+  - first:
+      213: 4664442347202385040
+    second: plankParticle3
+  - first:
+      213: 2151034795388803129
+    second: nailParticle1
+  - first:
+      213: 6760327034189521759
+    second: plankparticle4
+  - first:
+      213: -8900716912564770536
+    second: plankparticle5
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: badlyDamagedvikingShip_Sail
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 440
+        width: 375
+        height: 518
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 936e6c2775de59a50800000000000000
+      internalID: 6527384194786977337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DamagedvikingShip_Mast1
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 459
+        width: 23
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96ff4cd118bd6b200800000000000000
+      internalID: 195584981433909097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DamagedvikingShip_Mast2
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 579
+        width: 26
+        height: 434
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f36e2ce1be52e530800000000000000
+      internalID: 3882769947011474425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vikingShip_shield1
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 907
+        width: 109
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b773267a4534989f0800000000000000
+      internalID: -465767055591590021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vikingShip_shield2
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 910
+        width: 105
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47543c4020b890560800000000000000
+      internalID: 7280503113407219060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vikingShip_shield3
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 908
+        width: 106
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85a460ad1f448440800000000000000
+      internalID: 4937158080168502669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badlyDamagedVikingShip_hull
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 31
+        width: 619
+        height: 306
+      alignment: 9
+      pivot: {x: 0.45944643, y: 0.10580563}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08dd76ea172520170800000000000000
+      internalID: 8143161724450102656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadlyDamagedvikingShip_piece
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 187
+        width: 171
+        height: 142
+      alignment: 9
+      pivot: {x: 0.89371717, y: 0.19036779}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f660e22895373da60800000000000000
+      internalID: 7697623016379647599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadlyDamagedvikingShip_piece2
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 22
+        width: 210
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba93cb0e8e2031f60800000000000000
+      internalID: 8003744161993603499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sail_particle1
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 608
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65196b89ee38160a0800000000000000
+      internalID: -6890080894112591530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sail_particle2
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 632
+        width: 45
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e5f5aa315d5dcf30800000000000000
+      internalID: 4597433398072833511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sail_particle3
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 611
+        width: 36
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f010e93d3651c2090800000000000000
+      internalID: -8058042114776366833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plankParticle1
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 601
+        width: 139
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd7111051c951f50800000000000000
+      internalID: 6851554022140247472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plankParticle2
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 570
+        width: 50
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ee4d0a2dc324de0800000000000000
+      internalID: -1350450062918619577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plankParticle3
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 538
+        width: 37
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094994cf99d6bb040800000000000000
+      internalID: 4664442347202385040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nailParticle1
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 499
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93897aeefb20add10800000000000000
+      internalID: 2151034795388803129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plankparticle4
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 644
+        width: 72
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53265eae9181dd50800000000000000
+      internalID: 6760327034189521759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plankparticle5
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 681
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 819e344402d4a7480800000000000000
+      internalID: -8900716912564770536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

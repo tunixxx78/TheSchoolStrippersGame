@@ -13,6 +13,17 @@ public class PlayerMovement : MonoBehaviour
     public UnderwaterDots underwaterDots;
     public UnderwaterDotSpawner underwaterDotSpawner;
 
+    [SerializeField]
+    GameObject PlayerStunFX;
+    [SerializeField]
+    Animator mermaidAnimator;
+    [SerializeField]
+    GameObject expandingBubbleFx;
+    private void Awake()
+    {
+        
+    }
+
     private void Start()
     {
         
@@ -35,7 +46,12 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(SlowDownPlayer());
         }
-        
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject expandingFX = Instantiate(expandingBubbleFx, Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0,0,10)), Quaternion.identity);
+            Destroy(expandingFX, 1);
+        }
 
     }
 
@@ -95,7 +111,13 @@ public class PlayerMovement : MonoBehaviour
         
         if (collision.CompareTag("Obstacle"))
         {
-            hasHitObstacle = true; 
+            hasHitObstacle = true;
+
+            //Spawn StunFX
+            Instantiate(PlayerStunFX, this.transform.position, Quaternion.identity);
+
+            mermaidAnimator.SetTrigger("Stun");
+            
         }
 
     }
