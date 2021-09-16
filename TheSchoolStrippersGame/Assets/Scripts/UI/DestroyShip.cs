@@ -11,6 +11,8 @@ public class DestroyShip : MonoBehaviour
     [SerializeField]
     private GameObject badlyDamagedShip;
     [SerializeField]
+    private GameObject reallyBadlyDamagedShip;
+    [SerializeField]
     private GameObject destroyedShip;
 
     [SerializeField]
@@ -40,13 +42,22 @@ public class DestroyShip : MonoBehaviour
     void ChangeSpritetoWrecked2()
     {
         Destroy(badlyDamagedShip);
-        destroyedShip.gameObject.SetActive(true);
+        reallyBadlyDamagedShip.gameObject.SetActive(true);
 
         launchShield(2);
         SpawnParticles();
     }
 
-   
+    void ChangeSpritetoDestroyed()
+    {
+        Destroy(reallyBadlyDamagedShip);
+        destroyedShip.gameObject.SetActive(true);
+
+        
+        SpawnParticles();
+    }
+
+
 
     /* void Update()
      {
@@ -81,6 +92,9 @@ public class DestroyShip : MonoBehaviour
             case 3:
                 ChangeSpritetoWrecked2();
                 break;
+            case 4:
+                ChangeSpritetoDestroyed();
+                break;
             default:
                 break;
         }
@@ -97,6 +111,10 @@ public class DestroyShip : MonoBehaviour
 
     void launchShield(int shieldn)
     {
-        shields[shieldn].GetComponent<ShieldScript>().ActivateShield();
+        if (shields[shieldn])
+        {
+            shields[shieldn].GetComponent<ShieldScript>().ActivateShield();
+        }
+        
     }
 }

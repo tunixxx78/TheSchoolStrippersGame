@@ -15,6 +15,9 @@ public class Combo : MonoBehaviour
 
     DestroyShip shipScript;
 
+
+    [SerializeField]
+    float wingameDelay = 5;
     private void Awake()
     {
         shipScript = FindObjectOfType<DestroyShip>();
@@ -87,7 +90,7 @@ public class Combo : MonoBehaviour
     {
         if(attackCounter == 4)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(wingameDelay);
             SceneManager.LoadScene("WinScene");
         }
     }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ca57231f481bb7240a53890925f3af97
+guid: 975a1c9d7b8bc294885ecc91799e363e
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 6527384194786977337
-    second: DamagedvikingShip_Sail
+    second: badlyDamagedvikingShip_Sail
   - first:
       213: 195584981433909097
     second: DamagedvikingShip_Mast1
@@ -22,7 +22,46 @@ TextureImporter:
     second: vikingShip_shield3
   - first:
       213: 8143161724450102656
-    second: DamagedVikingShip_hull
+    second: destroyedShipPart
+  - first:
+      213: 7697623016379647599
+    second: BadlyDamagedvikingShip_piece
+  - first:
+      213: 8003744161993603499
+    second: BadlyDamagedvikingShip_piece2
+  - first:
+      213: -6890080894112591530
+    second: Sail_particle1
+  - first:
+      213: 4597433398072833511
+    second: Sail_particle2
+  - first:
+      213: -8058042114776366833
+    second: Sail_particle3
+  - first:
+      213: 6851554022140247472
+    second: plankParticle1
+  - first:
+      213: -1350450062918619577
+    second: plankParticle2
+  - first:
+      213: 4664442347202385040
+    second: plankParticle3
+  - first:
+      213: 2151034795388803129
+    second: nailParticle1
+  - first:
+      213: 6760327034189521759
+    second: plankparticle4
+  - first:
+      213: -8900716912564770536
+    second: plankparticle5
+  - first:
+      213: 3213803922250929786
+    second: destroyedShipPart1
+  - first:
+      213: 2336753393657588138
+    second: destroyedShipPart2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,36 +151,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DamagedvikingShip_Sail
+      name: destroyedShipPart
       rect:
         serializedVersion: 2
-        x: 56
-        y: 440
-        width: 375
-        height: 518
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 936e6c2775de59a50800000000000000
-      internalID: 6527384194786977337
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DamagedVikingShip_hull
-      rect:
-        serializedVersion: 2
-        x: 93
+        x: 240
         y: 31
-        width: 766
-        height: 306
+        width: 304
+        height: 207
       alignment: 9
-      pivot: {x: 0.5626624, y: 0.11029584}
+      pivot: {x: 0.9251354, y: 0.094855554}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -149,6 +167,48 @@ TextureImporter:
       bones: []
       spriteID: 08dd76ea172520170800000000000000
       internalID: 8143161724450102656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: destroyedShipPart1
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 30
+        width: 216
+        height: 178
+      alignment: 9
+      pivot: {x: 0.05788563, y: 0.12647288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76168bc3a9b99c20800000000000000
+      internalID: 3213803922250929786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: destroyedShipPart2
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 116
+        width: 165
+        height: 161
+      alignment: 9
+      pivot: {x: 0.078615874, y: 0.37230337}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa926a4b4d0dd6020800000000000000
+      internalID: 2336753393657588138
       vertices: []
       indices: 
       edges: []

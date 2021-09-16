@@ -22900,10 +22900,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 475201596479459103, guid: e26b2817e80f94045bf6fe92cf0ddfb5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 475201597184513434, guid: e26b2817e80f94045bf6fe92cf0ddfb5, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -22951,18 +22947,6 @@ PrefabInstance:
     - target: {fileID: 475201597184513437, guid: e26b2817e80f94045bf6fe92cf0ddfb5, type: 3}
       propertyPath: m_Name
       value: VikingShip
-      objectReference: {fileID: 0}
-    - target: {fileID: 475201597191191940, guid: e26b2817e80f94045bf6fe92cf0ddfb5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 475201597205370493, guid: e26b2817e80f94045bf6fe92cf0ddfb5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 475201597569600129, guid: e26b2817e80f94045bf6fe92cf0ddfb5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e26b2817e80f94045bf6fe92cf0ddfb5, type: 3}
