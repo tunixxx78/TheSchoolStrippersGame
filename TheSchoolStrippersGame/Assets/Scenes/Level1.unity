@@ -6670,6 +6670,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
       propertyPath: mermaidAnimator
       value: 
       objectReference: {fileID: 593323799}
