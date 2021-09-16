@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public MovingDots movingDots;
     public UnderwaterDots underwaterDots;
     public UnderwaterDotSpawner underwaterDotSpawner;
+    
 
     [SerializeField]
     GameObject PlayerStunFX;
@@ -19,9 +20,10 @@ public class PlayerMovement : MonoBehaviour
     Animator mermaidAnimator;
     [SerializeField]
     GameObject expandingBubbleFx;
+
     private void Awake()
     {
-        
+        transform.localScale = new Vector3(1, 1, 1);
     }
 
     private void Start()
@@ -30,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
         underwaterDots = FindObjectOfType<UnderwaterDots>();
         underwaterDotSpawner = FindObjectOfType<UnderwaterDotSpawner>();
         //underwaterDotSpawner.SpawnUnderwaterObjects();
+
+        
     }
     private void Update()
     {
@@ -53,6 +57,12 @@ public class PlayerMovement : MonoBehaviour
             Destroy(expandingFX, 1);
         }
 
+        //float x = transform.position.x;
+        
+        
+        //Debug.Log(x);
+          
+
     }
 
 
@@ -60,25 +70,34 @@ public class PlayerMovement : MonoBehaviour
     {
         //if (Input.GetMouseButtonDown(0))
         //{
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Vector3 CharacterScale = transform.localScale;
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
 
-            if(hit2D.collider.CompareTag("PlayArea")|| hit2D.collider.CompareTag("BlueDotU") || hit2D.collider.CompareTag("RedDotU") || hit2D.collider.CompareTag("YellowDotU") || hit2D.collider.CompareTag("GreenDotU"))
+        if (hit2D.collider.CompareTag("PlayArea") || hit2D.collider.CompareTag("BlueDotU") || hit2D.collider.CompareTag("RedDotU") || hit2D.collider.CompareTag("YellowDotU") || hit2D.collider.CompareTag("GreenDotU"))
+        {
+            targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            if (transform.localPosition.x > targetPosition.x)
             {
-                targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-
+                Player.transform.localScale = new Vector3(-1, 1, 1);
                 isMoving = true;
             }
-            
-            
-        //}
+
+            else
+            {
+                Player.transform.localScale = new Vector3(1, 1, 1);
+                isMoving = true;
+            }
+        }
         
     }
 
     private void MovePlayer()
     {
+        
         Player.MovePosition(targetPosition);
 
         FindObjectOfType<SFXManager>().Swim();
