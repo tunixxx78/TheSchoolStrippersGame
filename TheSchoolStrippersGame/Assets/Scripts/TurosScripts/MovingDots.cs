@@ -129,6 +129,7 @@ public class MovingDots : MonoBehaviour
             if (hit2D.collider.CompareTag("BlueDotU"))
             {
                 ScoringSystem.theScore += 1;
+                FindObjectOfType<SFXManager>().CollectingOne();
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
 
@@ -170,6 +171,7 @@ public class MovingDots : MonoBehaviour
             if (hit2D.collider.CompareTag("RedDotU"))
             {
                 ScoringSystem.theScore += 1;
+                FindObjectOfType<SFXManager>().CollectingOne();
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
                 Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
@@ -200,6 +202,7 @@ public class MovingDots : MonoBehaviour
             if (hit2D.collider.CompareTag("GreenDotU"))
             {
                 ScoringSystem.theScore += 1;
+                FindObjectOfType<SFXManager>().CollectingOne();
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
                 Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
@@ -231,6 +234,7 @@ public class MovingDots : MonoBehaviour
             if (hit2D.collider.CompareTag("YellowDotU"))
             {
                 ScoringSystem.theScore += 1;
+                FindObjectOfType<SFXManager>().CollectingOne();
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
                 Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));

@@ -72,6 +72,7 @@ public class Combo : MonoBehaviour
 
         //damage the ship through DestroyShip script
         shipScript.DamageShip(attackCounter);
+        FindObjectOfType<SFXManager>().BreakingShip();
         
         StartCoroutine(WinGame());
     }

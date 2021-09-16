@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButtonDown(0))
         {
                 SetTargetPosition();   
         }
@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
             RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
 
-            if(hit2D.collider.CompareTag("PlayArea")|| hit2D.collider.CompareTag("BlueDot") || hit2D.collider.CompareTag("RedDot") || hit2D.collider.CompareTag("YellowDot") || hit2D.collider.CompareTag("GreenDot"))
+            if(hit2D.collider.CompareTag("PlayArea")|| hit2D.collider.CompareTag("BlueDotU") || hit2D.collider.CompareTag("RedDotU") || hit2D.collider.CompareTag("YellowDotU") || hit2D.collider.CompareTag("GreenDotU"))
             {
                 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -80,6 +80,8 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         Player.MovePosition(targetPosition);
+
+        FindObjectOfType<SFXManager>().Swim();
 
         if(Player.position == targetPosition)
         {
