@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Rigidbody2D Player;
-    [SerializeField] float speed = 5f, paralysedTime = 4f;
+    [SerializeField] float speed = 5f, paralysedTime = 4f, paralysedSpeed = 0f, normalSpeed = 5f;
     Vector2 targetPosition;
     bool isMoving = false;
     public bool hasHitObstacle = false;
@@ -42,10 +42,10 @@ public class PlayerMovement : MonoBehaviour
                 SetTargetPosition();   
         }
 
-        if (isMoving)
+        /*if (isMoving)
         {
             MovePlayer();
-        }
+        }*/
         if (hasHitObstacle)
         {
             StartCoroutine(SlowDownPlayer());
@@ -65,6 +65,13 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private void FixedUpdate()
+    {
+        if (isMoving)
+        {
+            MovePlayer();
+        }
+    }
 
     private void SetTargetPosition()
     {
@@ -98,9 +105,8 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
 
-
-        
-        Player.MovePosition(targetPosition);
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        //Player.MovePosition(targetPosition);
 
         FindObjectOfType<SFXManager>().Swim();
 
@@ -113,28 +119,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        /*
-            if (collision.CompareTag("BlueDot"))
-            {
-                FindObjectOfType<UnderwaterDots>().BlueDotIsClicked();
-            }
-            if (collision.CompareTag("RedDot"))
-            {
-                FindObjectOfType<UnderwaterDots>().RedDotIsClicked();
-            }
-            if (collision.CompareTag("GreenDot"))
-            {
-                FindObjectOfType<UnderwaterDots>().GreenDotIsClicked();
-            }
-            if (collision.CompareTag("YellowDot"))
-            {
-                FindObjectOfType<UnderwaterDots>().YellowDotIsClicked();
-            }
-        */
         
         if (collision.CompareTag("Obstacle"))
         {
             hasHitObstacle = true;
+            speed = paralysedSpeed;
 
             //Spawn StunFX
             Instantiate(PlayerStunFX, this.transform.position, Quaternion.identity);
@@ -145,9 +134,9 @@ public class PlayerMovement : MonoBehaviour
 
     }
   
-    private void OnTriggerExit2D(Collider2D collision)
+    public void SlowdownPlayerFromOtherScript()
     {
-        
+        StartCoroutine(SlowDownPlayer());
     }
 
     public IEnumerator SlowDownPlayer()
@@ -158,6 +147,8 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(paralysedTime);
 
         Player.constraints = RigidbodyConstraints2D.None;
+        speed = normalSpeed;
+        isMoving = false;
         hasHitObstacle = false;
 
     }

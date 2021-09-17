@@ -34,6 +34,11 @@ public class MovingObstacles : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("OSUTTU PELAAJAAN!");
+            FindObjectOfType<PlayerMovement>().SlowdownPlayerFromOtherScript();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

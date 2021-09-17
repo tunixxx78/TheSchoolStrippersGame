@@ -6617,6 +6617,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 768086589939349843, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 768086589939349928, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6669,9 +6673,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 768086589939349934, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 768086589939349934, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
       propertyPath: speed
-      value: 1
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
+      propertyPath: normalSpeed
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
       propertyPath: mermaidAnimator
