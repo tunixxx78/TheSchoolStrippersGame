@@ -15,9 +15,9 @@ public class Combo : MonoBehaviour
 
     DestroyShip shipScript;
 
-
     [SerializeField]
     float wingameDelay = 5;
+
     private void Awake()
     {
         shipScript = FindObjectOfType<DestroyShip>();
@@ -89,11 +89,25 @@ public class Combo : MonoBehaviour
     {
         if(attackCounter == 4)
         {
-            GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
-            GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(0).gameObject.SetActive(true);
+            // kolme tähteä
+            if(ScoringSystem.theScore >= 5)
+            {
+                GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
+                GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(0).gameObject.SetActive(true);
+            }
+            // kaksi tähteä
+            else if (ScoringSystem.theScore >= 3)
+            {
+                GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
+                GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(1).gameObject.SetActive(true);
+            }
+            // yksi tähti
+            else if (ScoringSystem.theScore < 3)
+            {
+                GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
+                GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(2).gameObject.SetActive(true);
+            }
             yield return new WaitForSeconds(wingameDelay);
-            //GameObject.Find("GameController").GetComponent<GameController>().currentStarValue = 1;
-            SceneManager.LoadScene("WinScene");
         }
     }
 }

@@ -10,7 +10,10 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] public bool unlocked;
     public Image unlockImage;
     public GameObject[] stars;
-
+    private void Start()
+    {
+        //PlayerPrefs.DeleteAll();
+    }
     private void Update()
     {
         UpdateLevelStatus();
