@@ -13,8 +13,8 @@ public class LevelSelection : MonoBehaviour
 
     private void Update()
     {
-        UpdateLevelImage();
         UpdateLevelStatus();
+        UpdateLevelImage();
     }
     public void UpdateLevelStatus()
     {

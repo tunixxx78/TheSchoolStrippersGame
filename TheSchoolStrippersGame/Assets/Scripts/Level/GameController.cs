@@ -7,9 +7,9 @@ public class GameController : MonoBehaviour
     public int levelIndex;
     public int currentStarValue = 0;
 
-    public void WinLevel()
+    public void WinLevel(int _starNum)
     {
-        //currentStarValue = starNum;
+        currentStarValue = _starNum;
         if (currentStarValue > PlayerPrefs.GetInt("Lv" + levelIndex))
         {
             PlayerPrefs.SetInt("Lv" + levelIndex, currentStarValue);

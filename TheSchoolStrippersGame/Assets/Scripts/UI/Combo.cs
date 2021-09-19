@@ -40,7 +40,6 @@ public class Combo : MonoBehaviour
             Attack();
             current = 0;
             ModifyHealth();
-            
         }
         
     }
@@ -90,10 +89,10 @@ public class Combo : MonoBehaviour
     {
         if(attackCounter == 4)
         {
+            GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
+            GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(0).gameObject.SetActive(true);
             yield return new WaitForSeconds(wingameDelay);
-
-            GameObject.Find("GameController").GetComponent<GameController>().currentStarValue = 1;
-            GameObject.Find("GameController").GetComponent<GameController>().WinLevel();
+            //GameObject.Find("GameController").GetComponent<GameController>().currentStarValue = 1;
             SceneManager.LoadScene("WinScene");
         }
     }
