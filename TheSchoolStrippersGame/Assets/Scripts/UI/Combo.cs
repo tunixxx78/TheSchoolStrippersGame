@@ -91,8 +91,10 @@ public class Combo : MonoBehaviour
         if(attackCounter == 4)
         {
             yield return new WaitForSeconds(wingameDelay);
+
+            GameObject.Find("GameController").GetComponent<GameController>().currentStarValue = 1;
+            GameObject.Find("GameController").GetComponent<GameController>().WinLevel();
             SceneManager.LoadScene("WinScene");
         }
     }
-
 }
