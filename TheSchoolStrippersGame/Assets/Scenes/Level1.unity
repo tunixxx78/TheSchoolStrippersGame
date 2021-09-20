@@ -1698,8 +1698,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5439127836356857087, guid: 058fa7f3fa1df4d0292df9d224326e6c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.8770988
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439127836356857087, guid: 058fa7f3fa1df4d0292df9d224326e6c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.001482
+      value: -4.0015
       objectReference: {fileID: 0}
     - target: {fileID: 5439127836356857087, guid: 058fa7f3fa1df4d0292df9d224326e6c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1822,7 +1826,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 696329246}
         m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
         m_MethodName: TryAgainButton
         m_Mode: 1
@@ -3701,7 +3705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3706733739040541433, guid: 98151734f4ec64824b29083c28820e38, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.44
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 3706733739040541433, guid: 98151734f4ec64824b29083c28820e38, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8114,11 +8118,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
       propertyPath: speed
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
       propertyPath: normalSpeed
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
       propertyPath: mermaidAnimator
@@ -8349,7 +8353,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 696329246}
         m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
         m_MethodName: BackToMainMenu
         m_Mode: 1

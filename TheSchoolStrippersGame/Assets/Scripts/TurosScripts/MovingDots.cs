@@ -15,6 +15,7 @@ public class MovingDots : MonoBehaviour
     private bool scoreCanBeReduced = true;
     public UnderwaterDots underwaterDots;
     public UnderwaterDotSpawner underwaterDotSpawner;
+    public int scoreAmount = 1;
 
     
 
@@ -32,7 +33,7 @@ public class MovingDots : MonoBehaviour
     private void Update()
     {
 
-        //transform.Translate(Vector2.right * -3.6f * Time.deltaTime);
+        
         transform.Translate(Vector2.right * -dotSpawner.beatTempoForLevel * Time.deltaTime);
 
         if (playerMovement.hasHitObstacle == false)
@@ -128,7 +129,7 @@ public class MovingDots : MonoBehaviour
 
             if (hit2D.collider.CompareTag("BlueDotU"))
             {
-                ScoringSystem.theScore += 1;
+                ScoringSystem.theScore += scoreAmount;
                 FindObjectOfType<SFXManager>().CollectingOne();
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
@@ -139,24 +140,32 @@ public class MovingDots : MonoBehaviour
                 Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
 
                 underwaterDotSpawner.SpawnUnderwaterObjectsNow();
-                //underwaterDots.DestroyAllDots();
 
                 // tässä combobar
-                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
                 combo.ComboBar();
 
                 
             }
+            
         }
-        // lisäsin tänne testipätkän --------------------------------------------------------------------------------
-        /*else if (Input.GetMouseButtonDown(0) && !onBeatSpot == true && CompareTag("BlueDot"))
+        else if (Input.GetMouseButtonDown(0) && onBeatSpot == false && CompareTag("BlueDot"))
         {
-            Destroy(GameObject.FindGameObjectWithTag("BlueDot"));
-            Destroy(GameObject.FindGameObjectWithTag("RedDot"));
-            Destroy(GameObject.FindGameObjectWithTag("YellowDot"));
-            Destroy(GameObject.FindGameObjectWithTag("GreenDot"));
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        }*/
+            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+            
+            if (hit2D.collider.CompareTag("BlueDotU"))
+            {
+                //Particle effect ->
+                underwaterDots.WrongDotBlue();
+                Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
+                
+            }
+            
+            
+        }
+        
+        
     }
 
     public void RedDotIsClicked()
@@ -170,7 +179,7 @@ public class MovingDots : MonoBehaviour
 
             if (hit2D.collider.CompareTag("RedDotU"))
             {
-                ScoringSystem.theScore += 1;
+                ScoringSystem.theScore += scoreAmount;
                 FindObjectOfType<SFXManager>().CollectingOne();
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
@@ -180,14 +189,31 @@ public class MovingDots : MonoBehaviour
                 Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
 
                 underwaterDotSpawner.SpawnUnderwaterObjectsNow();
-                //underwaterDots.DestroyAllDots();
+
                 // tässä combobar
-                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
                 combo.ComboBar();
 
                 
             }
         }
+
+        else if (Input.GetMouseButtonDown(0) && onBeatSpot == false &&  CompareTag("RedDot"))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+
+            if (hit2D.collider.CompareTag("RedDotU"))
+            {
+                //Particle effect ->
+                underwaterDots.WrongDotRed();
+                Destroy(GameObject.FindGameObjectWithTag("RedDotU"));
+                
+            }
+            
+
+        }
+        
     }
 
     public void GreenDotIsClicked()
@@ -201,7 +227,7 @@ public class MovingDots : MonoBehaviour
 
             if (hit2D.collider.CompareTag("GreenDotU"))
             {
-                ScoringSystem.theScore += 1;
+                ScoringSystem.theScore += scoreAmount;
                 FindObjectOfType<SFXManager>().CollectingOne();
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
@@ -211,14 +237,30 @@ public class MovingDots : MonoBehaviour
                 Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
 
                 underwaterDotSpawner.SpawnUnderwaterObjectsNow();
-                //underwaterDots.DestroyAllDots();
+
                 // tässä combobar
-                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
                 combo.ComboBar();
 
                 
             }
         }
+        else if (Input.GetMouseButtonDown(0) && onBeatSpot == false && CompareTag("GreenDot"))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+
+            if (hit2D.collider.CompareTag("GreenDotU"))
+            {
+                //Particle effect ->
+                underwaterDots.WrongDotGreen();
+                Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
+                
+            }
+            
+
+        }
+        
     }
 
     public void YellowDotIsClicked()
@@ -233,7 +275,7 @@ public class MovingDots : MonoBehaviour
 
             if (hit2D.collider.CompareTag("YellowDotU"))
             {
-                ScoringSystem.theScore += 1;
+                ScoringSystem.theScore += scoreAmount;
                 FindObjectOfType<SFXManager>().CollectingOne();
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
@@ -243,13 +285,30 @@ public class MovingDots : MonoBehaviour
                 Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
 
                 underwaterDotSpawner.SpawnUnderwaterObjectsNow();
-                //underwaterDots.DestroyAllDots();
+
                 // tässä combobar
-                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
                 combo.ComboBar();
 
                 
             }
         }
+
+        else if (Input.GetMouseButtonDown(0) && onBeatSpot == false && CompareTag("YellowDot"))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+
+            if (hit2D.collider.CompareTag("YellowDotU"))
+            {
+                //Particle effect ->
+                underwaterDots.WrongDotYellow();
+                Destroy(GameObject.FindGameObjectWithTag("YellowDotU"));
+                
+            }
+            
+
+        }
+        
     }
 }

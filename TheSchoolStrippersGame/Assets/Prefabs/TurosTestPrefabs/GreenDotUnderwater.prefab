@@ -156,4 +156,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 9
   dotAnimator: {fileID: 5745521244881118312}
-  text: {fileID: 0}
+  TestThing: {fileID: 1791498814441403267, guid: 3ba566a3e5d6e4db0bb1ab2bcc473474, type: 3}
