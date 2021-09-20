@@ -138,11 +138,12 @@ MonoBehaviour:
   dotAnimator: {fileID: 7117914797039513585}
   onBeatSpot: 0
   text: {fileID: 6400361334901089165, guid: 59343fa2022fa4886927fe3dbc82e0d1, type: 3}
+  testThing: {fileID: 2790340410848199654, guid: 2427d76402c994f0ebdff56f4d2529be, type: 3}
   playerMovement: {fileID: 0}
   combo: {fileID: 0}
   underwaterDots: {fileID: 0}
   underwaterDotSpawner: {fileID: 0}
-  expandingCircleFX: {fileID: 5132984704434036656, guid: d919297cba08e744faed03efa40f74df, type: 3}
+  scoreAmount: 1
 --- !u!95 &7117914797039513585
 Animator:
   serializedVersion: 3

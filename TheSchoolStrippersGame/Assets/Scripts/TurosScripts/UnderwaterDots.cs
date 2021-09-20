@@ -7,7 +7,7 @@ public class UnderwaterDots : MonoBehaviour
     public float lifetime = 2f;
     [SerializeField] Animator dotAnimator;
     private bool onBeatSpot = false;
-    [SerializeField] GameObject text;
+    [SerializeField] GameObject TestThing;
     bool canDestroyAllDots = false;
 
     private void Start()
@@ -29,142 +29,77 @@ public class UnderwaterDots : MonoBehaviour
         }
     }
 
-    /*public void DotIsBeatSpoted()
-    {
-        onBeatSpot = true;
-    }*/
-
     public void DestroyAllDots()
     {
         canDestroyAllDots = true;   
         
     }
 
-    /*private void OnTriggerEnter2D(Collider2D collision)
+    public void WrongDotBlue()
     {
-        if (collision.CompareTag("DotDestroyer"))
-        {
-            dotAnimator.SetTrigger("DotDeath");
-            ScoringSystem.theScore -= 1; 
-            //GameObject.Find("PlayerScore").GetComponent<Combo>().StartComboBar();
-            Destroy(this.gameObject, 2f);
-        }
-        if (collision.tag == "DotDestroyerLarge")
-        {
-            dotAnimator.SetTrigger("DotDeath");
-            Destroy(this.gameObject, 4f);
-        }
-
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "BeatSpot")
-        {
-            DotIsBeatSpoted();
-
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "BeatSpot")
-        {
-            onBeatSpot = false;
-        }
-    }
-
-    /*public void BlueDotIsClicked()
-    {
-        Debug.Log("SININEN!");
         
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("BlueDot"))
-        {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
 
-            if (hit2D.collider.CompareTag("BlueDot"))
+            if (hit2D.collider.CompareTag("BlueDotU"))
             {
-                ScoringSystem.theScore += 1;
-                Destroy(this.gameObject, 0.1f);
-                Instantiate(text, transform.position, Quaternion.identity);
-                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
-            }           
-        }
-        // lisäsin tänne testipätkän --------------------------------------------------------------------------------
-        /*else if (Input.GetMouseButtonDown(0) && !onBeatSpot == true && CompareTag("BlueDot"))
-        {
-            Destroy(GameObject.Find("DotSpawnPoint").transform.GetChild(0));
-            Destroy(GameObject.Find("DotSpawnPoint").transform.GetChild(1));
-            Destroy(GameObject.Find("DotSpawnPoint").transform.GetChild(2));
-            Destroy(GameObject.Find("DotSpawnPoint").transform.GetChild(3));
-            //    Destroy(GameObject.FindGameObjectWithTag("BlueDot"));
-            //    Destroy(GameObject.FindGameObjectWithTag("RedDot"));
-            //    Destroy(GameObject.FindGameObjectWithTag("YellowDot"));
-            //    Destroy(GameObject.FindGameObjectWithTag("GreenDot"));
-            GameObject.Find("Spawners").transform.GetChild(2).GetComponent<UnderwaterDotSpawner>().SpawnAllUnderwaterObjects();
-        }*/
-    //}
-    /*
-    public void RedDotIsClicked()
-    {
-        Debug.Log("PUNAINEN!");
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("RedDot"))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
-
-            if (hit2D.collider.CompareTag("RedDot"))
-            {
-                ScoringSystem.theScore += 1;
-                Destroy(this.gameObject, 0.1f);
-                Instantiate(text, transform.position, Quaternion.identity);
-                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
-
+                //Here is place for particle effect instantiations
+                Instantiate(TestThing, hit2D.point, Quaternion.identity);
+                
             }
-        }
+
+        
     }
 
-    public void GreenDotIsClicked()
+    public void WrongDotRed()
     {
-        Debug.Log("VIHREÄ!");
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("GreenDot"))
-        {
+        
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
 
-            if (hit2D.collider.CompareTag("GreenDot"))
+            if (hit2D.collider.CompareTag("RedDotU"))
             {
-                ScoringSystem.theScore += 1;
-                Destroy(this.gameObject, 0.1f);
-                Instantiate(text, transform.position, Quaternion.identity);
-                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
+                //Here is place for particle effect instantiations
+                Instantiate(TestThing, hit2D.point, Quaternion.identity);
+
             }
-        }
+
+        
     }
 
-    public void YellowDotIsClicked()
+    public void WrongDotGreen()
     {
-        Debug.Log("KELTAINEN!");
-
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("YellowDot"))
-        {
+        
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
 
-            if (hit2D.collider.CompareTag("YellowDot"))
+            if (hit2D.collider.CompareTag("GreenDotU"))
             {
-                ScoringSystem.theScore += 1;
-                Destroy(this.gameObject, 0.1f);
-                Instantiate(text, transform.position, Quaternion.identity);
-                //GameObject.Find("PlayerScore").GetComponent<Combo>().ComboBar();
-            }
-        }
-    }*/
+                //Here is place for particle effect instantiations
+                Instantiate(TestThing, hit2D.point, Quaternion.identity);
 
-    
+            }
+
+        
+    }
+
+    public void WrongDotYellow()
+    {
+        
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+
+            if (hit2D.collider.CompareTag("YellowDotU"))
+            {
+                //Here is place for particle effect instantiations
+                Instantiate(TestThing, hit2D.point, Quaternion.identity);
+
+            }
+
+        
+    }
 }
