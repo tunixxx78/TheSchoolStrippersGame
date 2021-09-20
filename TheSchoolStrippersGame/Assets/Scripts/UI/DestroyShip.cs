@@ -57,6 +57,26 @@ public class DestroyShip : MonoBehaviour
         SpawnParticles();
     }
 
+
+
+    /* void Update()
+     {
+
+         if (Input.GetMouseButtonDown(0) && GameObject.Find("PlayerScore").GetComponent<Combo>().attackCounter == 1)
+         {
+             ChangeSpritetoWrecked();
+         }
+         if (Input.GetMouseButtonDown(0) && GameObject.Find("PlayerScore").GetComponent<Combo>().attackCounter == 2)
+         {
+             ChangeSpritetoWrecked1();
+         }
+         if (Input.GetMouseButtonDown(0) && GameObject.Find("PlayerScore").GetComponent<Combo>().attackCounter == 3)
+         {
+             ChangeSpritetoWrecked2();
+         }
+
+     }*/
+
     //function called from Combo Script's attack();
     public void DamageShip(int attackCounter)
     {
