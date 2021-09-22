@@ -628,6 +628,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7542734197580213110, guid: dba9e9ad26570dd4ba24f13e1cb8888b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7542734197845167284, guid: dba9e9ad26570dd4ba24f13e1cb8888b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -675,6 +679,14 @@ PrefabInstance:
     - target: {fileID: 7542734197845167290, guid: dba9e9ad26570dd4ba24f13e1cb8888b, type: 3}
       propertyPath: m_Name
       value: Collectibles
+      objectReference: {fileID: 0}
+    - target: {fileID: 7542734198245919771, guid: dba9e9ad26570dd4ba24f13e1cb8888b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7542734198421964157, guid: dba9e9ad26570dd4ba24f13e1cb8888b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dba9e9ad26570dd4ba24f13e1cb8888b, type: 3}
