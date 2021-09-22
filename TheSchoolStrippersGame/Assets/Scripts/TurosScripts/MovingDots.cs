@@ -144,7 +144,7 @@ public class MovingDots : MonoBehaviour
                 // tässä combobar
                 combo.ComboBar();
 
-                
+                underwaterDots.spawnFX(hit2D.collider.gameObject.transform.position);
             }
             
         }
@@ -193,7 +193,7 @@ public class MovingDots : MonoBehaviour
                 // tässä combobar
                 combo.ComboBar();
 
-                
+                underwaterDots.spawnFX(hit2D.collider.gameObject.transform.position);
             }
         }
 
@@ -225,6 +225,7 @@ public class MovingDots : MonoBehaviour
 
             RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
 
+
             if (hit2D.collider.CompareTag("GreenDotU"))
             {
                 ScoringSystem.theScore += scoreAmount;
@@ -241,7 +242,7 @@ public class MovingDots : MonoBehaviour
                 // tässä combobar
                 combo.ComboBar();
 
-                
+                underwaterDots.spawnFX(hit2D.collider.gameObject.transform.position);
             }
         }
         else if (Input.GetMouseButtonDown(0) && onBeatSpot == false && CompareTag("GreenDot"))
@@ -289,6 +290,7 @@ public class MovingDots : MonoBehaviour
                 // tässä combobar
                 combo.ComboBar();
 
+                underwaterDots.spawnFX(hit2D.collider.gameObject.transform.position);
                 
             }
         }
@@ -311,4 +313,6 @@ public class MovingDots : MonoBehaviour
         }
         
     }
+
+    
 }
