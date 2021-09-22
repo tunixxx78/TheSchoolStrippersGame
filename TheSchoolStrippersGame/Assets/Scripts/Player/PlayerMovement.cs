@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Rigidbody2D Player;
-    [SerializeField] float speed = 5f, paralysedTime = 4f, paralysedSpeed = 0f, normalSpeed = 5f;
+    [SerializeField] float speed = 5f, paralysedTime = 1f, paralysedSpeed = 0f, normalSpeed = 5f;
     Vector2 targetPosition;
     bool isMoving = false;
     public bool hasHitObstacle = false;
@@ -20,9 +20,14 @@ public class PlayerMovement : MonoBehaviour
     Animator mermaidAnimator;
     [SerializeField]
     GameObject expandingBubbleFx;
+    [SerializeField]
+    GameObject mermaidObject;
+
+    SFXManager soundManager;
 
     private void Awake()
     {
+        soundManager = FindObjectOfType<SFXManager>();
         transform.localScale = new Vector3(1, 1, 1);
     }
 
@@ -37,24 +42,27 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        
+
+        /*if (Input.GetMouseButtonDown(0))
         {
                 SetTargetPosition();   
-        }
-
-        /*if (isMoving)
-        {
-            MovePlayer();
         }*/
-        if (hasHitObstacle)
+
+        
+        /*if (hasHitObstacle)
         {
             StartCoroutine(SlowDownPlayer());
-        }
+        }*/
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !hasHitObstacle)
         {
+            SetTargetPosition();
+
             GameObject expandingFX = Instantiate(expandingBubbleFx, Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0,0,10)), Quaternion.identity);
             Destroy(expandingFX, 1);
+
+            
         }
 
         //float x = transform.position.x;
@@ -81,24 +89,29 @@ public class PlayerMovement : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+        RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
 
-        if (hit2D.collider.CompareTag("PlayArea") || hit2D.collider.CompareTag("BlueDotU") || hit2D.collider.CompareTag("RedDotU") || hit2D.collider.CompareTag("YellowDotU") || hit2D.collider.CompareTag("GreenDotU"))
+        if (hit2D)
         {
-            targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            if (transform.localPosition.x > targetPosition.x)
+            if (hit2D.collider.CompareTag("PlayArea") || hit2D.collider.CompareTag("BlueDotU") || hit2D.collider.CompareTag("RedDotU") || hit2D.collider.CompareTag("YellowDotU") || hit2D.collider.CompareTag("GreenDotU") && !hasHitObstacle)
             {
-                Player.transform.localScale = new Vector3(-1, 1, 1);
-                isMoving = true;
-            }
+                targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            else
-            {
-                Player.transform.localScale = new Vector3(1, 1, 1);
-                isMoving = true;
+                if (transform.localPosition.x > targetPosition.x)
+                {
+                    Player.transform.localScale = new Vector3(-1, 1, 1);
+                    isMoving = true;
+                }
+
+                else
+                {
+                    Player.transform.localScale = new Vector3(1, 1, 1);
+                    isMoving = true;
+                }
             }
         }
+
+       
         
     }
 
@@ -108,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         //Player.MovePosition(targetPosition);
 
-        FindObjectOfType<SFXManager>().Swim();
+        soundManager.Swim();
 
         if(Player.position == targetPosition)
         {
@@ -117,33 +130,26 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-        if (collision.CompareTag("Obstacle"))
-        {
-            hasHitObstacle = true;
-            speed = paralysedSpeed;
-
-            //Spawn StunFX
-            Instantiate(PlayerStunFX, this.transform.position, Quaternion.identity);
-
-            mermaidAnimator.SetTrigger("Stun");
-            
-        }
-
-    }
-  
+    
+    //called from moving obstacle script
     public void SlowdownPlayerFromOtherScript()
     {
+        hasHitObstacle = true;
         StartCoroutine(SlowDownPlayer());
+        //Spawn StunFX
+        Instantiate(PlayerStunFX, this.transform.position, Quaternion.identity);
+        
+        speed = paralysedSpeed;
+
     }
 
     public IEnumerator SlowDownPlayer()
     {
-        Debug.Log("OOOOSUUUUMAAAAA");
+        isMoving = false;
         Player.constraints = RigidbodyConstraints2D.FreezeAll;
+        targetPosition = Player.position;
         
+        mermaidAnimator.SetTrigger("Stun");
         yield return new WaitForSeconds(paralysedTime);
 
         Player.constraints = RigidbodyConstraints2D.None;

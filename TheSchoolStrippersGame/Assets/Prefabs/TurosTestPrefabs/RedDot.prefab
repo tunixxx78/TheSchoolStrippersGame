@@ -143,6 +143,9 @@ MonoBehaviour:
   underwaterDots: {fileID: 0}
   underwaterDotSpawner: {fileID: 0}
   scoreAmount: 1
+  underwaterdotLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!95 &7117914797039513585
 Animator:
   serializedVersion: 3

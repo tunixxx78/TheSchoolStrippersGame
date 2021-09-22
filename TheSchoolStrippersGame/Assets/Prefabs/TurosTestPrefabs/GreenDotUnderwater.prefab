@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5745521244881118306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.3327165, y: -3.9277635, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -157,4 +157,8 @@ MonoBehaviour:
   lifetime: 9
   dotAnimator: {fileID: 5745521244881118312}
   deathParticleFX: {fileID: 1120620930852420391, guid: 2407e714edd199747b61144a2767946d, type: 3}
-  correctParticleFX: {fileID: 1027130130454084156, guid: 9cce5655266e40b48a7b9cdeaf3d4a4e, type: 3}
+  correctParticleFX:
+  - {fileID: 1027130130454084156, guid: 9cce5655266e40b48a7b9cdeaf3d4a4e, type: 3}
+  - {fileID: 1382727525519633684, guid: 8802b432230ae214292cbb090be782d8, type: 3}
+  - {fileID: 1382727525519633684, guid: 307ac48aa3a047d4d8e32949564f1efd, type: 3}
+  - {fileID: 4568354125937938782, guid: 39527fd4279e00941863e13604896b45, type: 3}

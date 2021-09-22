@@ -8,7 +8,7 @@ public class UnderwaterDots : MonoBehaviour
     [SerializeField] Animator dotAnimator;
     private bool onBeatSpot = false;
     [SerializeField] GameObject deathParticleFX;
-    [SerializeField] GameObject correctParticleFX;
+    [SerializeField] GameObject[] correctParticleFX;
     bool canDestroyAllDots = false;
 
     private void Start()
@@ -36,77 +36,15 @@ public class UnderwaterDots : MonoBehaviour
         
     }
 
-    public void WrongDotBlue()
+    public void spawnFX(Vector2 position, int color)
     {
-        
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
-
-            if (hit2D.collider.CompareTag("BlueDotU"))
-            {
-                //Here is place for particle effect instantiations
-                Instantiate(deathParticleFX, hit2D.collider.gameObject.transform.position, Quaternion.identity);
-                
-            }
-
-        
+        Instantiate(correctParticleFX[color], position, Quaternion.identity);
     }
 
-    public void WrongDotRed()
+    public void destroyDotFX(Vector2 position)
     {
-        
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
-
-            if (hit2D.collider.CompareTag("RedDotU"))
-            {
-                //Here is place for particle effect instantiations
-                Instantiate(deathParticleFX, hit2D.collider.gameObject.transform.position, Quaternion.identity);
-
-            }
-
-        
+        Instantiate(deathParticleFX, position, Quaternion.identity);
     }
 
-    public void WrongDotGreen()
-    {
-        
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
-
-            if (hit2D.collider.CompareTag("GreenDotU"))
-            {
-                //Here is place for particle effect instantiations
-                Instantiate(deathParticleFX, hit2D.collider.gameObject.transform.position, Quaternion.identity);
-
-            }
-
-        
-    }
-
-    public void WrongDotYellow()
-    {
-        
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
-
-
-            if (hit2D.collider.CompareTag("YellowDotU"))
-            {
-                //Here is place for particle effect instantiations
-                Instantiate(deathParticleFX, hit2D.collider.gameObject.transform.position, Quaternion.identity);
-
-            }
-
-        
-    }
-
-    public void spawnFX(Vector2 position)
-    {
-        Instantiate(correctParticleFX, position, Quaternion.identity);
-    }
 }

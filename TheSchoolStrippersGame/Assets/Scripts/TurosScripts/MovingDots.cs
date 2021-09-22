@@ -17,6 +17,8 @@ public class MovingDots : MonoBehaviour
     public UnderwaterDotSpawner underwaterDotSpawner;
     public int scoreAmount = 1;
 
+    public LayerMask underwaterdotLayer;
+
     
 
     private void Start()
@@ -70,6 +72,12 @@ public class MovingDots : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "BeatSpot")
+        {
+            onBeatSpot = true;
+
+        }
+
         if (collision.CompareTag("DotDestroyer"))
         {
             
@@ -100,14 +108,7 @@ public class MovingDots : MonoBehaviour
         
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "BeatSpot")
-        {
-            DotIsBeatSpoted();
-            
-        }
-    }
+   
 
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -123,44 +124,26 @@ public class MovingDots : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("BlueDot"))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
-
-            if (hit2D.collider.CompareTag("BlueDotU"))
-            {
-                ScoringSystem.theScore += scoreAmount;
-                FindObjectOfType<SFXManager>().CollectingOne();
-                Destroy(this.gameObject, 0.1f);
-                Instantiate(text, transform.position, Quaternion.identity);
-
-                Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
-                Destroy(GameObject.FindGameObjectWithTag("RedDotU"));
-                Destroy(GameObject.FindGameObjectWithTag("YellowDotU"));
-                Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
-
-                underwaterDotSpawner.SpawnUnderwaterObjectsNow();
-
-                // tässä combobar
-                combo.ComboBar();
-
-                underwaterDots.spawnFX(hit2D.collider.gameObject.transform.position);
-            }
+            //correct dot was clicked
+            DotIsClicked("BlueDotU");
             
         }
         else if (Input.GetMouseButtonDown(0) && onBeatSpot == false && CompareTag("BlueDot"))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
-            
-            if (hit2D.collider.CompareTag("BlueDotU"))
+            RaycastHit2D hit2D = ShootRay();
+            if (hit2D)
             {
-                //Particle effect ->
-                underwaterDots.WrongDotBlue();
-                Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
-                
+                if (hit2D.collider.CompareTag("BlueDotU"))
+                {
+                    //Particle effect ->
+                    underwaterDots.destroyDotFX(hit2D.collider.gameObject.transform.position);
+                    Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
+
+                }
             }
+
+            
+
             
             
         }
@@ -173,44 +156,25 @@ public class MovingDots : MonoBehaviour
         //Debug.Log("PUNAINEN!");
         if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("RedDot"))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
-
-            if (hit2D.collider.CompareTag("RedDotU"))
-            {
-                ScoringSystem.theScore += scoreAmount;
-                FindObjectOfType<SFXManager>().CollectingOne();
-                Destroy(this.gameObject, 0.1f);
-                Instantiate(text, transform.position, Quaternion.identity);
-                Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
-                Destroy(GameObject.FindGameObjectWithTag("RedDotU"));
-                Destroy(GameObject.FindGameObjectWithTag("YellowDotU"));
-                Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
-
-                underwaterDotSpawner.SpawnUnderwaterObjectsNow();
-
-                // tässä combobar
-                combo.ComboBar();
-
-                underwaterDots.spawnFX(hit2D.collider.gameObject.transform.position);
-            }
+            
+            DotIsClicked("RedDotU");
         }
 
         else if (Input.GetMouseButtonDown(0) && onBeatSpot == false &&  CompareTag("RedDot"))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit2D = ShootRay();
 
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
-
-            if (hit2D.collider.CompareTag("RedDotU"))
+            if (hit2D)
             {
-                //Particle effect ->
-                underwaterDots.WrongDotRed();
-                Destroy(GameObject.FindGameObjectWithTag("RedDotU"));
-                
+                if (hit2D.collider.CompareTag("RedDotU"))
+                {
+                    //Particle effect ->
+                    underwaterDots.destroyDotFX(hit2D.collider.gameObject.transform.position);
+                    Destroy(GameObject.FindGameObjectWithTag("RedDotU"));
+
+                }
             }
-            
+
 
         }
         
@@ -221,44 +185,24 @@ public class MovingDots : MonoBehaviour
         //Debug.Log("VIHREÄ!");
         if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("GreenDot"))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
-
-
-            if (hit2D.collider.CompareTag("GreenDotU"))
-            {
-                ScoringSystem.theScore += scoreAmount;
-                FindObjectOfType<SFXManager>().CollectingOne();
-                Destroy(this.gameObject, 0.1f);
-                Instantiate(text, transform.position, Quaternion.identity);
-                Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
-                Destroy(GameObject.FindGameObjectWithTag("RedDotU"));
-                Destroy(GameObject.FindGameObjectWithTag("YellowDotU"));
-                Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
-
-                underwaterDotSpawner.SpawnUnderwaterObjectsNow();
-
-                // tässä combobar
-                combo.ComboBar();
-
-                underwaterDots.spawnFX(hit2D.collider.gameObject.transform.position);
-            }
+            
+            DotIsClicked("GreenDotU");
         }
         else if (Input.GetMouseButtonDown(0) && onBeatSpot == false && CompareTag("GreenDot"))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit2D = ShootRay();
 
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
-
-            if (hit2D.collider.CompareTag("GreenDotU"))
+            if (hit2D)
             {
-                //Particle effect ->
-                underwaterDots.WrongDotGreen();
-                Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
-                
+                if (hit2D.collider.CompareTag("GreenDotU"))
+                {
+                    //Particle effect ->
+                    underwaterDots.destroyDotFX(hit2D.collider.gameObject.transform.position);
+                    Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
+
+                }
             }
-            
+
 
         }
         
@@ -270,16 +214,46 @@ public class MovingDots : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("YellowDot"))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+            DotIsClicked("YellowDotU");
+        }
 
-            if (hit2D.collider.CompareTag("YellowDotU"))
+        else if (Input.GetMouseButtonDown(0) && onBeatSpot == false && CompareTag("YellowDot"))
+        {
+            RaycastHit2D hit2D = ShootRay();
+
+            if (hit2D)
+            {
+                if (hit2D.collider.CompareTag("YellowDotU"))
+                {
+                    //Particle effect ->
+                    underwaterDots.destroyDotFX(hit2D.collider.gameObject.transform.position);
+                    Destroy(GameObject.FindGameObjectWithTag("YellowDotU"));
+
+                }
+            }
+
+
+        }
+        
+    }
+
+    //this happens when correct dot has been clicked
+    void DotIsClicked(string dotTag)
+    {
+
+
+        RaycastHit2D hit2D = ShootRay();
+
+        if (hit2D)
+        {
+            if (hit2D.collider.CompareTag(dotTag))
             {
                 ScoringSystem.theScore += scoreAmount;
                 FindObjectOfType<SFXManager>().CollectingOne();
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
+
                 Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
                 Destroy(GameObject.FindGameObjectWithTag("RedDotU"));
                 Destroy(GameObject.FindGameObjectWithTag("YellowDotU"));
@@ -289,28 +263,23 @@ public class MovingDots : MonoBehaviour
 
                 // tässä combobar
                 combo.ComboBar();
+                //spawn FX for correct dot
+                underwaterDots.spawnFX(hit2D.collider.gameObject.transform.position, 0);
 
-                underwaterDots.spawnFX(hit2D.collider.gameObject.transform.position);
-                
+
             }
         }
 
-        else if (Input.GetMouseButtonDown(0) && onBeatSpot == false && CompareTag("YellowDot"))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        
+    }
 
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+    RaycastHit2D ShootRay()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (hit2D.collider.CompareTag("YellowDotU"))
-            {
-                //Particle effect ->
-                underwaterDots.WrongDotYellow();
-                Destroy(GameObject.FindGameObjectWithTag("YellowDotU"));
-                
-            }
-            
+        RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray, 20, underwaterdotLayer);
 
-        }
+        return hit2D;
         
     }
 

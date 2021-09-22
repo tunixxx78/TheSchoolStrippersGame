@@ -9,6 +9,11 @@ public class MovingObstacles : MonoBehaviour
     bool isSwimmingFast = true;
     bool isSimmingSlow = false;
 
+    PlayerMovement player;
+    private void Awake()
+    {
+        player = FindObjectOfType<PlayerMovement>();
+    }
     private void Update()
     {
         if (isSwimmingFast)
@@ -36,8 +41,8 @@ public class MovingObstacles : MonoBehaviour
         }
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("OSUTTU PELAAJAAN!");
-            FindObjectOfType<PlayerMovement>().SlowdownPlayerFromOtherScript();
+            
+            player.SlowdownPlayerFromOtherScript();
         }
     }
 
