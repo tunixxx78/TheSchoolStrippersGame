@@ -33,8 +33,8 @@ public class MovingDots : MonoBehaviour
     private void Update()
     {
 
-        
-        transform.Translate(Vector2.right * -dotSpawner.beatTempoForLevel * Time.deltaTime);
+        transform.position -= new Vector3(dotSpawner.beatTempoForLevel * Time.deltaTime, 0f, 0f);
+        //transform.Translate(Vector2.right * -dotSpawner.beatTempoForLevel * Time.deltaTime);
 
         if (playerMovement.hasHitObstacle == false)
         {

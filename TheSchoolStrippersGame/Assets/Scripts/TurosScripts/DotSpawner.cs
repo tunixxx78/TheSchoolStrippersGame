@@ -8,10 +8,11 @@ public class DotSpawner : MonoBehaviour
     private float timeBtwSpawns;
     [SerializeField] private float startTimeBtwSpawns, decrreaseTime, minTime = 0.65f;
     public float beatTempoForLevel;
+    [SerializeField] float diveder = 1f;
 
     private void Start()
     {
-       beatTempoForLevel = beatTempoForLevel /50f;
+       beatTempoForLevel = beatTempoForLevel /diveder;
     }
     private void Update()
     {
