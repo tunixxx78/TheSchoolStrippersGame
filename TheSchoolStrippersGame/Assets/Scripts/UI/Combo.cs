@@ -13,6 +13,8 @@ public class Combo : MonoBehaviour
     public int current;
     public Image mask;
 
+    private int attackScore = 25;
+
     DestroyShip shipScript;
 
     [SerializeField]
@@ -37,7 +39,7 @@ public class Combo : MonoBehaviour
             ModifyHealth();
         }
 
-        if (current >= 25)
+        if (current >= attackScore)
         {
             Attack();
             current = 0;
@@ -55,7 +57,7 @@ public class Combo : MonoBehaviour
 
     public void ComboBar()
     {
-        if (current < 25)
+        if (current < attackScore)
         {
             current++;
             ModifyHealth();
