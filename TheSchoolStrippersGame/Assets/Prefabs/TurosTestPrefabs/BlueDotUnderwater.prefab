@@ -162,3 +162,6 @@ MonoBehaviour:
   - {fileID: 1382727525519633684, guid: 8802b432230ae214292cbb090be782d8, type: 3}
   - {fileID: 1382727525519633684, guid: 307ac48aa3a047d4d8e32949564f1efd, type: 3}
   - {fileID: 4568354125937938782, guid: 39527fd4279e00941863e13604896b45, type: 3}
+  underwaterdotLayer:
+    serializedVersion: 2
+    m_Bits: 128

@@ -53,6 +53,7 @@ public class MovingDots : MonoBehaviour
         {
             scoreCanBeReduced = true;
         }
+        
     }
 
     void DestroyEverything()
@@ -128,7 +129,7 @@ public class MovingDots : MonoBehaviour
             DotIsClicked("BlueDotU");
             
         }
-        else if (Input.GetMouseButtonDown(0) && onBeatSpot == false && CompareTag("BlueDot"))
+        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
         {
             RaycastHit2D hit2D = ShootRay();
             if (hit2D)
@@ -140,14 +141,8 @@ public class MovingDots : MonoBehaviour
                     Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
 
                 }
-            }
-
-            
-
-            
-            
+            } 
         }
-        
         
     }
 
@@ -160,7 +155,7 @@ public class MovingDots : MonoBehaviour
             DotIsClicked("RedDotU");
         }
 
-        else if (Input.GetMouseButtonDown(0) && onBeatSpot == false &&  CompareTag("RedDot"))
+        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
         {
             RaycastHit2D hit2D = ShootRay();
 
@@ -177,7 +172,7 @@ public class MovingDots : MonoBehaviour
 
 
         }
-        
+
     }
 
     public void GreenDotIsClicked()
@@ -188,7 +183,7 @@ public class MovingDots : MonoBehaviour
             
             DotIsClicked("GreenDotU");
         }
-        else if (Input.GetMouseButtonDown(0) && onBeatSpot == false && CompareTag("GreenDot"))
+        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
         {
             RaycastHit2D hit2D = ShootRay();
 
@@ -205,7 +200,8 @@ public class MovingDots : MonoBehaviour
 
 
         }
-        
+      
+
     }
 
     public void YellowDotIsClicked()
@@ -218,7 +214,7 @@ public class MovingDots : MonoBehaviour
             DotIsClicked("YellowDotU");
         }
 
-        else if (Input.GetMouseButtonDown(0) && onBeatSpot == false && CompareTag("YellowDot"))
+        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
         {
             RaycastHit2D hit2D = ShootRay();
 
@@ -232,10 +228,11 @@ public class MovingDots : MonoBehaviour
 
                 }
             }
-
+            
 
         }
-        
+
+
     }
 
     //this happens when correct dot has been clicked

@@ -10,6 +10,7 @@ public class UnderwaterDots : MonoBehaviour
     [SerializeField] GameObject deathParticleFX;
     [SerializeField] GameObject[] correctParticleFX;
     bool canDestroyAllDots = false;
+    public LayerMask underwaterdotLayer;
 
     private void Start()
     {
@@ -45,6 +46,5 @@ public class UnderwaterDots : MonoBehaviour
     {
         Instantiate(deathParticleFX, position, Quaternion.identity);
     }
-
 
 }
