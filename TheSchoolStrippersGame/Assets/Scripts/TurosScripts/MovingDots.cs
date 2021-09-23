@@ -54,6 +54,8 @@ public class MovingDots : MonoBehaviour
         {
             scoreCanBeReduced = true;
         }
+       
+        
         
     }
 
@@ -142,8 +144,11 @@ public class MovingDots : MonoBehaviour
                     Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
 
                 }
-            } 
+            }
         }
+        
+        
+        
         
     }
 
@@ -234,6 +239,20 @@ public class MovingDots : MonoBehaviour
         }
 
 
+    }
+
+    void WrongDotsClicked()
+    { 
+            RaycastHit2D hit2D = ShootRay();
+            if (hit2D)
+            {
+            if (hit2D.collider.CompareTag("BlueDotU"))
+            {
+                underwaterDots.destroyDotFX(hit2D.collider.gameObject.transform.position);
+                Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
+
+            }
+            }
     }
 
     //this happens when correct dot has been clicked
