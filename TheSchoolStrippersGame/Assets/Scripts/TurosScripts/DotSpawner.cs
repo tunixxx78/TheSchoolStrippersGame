@@ -6,13 +6,13 @@ public class DotSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] dots;
     private float timeBtwSpawns;
-    [SerializeField] private float startTimeBtwSpawns, decrreaseTime, minTime = 0.65f;
+    [SerializeField] private float startTimeBtwSpawns, decrreaseTime, minTime = 0f;
     public float beatTempoForLevel;
     [SerializeField] float diveder = 1f;
 
     private void Start()
     {
-       beatTempoForLevel = beatTempoForLevel /diveder;
+        beatTempoForLevel = beatTempoForLevel /diveder;
     }
     private void Update()
     {
