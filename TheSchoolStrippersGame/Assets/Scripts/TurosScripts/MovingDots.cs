@@ -16,6 +16,7 @@ public class MovingDots : MonoBehaviour
     public UnderwaterDots underwaterDots;
     public UnderwaterDotSpawner underwaterDotSpawner;
     public int scoreAmount = 1;
+    
 
     public LayerMask underwaterdotLayer;
 
@@ -129,7 +130,7 @@ public class MovingDots : MonoBehaviour
             DotIsClicked("BlueDotU");
             
         }
-        else if (Input.GetMouseButtonDown(0))
+        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
         {
             RaycastHit2D hit2D = ShootRay();
             if (hit2D)
@@ -155,7 +156,7 @@ public class MovingDots : MonoBehaviour
             DotIsClicked("RedDotU");
         }
 
-        else if (Input.GetMouseButtonDown(0))
+        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
         {
             RaycastHit2D hit2D = ShootRay();
 
@@ -183,7 +184,7 @@ public class MovingDots : MonoBehaviour
             
             DotIsClicked("GreenDotU");
         }
-        else if (Input.GetMouseButtonDown(0))
+        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
         {
             RaycastHit2D hit2D = ShootRay();
 
@@ -214,7 +215,7 @@ public class MovingDots : MonoBehaviour
             DotIsClicked("YellowDotU");
         }
 
-        else if (Input.GetMouseButtonDown(0))
+        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
         {
             RaycastHit2D hit2D = ShootRay();
 
@@ -257,6 +258,10 @@ public class MovingDots : MonoBehaviour
                 Destroy(GameObject.FindGameObjectWithTag("YellowDotU"));
                 Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
 
+                if (ScoringSystem.thePoints >= 10)
+                {
+                    FindObjectOfType<ScoringSystem>().PowerUpSpawn();
+                }
                 underwaterDotSpawner.SpawnUnderwaterObjectsNow();
 
                 // tässä combobar
