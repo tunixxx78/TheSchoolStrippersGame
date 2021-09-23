@@ -9,6 +9,8 @@ public class ScoringSystem : MonoBehaviour
     public static int thePoints;
     [SerializeField] TMP_Text scoreText;
     [SerializeField] float pointBarrier = 10f;
+    [SerializeField] GameObject testSpawnPoint;
+    [SerializeField] GameObject powerUpItem;
 
     public int score;
     public int points;
@@ -29,9 +31,14 @@ public class ScoringSystem : MonoBehaviour
 
         scoreText.text = theScore.ToString();
 
-        if (points >= pointBarrier)
+        if (thePoints >= pointBarrier)
         {
-            points = 0;
+            thePoints = 0;
         }
+    }
+
+    public void PowerUpSpawn()
+    {
+        Instantiate(powerUpItem, testSpawnPoint.transform.position, Quaternion.identity);
     }
 }
