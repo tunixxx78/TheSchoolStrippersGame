@@ -49,20 +49,32 @@ public class VolumeSlider : MonoBehaviour
         PlayerPrefs.SetInt("muted", muted ? 1 : 0);
     }
 
-    public void OnButtonPress()
+    public void OnMutePress()
     {
-        if(muted == false)
+        if (!muted)
         {
             muted = true;
             AudioListener.pause = true;
+            Save();
+            Debug.Log("mute " + muted);
         }
         else
         {
+            Debug.Log("on mutella");
+        }
+    }
+    public void OnUnmutePress()
+    {
+        if (muted)
+        {
             muted = false;
             AudioListener.pause = false;
+            Save();
+            Debug.Log("Unmute " + muted);
         }
-
-        Save();
+        else
+        {
+            Debug.Log("ei ole mutella");
+        }
     }
-
 }
