@@ -29,13 +29,15 @@ public class Combo : MonoBehaviour
    
     void Update()
     {
+        // Tämä pitää poistaa ------ vain devaajille ----------
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             current++;
             ModifyHealth();
         }
 
-        if (current >= 3)
+        if (current >= 25)
         {
             Attack();
             current = 0;
@@ -53,7 +55,7 @@ public class Combo : MonoBehaviour
 
     public void ComboBar()
     {
-        if (current < 3)
+        if (current < 25)
         {
             current++;
             ModifyHealth();
@@ -79,12 +81,6 @@ public class Combo : MonoBehaviour
         StartCoroutine(WinGame());
     }
 
-    public IEnumerator BoolToFalse()
-    {
-        yield return new WaitForSeconds(1f);
-        GameObject.Find("attack").GetComponent<Animator>().SetBool("attack", false);
-    }
-
     public IEnumerator WinGame()
     {
         if(attackCounter == 4)
@@ -92,20 +88,32 @@ public class Combo : MonoBehaviour
             // kolme tähteä
             if(ScoringSystem.theScore >= 5)
             {
+                // active win scene and stars
                 GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
                 GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(0).gameObject.SetActive(true);
+                // deactive players and dots
+                GameObject.Find("Player").transform.gameObject.SetActive(false);
+                GameObject.Find("Spawners").transform.gameObject.SetActive(false);
             }
             // kaksi tähteä
             else if (ScoringSystem.theScore >= 3)
             {
+                // active win scene and stars
                 GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
                 GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(1).gameObject.SetActive(true);
+                // deactive players and dots
+                GameObject.Find("Player").transform.gameObject.SetActive(false);
+                GameObject.Find("Spawners").transform.gameObject.SetActive(false);
             }
             // yksi tähti
             else if (ScoringSystem.theScore < 3)
-            {
+            { 
+                // active win scene and stars
                 GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
                 GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(2).gameObject.SetActive(true);
+                // deactive players and dots
+                GameObject.Find("Player").transform.gameObject.SetActive(false);
+                GameObject.Find("Spawners").transform.gameObject.SetActive(false);
             }
             yield return new WaitForSeconds(wingameDelay);
         }
