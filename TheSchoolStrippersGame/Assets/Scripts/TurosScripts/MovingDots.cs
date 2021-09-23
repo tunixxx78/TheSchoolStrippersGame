@@ -129,7 +129,7 @@ public class MovingDots : MonoBehaviour
             DotIsClicked("BlueDotU");
             
         }
-        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
+        else if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit2D = ShootRay();
             if (hit2D)
@@ -155,7 +155,7 @@ public class MovingDots : MonoBehaviour
             DotIsClicked("RedDotU");
         }
 
-        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
+        else if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit2D = ShootRay();
 
@@ -183,7 +183,7 @@ public class MovingDots : MonoBehaviour
             
             DotIsClicked("GreenDotU");
         }
-        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
+        else if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit2D = ShootRay();
 
@@ -214,7 +214,7 @@ public class MovingDots : MonoBehaviour
             DotIsClicked("YellowDotU");
         }
 
-        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
+        else if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit2D = ShootRay();
 
@@ -247,6 +247,7 @@ public class MovingDots : MonoBehaviour
             if (hit2D.collider.CompareTag(dotTag))
             {
                 ScoringSystem.theScore += scoreAmount;
+                ScoringSystem.thePoints += scoreAmount;
                 FindObjectOfType<SFXManager>().CollectingOne();
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);

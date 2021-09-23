@@ -8,6 +8,7 @@ public class ScoringSystem : MonoBehaviour
     public static int theScore;
     public static int thePoints;
     [SerializeField] TMP_Text scoreText;
+    [SerializeField] float pointBarrier = 10f;
 
     public int score;
     public int points;
@@ -28,6 +29,9 @@ public class ScoringSystem : MonoBehaviour
 
         scoreText.text = theScore.ToString();
 
-
+        if (points >= pointBarrier)
+        {
+            points = 0;
+        }
     }
 }

@@ -4181,7 +4181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1145086063}
+  pointBarrier: 10
   score: 0
+  points: 0
 --- !u!1 &703176574
 GameObject:
   m_ObjectHideFlags: 0
@@ -4639,6 +4641,14 @@ PrefabInstance:
     - target: {fileID: 4178058418575194189, guid: 172183db2518a4ee89ab7a0d3a0067cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439127836931424888, guid: 172183db2518a4ee89ab7a0d3a0067cd, type: 3}
+      propertyPath: m_Size.x
+      value: 0.23368824
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439127836931424888, guid: 172183db2518a4ee89ab7a0d3a0067cd, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.24197352
       objectReference: {fileID: 0}
     - target: {fileID: 5439127836931424891, guid: 172183db2518a4ee89ab7a0d3a0067cd, type: 3}
       propertyPath: m_Enabled
