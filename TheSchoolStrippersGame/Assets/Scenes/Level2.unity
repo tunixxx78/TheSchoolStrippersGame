@@ -24929,19 +24929,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 307903411959938353, guid: 6ac631f3175d33448960d730ee4bd314, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 307903413481772814, guid: 6ac631f3175d33448960d730ee4bd314, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 696329246}
     - target: {fileID: 307903413481772814, guid: 6ac631f3175d33448960d730ee4bd314, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1030063994}
+    - target: {fileID: 307903413481772814, guid: 6ac631f3175d33448960d730ee4bd314, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ContinueGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 307903413630519974, guid: 6ac631f3175d33448960d730ee4bd314, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 696329246}
+    - target: {fileID: 307903413630519974, guid: 6ac631f3175d33448960d730ee4bd314, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayButton
+      objectReference: {fileID: 0}
     - target: {fileID: 5737288224761534418, guid: 6ac631f3175d33448960d730ee4bd314, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5737288225817849396, guid: 6ac631f3175d33448960d730ee4bd314, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ac631f3175d33448960d730ee4bd314, type: 3}
