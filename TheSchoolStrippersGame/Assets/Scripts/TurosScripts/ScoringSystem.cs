@@ -41,4 +41,6 @@ public class ScoringSystem : MonoBehaviour
     {
         Instantiate(powerUpItem, testSpawnPoint.transform.position, Quaternion.identity);
     }
+
+    
 }
