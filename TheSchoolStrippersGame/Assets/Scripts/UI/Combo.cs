@@ -20,6 +20,10 @@ public class Combo : MonoBehaviour
     [SerializeField]
     float wingameDelay = 5;
 
+    // Turo Added
+    public int bonusComboAmount = 5;
+
+
     private void Awake()
     {
         shipScript = FindObjectOfType<DestroyShip>();
@@ -27,11 +31,12 @@ public class Combo : MonoBehaviour
     private void Start()
     {
         mask.fillAmount = 0;
+        
     }
    
     void Update()
     {
-        // Tämä pitää poistaa ------ vain devaajille ----------
+        // T?m? pit?? poistaa ------ vain devaajille ----------
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -63,6 +68,13 @@ public class Combo : MonoBehaviour
             ModifyHealth();
         }
     }
+    //Turo added -> adding extra point to combobar. Called from PointsPowerUp script.
+    public void BonusComboBar()
+    {
+        current += bonusComboAmount;
+        ModifyHealth();
+    }
+
     public void StartComboBar()
     {
         if (current > 0)
@@ -87,17 +99,21 @@ public class Combo : MonoBehaviour
     {
         if(attackCounter == 4)
         {
-            // kolme tähteä
+            // kolme t?hte?
             if(ScoringSystem.theScore >= 5)
             {
+                Invoke("ThreeStars", wingameDelay);
+                /*
                 // active win scene and stars
                 GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
                 GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(0).gameObject.SetActive(true);
+                */
                 // deactive players and dots
-                GameObject.Find("Player").transform.gameObject.SetActive(false);
-                GameObject.Find("Spawners").transform.gameObject.SetActive(false);
+                GameObject.Find("Player").SetActive(false);
+                GameObject.Find("Spawners").SetActive(false);
+                
             }
-            // kaksi tähteä
+            // kaksi t?hte?
             else if (ScoringSystem.theScore >= 3)
             {
                 // active win scene and stars
@@ -107,7 +123,7 @@ public class Combo : MonoBehaviour
                 GameObject.Find("Player").transform.gameObject.SetActive(false);
                 GameObject.Find("Spawners").transform.gameObject.SetActive(false);
             }
-            // yksi tähti
+            // yksi t?hti
             else if (ScoringSystem.theScore < 3)
             { 
                 // active win scene and stars
@@ -119,5 +135,14 @@ public class Combo : MonoBehaviour
             }
             yield return new WaitForSeconds(wingameDelay);
         }
+    }
+
+    void ThreeStars()
+    {
+        // active win scene and stars
+        GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
+        GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(0).gameObject.SetActive(true);
+        
+        
     }
 }
