@@ -20,6 +20,7 @@ TagManager:
   - RedDotU
   - GreenDotU
   - YellowDotU
+  - BeatSpotTwo
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,7 @@ public class MovingDots : MonoBehaviour
     
     [SerializeField] Animator dotAnimator;
     public bool onBeatSpot = false;
+    public bool onBeatSpotTwo = false;
     [SerializeField] GameObject text;
     DotSpawner dotSpawner;
     public PlayerMovement playerMovement;
@@ -81,6 +82,10 @@ public class MovingDots : MonoBehaviour
             onBeatSpot = true;
 
         }
+        if(collision.tag == "BeatSpotTwo")
+        {
+            onBeatSpotTwo = true;
+        }
 
         if (collision.CompareTag("DotDestroyer"))
         {
@@ -120,6 +125,10 @@ public class MovingDots : MonoBehaviour
         {
             onBeatSpot = false;
         }
+        if (collision.tag == "BeatSpotTwo")
+        {
+            onBeatSpotTwo = false;
+        }
     }
 
     public void BlueDotIsClicked()
@@ -132,7 +141,7 @@ public class MovingDots : MonoBehaviour
             DotIsClicked("BlueDotU");
             
         }
-        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
+        else if (Input.GetMouseButtonDown(0) && onBeatSpotTwo == true)
         {
             RaycastHit2D hit2D = ShootRay();
             if (hit2D)
@@ -161,7 +170,7 @@ public class MovingDots : MonoBehaviour
             DotIsClicked("RedDotU");
         }
 
-        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
+        else if (Input.GetMouseButtonDown(0) && onBeatSpotTwo == true)
         {
             RaycastHit2D hit2D = ShootRay();
 
@@ -189,7 +198,7 @@ public class MovingDots : MonoBehaviour
             
             DotIsClicked("GreenDotU");
         }
-        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
+        else if (Input.GetMouseButtonDown(0) && onBeatSpotTwo == true)
         {
             RaycastHit2D hit2D = ShootRay();
 
@@ -220,7 +229,7 @@ public class MovingDots : MonoBehaviour
             DotIsClicked("YellowDotU");
         }
 
-        else if (Input.GetMouseButtonDown(0) && onBeatSpot)
+        else if (Input.GetMouseButtonDown(0) && onBeatSpotTwo == true)
         {
             RaycastHit2D hit2D = ShootRay();
 
