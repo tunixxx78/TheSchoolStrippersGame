@@ -16,7 +16,9 @@ public class MovingDots : MonoBehaviour
     private bool scoreCanBeReduced = true;
     public UnderwaterDots underwaterDots;
     public UnderwaterDotSpawner underwaterDotSpawner;
-    public int scoreAmount = 1;
+    public int scoreAmount = 1, scoreAmountTwo = 1, scoreAmountThree = 2;
+    public int multiplierOne = 5;
+    public int multiplierTwo = 10;
     
 
     public LayerMask underwaterdotLayer;
@@ -95,6 +97,7 @@ public class MovingDots : MonoBehaviour
             if(scoreCanBeReduced == true)
             {
                 ScoringSystem.theScore -= 1;
+                ScoringSystem.theMultiplierPoints = 0;
             }
 
             Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
@@ -277,6 +280,7 @@ public class MovingDots : MonoBehaviour
             {
                 ScoringSystem.theScore += scoreAmount;
                 ScoringSystem.thePoints += scoreAmount;
+                ScoringSystem.theMultiplierPoints += scoreAmount;
                 FindObjectOfType<SFXManager>().CollectingOne();
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
@@ -289,6 +293,16 @@ public class MovingDots : MonoBehaviour
                 if (ScoringSystem.thePoints >= 10)
                 {
                     FindObjectOfType<ScoringSystem>().PowerUpSpawn();
+                }
+                if(ScoringSystem.theMultiplierPoints >= multiplierOne)
+                {
+                    ScoringSystem.theScore += scoreAmountTwo;
+                    ScoringSystem.thePoints += scoreAmountTwo;
+                }
+                if(ScoringSystem.theMultiplierPoints >= multiplierTwo)
+                {
+                    ScoringSystem.theScore += scoreAmountThree;
+                    ScoringSystem.thePoints += scoreAmountThree;
                 }
                 underwaterDotSpawner.SpawnUnderwaterObjectsNow();
 

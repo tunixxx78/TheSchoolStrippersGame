@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isMoving && canMove == true)
+        if (isMoving)
         {
             MovePlayer();
         }
@@ -175,7 +175,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    public bool PathIsClear()
+    public bool PathIsClear() // Checks if player path to dot have some obstacles.
     {
         
         targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
