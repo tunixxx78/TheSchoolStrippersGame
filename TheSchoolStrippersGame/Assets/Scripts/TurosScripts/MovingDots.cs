@@ -135,7 +135,7 @@ public class MovingDots : MonoBehaviour
     {
         //Debug.Log("SININEN!");
 
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("BlueDot"))
+        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("BlueDot") && playerMovement.canMove == true)
         {
             //correct dot was clicked
             DotIsClicked("BlueDotU");
@@ -164,7 +164,7 @@ public class MovingDots : MonoBehaviour
     public void RedDotIsClicked()
     {
         //Debug.Log("PUNAINEN!");
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("RedDot"))
+        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("RedDot") && playerMovement.canMove == true)
         {
             
             DotIsClicked("RedDotU");
@@ -193,7 +193,7 @@ public class MovingDots : MonoBehaviour
     public void GreenDotIsClicked()
     {
         //Debug.Log("VIHREÄ!");
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("GreenDot"))
+        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("GreenDot") && playerMovement.canMove == true)
         {
             
             DotIsClicked("GreenDotU");
@@ -223,7 +223,7 @@ public class MovingDots : MonoBehaviour
     {
         //Debug.Log("KELTAINEN!");
 
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("YellowDot"))
+        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("YellowDot") && playerMovement.canMove == true)
         {
 
             DotIsClicked("YellowDotU");

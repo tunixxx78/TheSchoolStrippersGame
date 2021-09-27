@@ -13,6 +13,7 @@ public class UnderwaterDotSpawner : MonoBehaviour
     public UnderwaterDots underwaterDots;
 
 
+
     private void Start()
     {
         underwaterDots = FindObjectOfType<UnderwaterDots>();
@@ -107,16 +108,21 @@ public class UnderwaterDotSpawner : MonoBehaviour
 
     public void SpawnUnderwaterObjectsNow()
     {
+        
         MeshCollider c = quad.GetComponent<MeshCollider>();
 
         float screenX, screenY;
 
-        Vector2 pos;
+        Vector2 pos = new Vector2(0, 0);
 
+        
+ 
         for (int i = 0; i < spawnPool.Count; i++)
         {
+
             screenX = Random.Range(c.bounds.min.x, c.bounds.max.x);
             screenY = Random.Range(c.bounds.min.y, c.bounds.max.y);
+
             pos = new Vector2(screenX, screenY);
 
             var spawnPoint = Instantiate(spawnPool[i], pos, Quaternion.identity);
@@ -124,4 +130,6 @@ public class UnderwaterDotSpawner : MonoBehaviour
             canSpawn = false;
         }
     }
+
+    
 }

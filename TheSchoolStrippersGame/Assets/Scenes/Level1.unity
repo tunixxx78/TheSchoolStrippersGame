@@ -1397,6 +1397,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291847776}
   m_CullTransparentMesh: 1
+--- !u!1 &336725403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 336725404}
+  m_Layer: 8
+  m_Name: StartPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &336725404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336725403}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.527, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 370354611}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &357947149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,6 +1512,11 @@ SpriteRenderer:
 --- !u!1 &370354606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 768086589939349928, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
+  m_PrefabInstance: {fileID: 1389100344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &370354611 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 768086589939349932, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
   m_PrefabInstance: {fileID: 1389100344}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &370498956
@@ -1851,6 +1886,10 @@ PrefabInstance:
       propertyPath: quad
       value: 
       objectReference: {fileID: 1858024610}
+    - target: {fileID: 7410832727265819813, guid: 83a772e2e31f64b11a1602a03106f26b, type: 3}
+      propertyPath: radius
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7410832726857371642, guid: 83a772e2e31f64b11a1602a03106f26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 83a772e2e31f64b11a1602a03106f26b, type: 3}
@@ -5145,7 +5184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 307903411959938352, guid: 6ac631f3175d33448960d730ee4bd314, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -18.830017
+      value: -18.829956
       objectReference: {fileID: 0}
     - target: {fileID: 307903411959938352, guid: 6ac631f3175d33448960d730ee4bd314, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7784,8 +7823,16 @@ PrefabInstance:
       value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
+      propertyPath: startPoint
+      value: 
+      objectReference: {fileID: 336725403}
+    - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
       propertyPath: normalSpeed
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
+      propertyPath: ignore.m_Bits
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
       propertyPath: mermaidObject
@@ -7800,9 +7847,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 593323799}
     - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
+      propertyPath: obstacle.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
+      propertyPath: ignoreToo.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
       propertyPath: expandingBubbleFx
       value: 
       objectReference: {fileID: 5132984704434036656, guid: d919297cba08e744faed03efa40f74df, type: 3}
+    - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
+      propertyPath: ignoreThis.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 768086589939349935, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
+      propertyPath: ignoreThisToo.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 1307003942036882368, guid: c328c9edd18204b1db15b2ba0b0dd0d7, type: 3}
       propertyPath: m_IsActive
       value: 1
