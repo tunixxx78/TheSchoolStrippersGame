@@ -9,7 +9,7 @@ public class ScoringSystem : MonoBehaviour
     public static int thePoints;
     public static int theMultiplierPoints;
     [SerializeField] TMP_Text scoreText;
-    [SerializeField] float pointBarrier = 10f;
+    public float pointBarrier = 1000f;
     [SerializeField] GameObject testSpawnPoint;
     [SerializeField] GameObject powerUpItem;
 

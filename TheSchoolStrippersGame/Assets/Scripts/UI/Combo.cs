@@ -13,7 +13,7 @@ public class Combo : MonoBehaviour
     public int current;
     public Image mask;
 
-    private int attackScore = 25;
+    private int attackScore = 2500;
 
     DestroyShip shipScript;
 
@@ -21,7 +21,7 @@ public class Combo : MonoBehaviour
     float wingameDelay = 5;
 
     // Turo Added
-    public int bonusComboAmount = 5;
+    public int bonusComboAmount = 500;
 
 
     private void Awake()

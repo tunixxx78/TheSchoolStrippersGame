@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PointsPowerUp : MonoBehaviour
 {
-    public int powerUpAmount;
+    public int powerUpAmount = 500;
     public Combo combo;
 
 
@@ -12,6 +12,14 @@ public class PointsPowerUp : MonoBehaviour
     {
         combo = FindObjectOfType<Combo>();
         powerUpAmount = combo.bonusComboAmount;
+    }
+
+    private void Update()
+    {
+        if (transform.position.y <= -7)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,6 +31,7 @@ public class PointsPowerUp : MonoBehaviour
             FindObjectOfType<Combo>().BonusComboBar();
             Destroy(this.gameObject);
         }
+        
     }
     
 }

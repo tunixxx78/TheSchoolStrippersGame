@@ -134,4 +134,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1426e03ef37a24916b69e5a1806675ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpAmount: 5
+  powerUpAmount: 500
+  combo: {fileID: 0}
