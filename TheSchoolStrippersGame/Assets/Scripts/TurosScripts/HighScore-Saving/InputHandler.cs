@@ -30,8 +30,8 @@ public class InputHandler : MonoBehaviour
     public void AddNameToList()
     {
         entries.Add(new InputEntry(nameInput.text, Random.Range(0, 100)));
-        nameInput.text = "";
+        //nameInput.text = "";
         //FileHandler.SaveToJson<InputEntry>(entries, fileName);
-        highscoreHandler.AddHighscoreIfPossible(new HighScoreElemt(playerNameTwo, playerScore));
+        highscoreHandler.AddHighscoreIfPossible(new HighScoreElemt(nameInput.text, playerScore));
     }
 }

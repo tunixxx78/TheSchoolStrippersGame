@@ -150,6 +150,7 @@ MonoBehaviour:
   multiplierOne: 500
   multiplierTwo: 1000
   multiplierThree: 2000
+  scoringSystem: {fileID: 0}
   underwaterdotLayer:
     serializedVersion: 2
     m_Bits: 128

@@ -5698,6 +5698,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1508866293177441411, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
+      propertyPath: maximum
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508866293177441411, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
+      propertyPath: bonusAddForCombobar
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1508866293177441422, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
       propertyPath: m_Name
       value: PlayerScore

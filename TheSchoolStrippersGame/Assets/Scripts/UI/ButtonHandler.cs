@@ -39,4 +39,9 @@ public class ButtonHandler : MonoBehaviour
     {
         Time.timeScale = 1;
     }
+
+    public void StartLevelOne()
+    {
+        SceneManager.LoadScene("Level1");
+    }
 }

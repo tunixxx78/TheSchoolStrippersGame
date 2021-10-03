@@ -13,7 +13,7 @@ public class Combo : MonoBehaviour
     public int current;
     public Image mask;
 
-    private int attackScore = 2500;
+    private int attackScore = 15;
 
     DestroyShip shipScript;
 
@@ -22,6 +22,7 @@ public class Combo : MonoBehaviour
 
     // Turo Added
     public int bonusComboAmount = 500;
+    public int bonusAddForCombobar = 1;
 
 
     private void Awake()
@@ -71,7 +72,8 @@ public class Combo : MonoBehaviour
     //Turo added -> adding extra point to combobar. Called from PointsPowerUp script.
     public void BonusComboBar()
     {
-        current += bonusComboAmount;
+        //current += bonusComboAmount;
+        current += bonusAddForCombobar;
         ModifyHealth();
     }
 
