@@ -20,6 +20,9 @@ public class ScoringSystem : MonoBehaviour
     private void Start()
     {
         multiplierPoints = 0;
+
+        //PlayerPrefs.SetString("highscoreTable", 0.ToString());
+        
     }
 
     private void Update()
