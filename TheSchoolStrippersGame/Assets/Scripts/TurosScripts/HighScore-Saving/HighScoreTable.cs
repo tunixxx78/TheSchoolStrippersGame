@@ -14,12 +14,15 @@ public class HighScoreTable : MonoBehaviour
     private List<Transform> highscoreEntryTransformList;
     [SerializeField] int maxRowCount = 5;
     [SerializeField] TMP_Text playerPoints;
+    [SerializeField] string saveFile;
     
 
     int playerScore;
 
     private void Awake()
     {
+        //saveFile = Application.persistentDataPath + "/highscoreData.json";
+
         
         playerScore = ScoringSystem.theScore;
         playerPoints.text = playerScore.ToString();
@@ -29,39 +32,54 @@ public class HighScoreTable : MonoBehaviour
 
         entryTemplate.gameObject.SetActive(false);
 
-        AddHighscoreEntry(playerScore);
 
-        string jsonString = PlayerPrefs.GetString("highscoreTable");
-        Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
-        
 
-        for (int i = 0; i < highscores.highscoreEntryList.Count; i++)
-        {
-            for (int j = i + 1; j <highscores.highscoreEntryList.Count; j++)
+
+        //if (File.Exists(saveFile)) //testing
+        //{
+            //string fileContent = File.ReadAllText(saveFile); //testing
+
+            AddHighscoreEntry(playerScore);
+
+            string jsonString = PlayerPrefs.GetString("highscoreTable");
+            Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
+
+
+            for (int i = 0; i < highscores.highscoreEntryList.Count; i++)
             {
-                if(highscores.highscoreEntryList[j].score >highscores.highscoreEntryList[i].score)
+                for (int j = i + 1; j < highscores.highscoreEntryList.Count; j++)
                 {
-                    HighscoreEntry tmp = highscores.highscoreEntryList[i];
-                    highscores.highscoreEntryList[i] = highscores.highscoreEntryList[j];
-                    highscores.highscoreEntryList[j] = tmp;
- 
-                }
-                if (highscores.highscoreEntryList.Count > maxRowCount)
-                {
-                    highscores.highscoreEntryList.RemoveAt(maxRowCount);
-                }
+                    if (highscores.highscoreEntryList[j].score > highscores.highscoreEntryList[i].score)
+                    {
+                        HighscoreEntry tmp = highscores.highscoreEntryList[i];
+                        highscores.highscoreEntryList[i] = highscores.highscoreEntryList[j];
+                        highscores.highscoreEntryList[j] = tmp;
 
+                    }
+                    if (highscores.highscoreEntryList.Count > maxRowCount)
+                    {
+                        highscores.highscoreEntryList.RemoveAt(maxRowCount);
+                    }
+
+                }
             }
-        }
-        
-        
 
-        highscoreEntryTransformList = new List<Transform>();
 
-        foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList)
-        {
-            CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
-        }
+
+            highscoreEntryTransformList = new List<Transform>();
+
+            foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList)
+            {
+                CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
+            }
+        //}
+        //else //testing
+       // {
+            Debug.Log("DATAA EI LÖYDY");
+            File.Create(saveFile);
+
+            
+        //}
 
     }
 
@@ -144,8 +162,6 @@ public class HighScoreTable : MonoBehaviour
     {
 
         public int score;
-
-        
 
     }
 
