@@ -4063,7 +4063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cbb67592ab78814ebb470bf681c8283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelIndex: 1
+  levelIndex: 2
   currentStarValue: 0
 --- !u!4 &696329245
 Transform:

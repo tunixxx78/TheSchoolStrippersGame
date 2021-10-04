@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
         currentStarValue = _starNum;
         if (currentStarValue > PlayerPrefs.GetInt("Lv" + levelIndex))
         {
-            PlayerPrefs.SetInt("Lv" + levelIndex, currentStarValue);
+            PlayerPrefs.SetInt("Lv" + levelIndex, _starNum);
         }
     }
 }

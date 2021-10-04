@@ -111,7 +111,7 @@ public class Combo : MonoBehaviour
                 // deactive players and dots
                 GameObject.Find("Player").SetActive(false);
                 GameObject.Find("Spawners").SetActive(false);
-                
+                GameObject.Find("GameController").GetComponent<GameController>().currentStarValue += 3;               
             }
             // kaksi t?hte?
             else if (ScoringSystem.theScore >= 3)
@@ -122,6 +122,7 @@ public class Combo : MonoBehaviour
                 // deactive players and dots
                 GameObject.Find("Player").transform.gameObject.SetActive(false);
                 GameObject.Find("Spawners").transform.gameObject.SetActive(false);
+                GameObject.Find("GameController").GetComponent<GameController>().currentStarValue += 2;
             }
             // yksi t?hti
             else if (ScoringSystem.theScore < 3)
@@ -132,6 +133,7 @@ public class Combo : MonoBehaviour
                 // deactive players and dots
                 GameObject.Find("Player").transform.gameObject.SetActive(false);
                 GameObject.Find("Spawners").transform.gameObject.SetActive(false);
+                GameObject.Find("GameController").GetComponent<GameController>().currentStarValue += 1;
             }
             yield return new WaitForSeconds(wingameDelay);
         }
