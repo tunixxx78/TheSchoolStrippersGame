@@ -43,6 +43,7 @@ public class MovingObstacles : MonoBehaviour
         {
             
             player.SlowdownPlayerFromOtherScript();
+            ScoringSystem.theMultiplierPoints = 0;
         }
     }
 

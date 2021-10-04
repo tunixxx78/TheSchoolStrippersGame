@@ -137,12 +137,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dotAnimator: {fileID: 7117914797039513585}
   onBeatSpot: 0
+  onBeatSpotTwo: 0
   text: {fileID: 6400361334901089165, guid: 59343fa2022fa4886927fe3dbc82e0d1, type: 3}
   playerMovement: {fileID: 0}
   combo: {fileID: 0}
   underwaterDots: {fileID: 0}
   underwaterDotSpawner: {fileID: 0}
-  scoreAmount: 1
+  scoreAmount: 100
+  scoreMultiplierOne: 2
+  scoreMultiplierTwo: 3
+  scoreMultiplierThree: 4
+  multiplierOne: 500
+  multiplierTwo: 1000
+  multiplierThree: 2000
+  scoringSystem: {fileID: 0}
   underwaterdotLayer:
     serializedVersion: 2
     m_Bits: 128

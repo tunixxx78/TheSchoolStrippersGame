@@ -16,8 +16,11 @@ public class MovingDots : MonoBehaviour
     private bool scoreCanBeReduced = true;
     public UnderwaterDots underwaterDots;
     public UnderwaterDotSpawner underwaterDotSpawner;
-    public int scoreAmount = 1;
-    
+    public int scoreAmount = 1, scoreMultiplierOne = 2, scoreMultiplierTwo = 3, scoreMultiplierThree = 4;
+    public int multiplierOne = 5;
+    public int multiplierTwo = 10;
+    public int multiplierThree = 20;
+    public ScoringSystem scoringSystem;
 
     public LayerMask underwaterdotLayer;
 
@@ -32,6 +35,7 @@ public class MovingDots : MonoBehaviour
         combo = FindObjectOfType<Combo>();
         underwaterDots = FindObjectOfType<UnderwaterDots>();
         underwaterDotSpawner = FindObjectOfType<UnderwaterDotSpawner>();
+        scoringSystem = FindObjectOfType<ScoringSystem>();
     }
 
     private void Update()
@@ -94,7 +98,8 @@ public class MovingDots : MonoBehaviour
 
             if(scoreCanBeReduced == true)
             {
-                ScoringSystem.theScore -= 1;
+                //ScoringSystem.theScore -= 1;
+                ScoringSystem.theMultiplierPoints = 0;
             }
 
             Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
@@ -135,7 +140,7 @@ public class MovingDots : MonoBehaviour
     {
         //Debug.Log("SININEN!");
 
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("BlueDot"))
+        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("BlueDot") && playerMovement.canMove == true)
         {
             //correct dot was clicked
             DotIsClicked("BlueDotU");
@@ -164,7 +169,7 @@ public class MovingDots : MonoBehaviour
     public void RedDotIsClicked()
     {
         //Debug.Log("PUNAINEN!");
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("RedDot"))
+        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("RedDot") && playerMovement.canMove == true)
         {
             
             DotIsClicked("RedDotU");
@@ -193,7 +198,7 @@ public class MovingDots : MonoBehaviour
     public void GreenDotIsClicked()
     {
         //Debug.Log("VIHREÄ!");
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("GreenDot"))
+        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("GreenDot") && playerMovement.canMove == true)
         {
             
             DotIsClicked("GreenDotU");
@@ -223,7 +228,7 @@ public class MovingDots : MonoBehaviour
     {
         //Debug.Log("KELTAINEN!");
 
-        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("YellowDot"))
+        if (Input.GetMouseButtonDown(0) && onBeatSpot == true && CompareTag("YellowDot") && playerMovement.canMove == true)
         {
 
             DotIsClicked("YellowDotU");
@@ -275,8 +280,31 @@ public class MovingDots : MonoBehaviour
         {
             if (hit2D.collider.CompareTag(dotTag))
             {
-                ScoringSystem.theScore += scoreAmount;
-                ScoringSystem.thePoints += scoreAmount;
+                if(ScoringSystem.theMultiplierPoints <= multiplierOne)
+                {
+                    ScoringSystem.theScore += scoreAmount;
+                    ScoringSystem.thePoints += scoreAmount;
+                    ScoringSystem.theMultiplierPoints += scoreAmount;
+                }
+                if(ScoringSystem.theMultiplierPoints >= multiplierOne && ScoringSystem.theMultiplierPoints <= multiplierTwo)
+                {
+                    ScoringSystem.theScore += scoreAmount * scoreMultiplierOne;
+                    ScoringSystem.thePoints += scoreAmount * scoreMultiplierOne;
+                    ScoringSystem.theMultiplierPoints += scoreAmount;
+                }
+                if(ScoringSystem.theMultiplierPoints >= multiplierTwo && ScoringSystem.theMultiplierPoints <= multiplierThree)
+                {
+                    ScoringSystem.theScore += scoreAmount * scoreMultiplierTwo;
+                    ScoringSystem.thePoints += scoreAmount * scoreMultiplierTwo;
+                    ScoringSystem.theMultiplierPoints += scoreAmount;
+                }
+                if(ScoringSystem.theMultiplierPoints >= multiplierThree)
+                {
+                    ScoringSystem.theScore += scoreAmount * scoreMultiplierThree;
+                    ScoringSystem.thePoints += scoreAmount * scoreMultiplierThree;
+                    ScoringSystem.theMultiplierPoints += scoreAmount;
+                }
+                
                 FindObjectOfType<SFXManager>().CollectingOne();
                 Destroy(this.gameObject, 0.1f);
                 Instantiate(text, transform.position, Quaternion.identity);
@@ -286,10 +314,11 @@ public class MovingDots : MonoBehaviour
                 Destroy(GameObject.FindGameObjectWithTag("YellowDotU"));
                 Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
 
-                if (ScoringSystem.thePoints >= 10)
+                if (ScoringSystem.thePoints >= scoringSystem.pointBarrier)
                 {
                     FindObjectOfType<ScoringSystem>().PowerUpSpawn();
                 }
+               
                 underwaterDotSpawner.SpawnUnderwaterObjectsNow();
 
                 // tässä combobar

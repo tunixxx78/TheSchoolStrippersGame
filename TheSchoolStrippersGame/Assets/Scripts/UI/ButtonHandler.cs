@@ -26,6 +26,7 @@ public class ButtonHandler : MonoBehaviour
     }
     public void NextLevel()
     {
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -37,5 +38,10 @@ public class ButtonHandler : MonoBehaviour
     public void ContinueGame()
     {
         Time.timeScale = 1;
+    }
+
+    public void StartLevelOne()
+    {
+        SceneManager.LoadScene("Level1");
     }
 }

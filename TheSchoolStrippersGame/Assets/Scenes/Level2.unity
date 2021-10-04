@@ -4104,11 +4104,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1145086063}
-  pointBarrier: 10
+  pointBarrier: 1000
   testSpawnPoint: {fileID: 125866235}
   powerUpItem: {fileID: 1791498814441403267, guid: 3ba566a3e5d6e4db0bb1ab2bcc473474, type: 3}
   score: 0
   points: 0
+  multiplierPoints: 0
 --- !u!1 &703176574
 GameObject:
   m_ObjectHideFlags: 0
@@ -6110,10 +6111,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1508866293177441411, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
       propertyPath: maximum
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1508866293177441411, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
       propertyPath: maxHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508866293177441411, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
+      propertyPath: bonusAddForCombobar
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1508866293177441420, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}

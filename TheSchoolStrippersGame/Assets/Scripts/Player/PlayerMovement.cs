@@ -25,6 +25,10 @@ public class PlayerMovement : MonoBehaviour
 
     SFXManager soundManager;
 
+    public bool canMove = true;
+    //public LayerMask obstacle, ignore, ignoreThis, ignoreThisToo;
+    [SerializeField] GameObject startPoint;
+
     private void Awake()
     {
         soundManager = FindObjectOfType<SFXManager>();
@@ -33,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        
+        //canMove = true;
         underwaterDots = FindObjectOfType<UnderwaterDots>();
         underwaterDotSpawner = FindObjectOfType<UnderwaterDotSpawner>();
         //underwaterDotSpawner.SpawnUnderwaterObjects();
@@ -42,8 +46,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        
 
+        //PathIsClear();
         /*if (Input.GetMouseButtonDown(0))
         {
                 SetTargetPosition();   
@@ -57,10 +61,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && !hasHitObstacle)
         {
-            SetTargetPosition();
+            PathIsClear();
+            if(canMove == true)
+            {
+                SetTargetPosition();
 
-            GameObject expandingFX = Instantiate(expandingBubbleFx, Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0,0,10)), Quaternion.identity);
-            Destroy(expandingFX, 1);
+                GameObject expandingFX = Instantiate(expandingBubbleFx, Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0, 0, 10)), Quaternion.identity);
+                Destroy(expandingFX, 1);
+            }
+            
 
             
         }
@@ -117,17 +126,24 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
+        
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            soundManager.Swim();
+
+            if (Player.position == targetPosition)
+            {
+                isMoving = false;
+
+            }
+        
+        
+            
+        
+        
         //Player.MovePosition(targetPosition);
 
-        soundManager.Swim();
-
-        if(Player.position == targetPosition)
-        {
-            isMoving = false;
-            
-        }
+        
     }
 
     
@@ -157,6 +173,38 @@ public class PlayerMovement : MonoBehaviour
         isMoving = false;
         hasHitObstacle = false;
 
+    }
+
+    public bool PathIsClear() // Checks if player path to dot have some obstacles.
+    {
+        
+        targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        RaycastHit2D clearPath = Physics2D.Linecast(startPoint.transform.position, targetPosition, 1 << LayerMask.NameToLayer("Obstacle"));
+        Debug.DrawLine(startPoint.transform.position, targetPosition, Color.red);
+        //Debug.Log(clearPath.collider.tag);
+
+        if(clearPath.collider != null)
+        {
+            if (clearPath.collider.gameObject.CompareTag("Obstacle"))
+            {
+                canMove = false;
+                Debug.Log("ESTE TIELLÄ");
+                isMoving = true;
+               
+            }
+            
+        }
+        else
+        {
+            canMove = true;
+            isMoving = false;
+            
+        }
+
+        return canMove;
+        
+        
     }
     
 }
