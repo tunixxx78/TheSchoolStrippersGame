@@ -37,7 +37,7 @@ public class Combo : MonoBehaviour
    
     void Update()
     {
-        // T?m? pit?? poistaa ------ vain devaajille ----------
+        // Tama pitaa poistaa ------ vain devaajille ----------
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -119,8 +119,8 @@ public class Combo : MonoBehaviour
             else if (ScoringSystem.theScore >= 3)
             {
                 // active win scene and stars
-                GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
-                GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(1).gameObject.SetActive(true);
+                GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
+                GameObject.Find("PopUps").transform.GetChild(2).transform.GetChild(1).gameObject.SetActive(true);
                 // deactive players and dots
                 GameObject.Find("Player").transform.gameObject.SetActive(false);
                 GameObject.Find("Spawners").transform.gameObject.SetActive(false);
@@ -130,8 +130,8 @@ public class Combo : MonoBehaviour
             else if (ScoringSystem.theScore < 3)
             { 
                 // active win scene and stars
-                GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
-                GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(2).gameObject.SetActive(true);
+                GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
+                GameObject.Find("PopUps").transform.GetChild(2).transform.GetChild(2).gameObject.SetActive(true);
                 // deactive players and dots
                 GameObject.Find("Player").transform.gameObject.SetActive(false);
                 GameObject.Find("Spawners").transform.gameObject.SetActive(false);
@@ -144,8 +144,8 @@ public class Combo : MonoBehaviour
     void ThreeStars()
     {
         // active win scene and stars
-        GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
-        GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(0).gameObject.SetActive(true);
+        GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
+        GameObject.Find("PopUps").transform.GetChild(2).transform.GetChild(0).gameObject.SetActive(true);
         
         
     }

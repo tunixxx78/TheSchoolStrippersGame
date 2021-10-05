@@ -9,7 +9,7 @@ public class ButtonHandler : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.P))
         {
-            GameObject.Find("Pause").transform.GetChild(0).gameObject.SetActive(true);
+            GameObject.Find("PopUps").transform.GetChild(0).gameObject.SetActive(true);
             Time.timeScale = 0;
         }
     }
