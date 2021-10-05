@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ButtonHandler : MonoBehaviour
 {
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            GameObject.Find("Pause").transform.GetChild(0).gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
     public void PlayButton()
     {
         SceneManager.LoadScene("LevelSelection");
