@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 public class SFXManager : MonoBehaviour
 {
-    public AudioSource swim, breakingShip, collecting1, collecting2;
+    public AudioSource swim, breakingShip, collecting1, collecting2, button, wrongDot;
 
     public void Swim()
     {
@@ -25,5 +25,15 @@ public class SFXManager : MonoBehaviour
     public void CollectingTwo()
     {
         collecting2.Play();
+    }
+
+    public void ButtonPress()
+    {
+        button.Play();
+    }
+
+    public void WrongDotSound()
+    {
+        wrongDot.Play();
     }
 }

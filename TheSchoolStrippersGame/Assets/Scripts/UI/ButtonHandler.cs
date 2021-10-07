@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class ButtonHandler : MonoBehaviour
 {
+    public SFXManager sounds;
+
+    private void Start()
+    {
+        sounds = FindObjectOfType<SFXManager>();
+    }
     public void Update()
     {
         if(Input.GetKeyDown(KeyCode.P))
@@ -16,6 +22,7 @@ public class ButtonHandler : MonoBehaviour
     public void PlayButton()
     {
         SceneManager.LoadScene("LevelSelection");
+        sounds.ButtonPress();
     }
 
     public void TryAgainButton()
@@ -51,5 +58,10 @@ public class ButtonHandler : MonoBehaviour
     public void StartLevelOne()
     {
         SceneManager.LoadScene("Level1");
+    }
+
+    public void PlayButtonSound()
+    {
+        sounds.ButtonPress();
     }
 }

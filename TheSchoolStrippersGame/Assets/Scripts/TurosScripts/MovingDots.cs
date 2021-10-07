@@ -21,6 +21,7 @@ public class MovingDots : MonoBehaviour
     public int multiplierTwo = 10;
     public int multiplierThree = 20;
     public ScoringSystem scoringSystem;
+    public SFXManager sfx;
 
     public LayerMask underwaterdotLayer;
 
@@ -36,6 +37,7 @@ public class MovingDots : MonoBehaviour
         underwaterDots = FindObjectOfType<UnderwaterDots>();
         underwaterDotSpawner = FindObjectOfType<UnderwaterDotSpawner>();
         scoringSystem = FindObjectOfType<ScoringSystem>();
+        sfx = FindObjectOfType<SFXManager>();
     }
 
     private void Update()
@@ -154,6 +156,7 @@ public class MovingDots : MonoBehaviour
                 if (hit2D.collider.CompareTag("BlueDotU"))
                 {
                     //Particle effect ->
+                    sfx.WrongDotSound();
                     underwaterDots.destroyDotFX(hit2D.collider.gameObject.transform.position);
                     Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
 
@@ -184,6 +187,7 @@ public class MovingDots : MonoBehaviour
                 if (hit2D.collider.CompareTag("RedDotU"))
                 {
                     //Particle effect ->
+                    sfx.WrongDotSound();
                     underwaterDots.destroyDotFX(hit2D.collider.gameObject.transform.position);
                     Destroy(GameObject.FindGameObjectWithTag("RedDotU"));
 
@@ -212,6 +216,7 @@ public class MovingDots : MonoBehaviour
                 if (hit2D.collider.CompareTag("GreenDotU"))
                 {
                     //Particle effect ->
+                    sfx.WrongDotSound();
                     underwaterDots.destroyDotFX(hit2D.collider.gameObject.transform.position);
                     Destroy(GameObject.FindGameObjectWithTag("GreenDotU"));
 
@@ -243,6 +248,7 @@ public class MovingDots : MonoBehaviour
                 if (hit2D.collider.CompareTag("YellowDotU"))
                 {
                     //Particle effect ->
+                    sfx.WrongDotSound();
                     underwaterDots.destroyDotFX(hit2D.collider.gameObject.transform.position);
                     Destroy(GameObject.FindGameObjectWithTag("YellowDotU"));
 
