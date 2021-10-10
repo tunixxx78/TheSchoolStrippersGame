@@ -1,2 +1,0 @@
-# TheSchoolStrippersGame
- SchoolProjectNo2
