@@ -285,13 +285,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc32ff9d8dfc75438541ef93c977cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 2
+  level: 3
   unlocked: 0
   unlockImage: {fileID: 878467874}
   stars:
   - {fileID: 1394701804}
   - {fileID: 1154322329}
   - {fileID: 56728857}
+  text: {fileID: 962721766}
 --- !u!1 &56728857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,6 +1057,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1160,6 +1162,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768e194b28397d14a8c347402492522a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds: {fileID: 0}
 --- !u!1 &534716418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,6 +1640,7 @@ MonoBehaviour:
   - {fileID: 1706076820}
   - {fileID: 1979268757}
   - {fileID: 907118041}
+  text: {fileID: 0}
 --- !u!1 &825942598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,7 +2001,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 152, y: 92.4}
+  m_AnchoredPosition: {x: 140.6, y: 92.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &962721766
@@ -2008,7 +2024,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ?????????
+  m_text: Usher
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c96965c290af66240a6f7b46006d2f2d, type: 2}
   m_sharedMaterial: {fileID: -2094012090501750643, guid: c96965c290af66240a6f7b46006d2f2d, type: 2}
@@ -2042,7 +2058,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2826,6 +2842,7 @@ MonoBehaviour:
   - {fileID: 1471234896}
   - {fileID: 1185966089}
   - {fileID: 1815551304}
+  text: {fileID: 0}
 --- !u!1 &1301654432
 GameObject:
   m_ObjectHideFlags: 0
@@ -2983,6 +3000,7 @@ MonoBehaviour:
   - {fileID: 346391694}
   - {fileID: 306799576}
   - {fileID: 1149528531}
+  text: {fileID: 0}
 --- !u!1 &1303674751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3303,7 +3321,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -120.1, y: 92.4}
+  m_AnchoredPosition: {x: -113.32, y: 92.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1490098996
@@ -3326,7 +3344,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lady Gaga
+  m_text: Tutorial
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c96965c290af66240a6f7b46006d2f2d, type: 2}
   m_sharedMaterial: {fileID: -2094012090501750643, guid: c96965c290af66240a6f7b46006d2f2d, type: 2}
@@ -4333,6 +4351,7 @@ MonoBehaviour:
   - {fileID: 534716418}
   - {fileID: 825942598}
   - {fileID: 1060359806}
+  text: {fileID: 0}
 --- !u!1 &1979268757
 GameObject:
   m_ObjectHideFlags: 0
@@ -4652,9 +4671,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2065771308}
-        m_TargetAssemblyTypeName: LevelSelection, Assembly-CSharp
-        m_MethodName: PressSelection
+      - m_Target: {fileID: 519420033}
+        m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4726,13 +4745,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc32ff9d8dfc75438541ef93c977cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  level: 2
   unlocked: 1
   unlockImage: {fileID: 1520869600}
   stars:
   - {fileID: 1033130142}
   - {fileID: 1847146680}
   - {fileID: 423771109}
+  text: {fileID: 1490098996}
 --- !u!1 &2124147207
 GameObject:
   m_ObjectHideFlags: 0

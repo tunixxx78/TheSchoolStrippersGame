@@ -102,7 +102,7 @@ public class Combo : MonoBehaviour
         if(attackCounter == 4)
         {
             // kolme t?hte?
-            if(ScoringSystem.theScore >= 5)
+            if(ScoringSystem.theScore >= 2500)
             {
                 Invoke("ThreeStars", wingameDelay);
                 /*
@@ -113,10 +113,10 @@ public class Combo : MonoBehaviour
                 // deactive players and dots
                 GameObject.Find("Player").SetActive(false);
                 GameObject.Find("Spawners").SetActive(false);
-                GameObject.Find("GameController").GetComponent<GameController>().currentStarValue += 3;               
+                GameObject.Find("GameController").GetComponent<GameController>().WinLevel(3);
             }
             // kaksi t?hte?
-            else if (ScoringSystem.theScore >= 3)
+            else if (ScoringSystem.theScore >= 1500)
             {
                 // active win scene and stars
                 GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
@@ -124,10 +124,10 @@ public class Combo : MonoBehaviour
                 // deactive players and dots
                 GameObject.Find("Player").transform.gameObject.SetActive(false);
                 GameObject.Find("Spawners").transform.gameObject.SetActive(false);
-                GameObject.Find("GameController").GetComponent<GameController>().currentStarValue += 2;
+                GameObject.Find("GameController").GetComponent<GameController>().WinLevel(2);
             }
             // yksi t?hti
-            else if (ScoringSystem.theScore < 3)
+            else if (ScoringSystem.theScore < 1500)
             { 
                 // active win scene and stars
                 GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
@@ -135,7 +135,7 @@ public class Combo : MonoBehaviour
                 // deactive players and dots
                 GameObject.Find("Player").transform.gameObject.SetActive(false);
                 GameObject.Find("Spawners").transform.gameObject.SetActive(false);
-                GameObject.Find("GameController").GetComponent<GameController>().currentStarValue += 1;
+                GameObject.Find("GameController").GetComponent<GameController>().WinLevel(1);
             }
             yield return new WaitForSeconds(wingameDelay);
         }
@@ -145,8 +145,6 @@ public class Combo : MonoBehaviour
     {
         // active win scene and stars
         GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
-        GameObject.Find("PopUps").transform.GetChild(2).transform.GetChild(0).gameObject.SetActive(true);
-        
-        
+        GameObject.Find("PopUps").transform.GetChild(2).transform.GetChild(0).gameObject.SetActive(true);      
     }
 }

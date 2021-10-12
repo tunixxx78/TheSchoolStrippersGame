@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelSelection : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] public bool unlocked;
     public Image unlockImage;
     public GameObject[] stars;
+    public TMP_Text text;
 
     private void Start()
     {
@@ -22,7 +24,8 @@ public class LevelSelection : MonoBehaviour
     }
     public void UpdateLevelStatus()
     {
-        int previousLevelNum = level - 1;
+        int previousLevelNum = level;
+        Debug.Log(PlayerPrefs.GetInt("Lv" + previousLevelNum));
         if (PlayerPrefs.GetInt("Lv" + previousLevelNum) > 0)
         {
             unlocked = true;
@@ -36,6 +39,7 @@ public class LevelSelection : MonoBehaviour
             for(int i = 0; i < stars.Length; i++)
             {
                 stars[i].gameObject.SetActive(false);
+                text.text = "???????";
             }
         }
         else
@@ -44,6 +48,7 @@ public class LevelSelection : MonoBehaviour
             for(int i = 0; i < stars.Length; i++)
             {
                 stars[i].gameObject.SetActive(true);
+                text.text = text.text;
             }
         }
     }

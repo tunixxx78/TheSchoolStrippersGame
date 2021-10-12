@@ -13,7 +13,7 @@ public class ButtonHandler : MonoBehaviour
     }
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             GameObject.Find("PopUps").transform.GetChild(0).gameObject.SetActive(true);
             Time.timeScale = 0;
@@ -41,7 +41,6 @@ public class ButtonHandler : MonoBehaviour
     }
     public void NextLevel()
     {
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
