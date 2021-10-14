@@ -21,25 +21,45 @@ public class ButtonHandler : MonoBehaviour
     }
     public void PlayButton()
     {
-        SceneManager.LoadScene("LevelSelection");
+        Invoke("NowReallyPlay", 0.5f);
+        
         sounds.ButtonPress();
+    }
+
+    public void PlayButtonForTutorial()
+    {
+        SceneManager.LoadScene("LevelSelection");
+    }
+    private void NowReallyPlay()
+    {
+        SceneManager.LoadScene("LevelSelection");
     }
 
     public void TryAgainButton()
     {
+        FindObjectOfType<ScoringSystem>().SetPointsToZero();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        sounds.ButtonPress();
+
     }
 
     public void BackToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        sounds.ButtonPress();
     }
 
     public void QuitGame()
     {
         Application.Quit();
+        sounds.ButtonPress();
     }
     public void NextLevel()
+    {
+        Invoke("NowNextLevel", 1f);
+        sounds.ButtonPress();
+    }
+    private void NowNextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
@@ -47,16 +67,19 @@ public class ButtonHandler : MonoBehaviour
     public void PauseButton()
     {
         Time.timeScale = 0;
+        sounds.ButtonPress();
     }
 
     public void ContinueGame()
     {
         Time.timeScale = 1;
+        sounds.ButtonPress();
     }
 
     public void StartLevelOne()
     {
         SceneManager.LoadScene("Level1");
+        sounds.ButtonPress();
     }
 
     public void PlayButtonSound()

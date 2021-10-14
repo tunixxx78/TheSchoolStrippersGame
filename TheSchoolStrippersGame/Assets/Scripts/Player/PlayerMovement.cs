@@ -102,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (hit2D)
         {
-            if (hit2D.collider.CompareTag("PlayArea") || hit2D.collider.CompareTag("BlueDotU") || hit2D.collider.CompareTag("RedDotU") || hit2D.collider.CompareTag("YellowDotU") || hit2D.collider.CompareTag("GreenDotU") && !hasHitObstacle)
+            if (hit2D.collider.CompareTag("PlayArea") || hit2D.collider.CompareTag("BlueDotU") || hit2D.collider.CompareTag("RedDotU") || hit2D.collider.CompareTag("YellowDotU") || hit2D.collider.CompareTag("GreenDotU") || hit2D.collider.CompareTag("PowerUp") && !hasHitObstacle)
             {
                 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 

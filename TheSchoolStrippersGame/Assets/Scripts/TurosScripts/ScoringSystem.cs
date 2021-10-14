@@ -10,7 +10,7 @@ public class ScoringSystem : MonoBehaviour
     public static int theMultiplierPoints;
     [SerializeField] TMP_Text scoreText;
     public float pointBarrier = 1000f;
-    [SerializeField] GameObject testSpawnPoint;
+    [SerializeField] GameObject [] powerUpSpawnPoints;
     [SerializeField] GameObject powerUpItem;
 
     public int score;
@@ -52,9 +52,20 @@ public class ScoringSystem : MonoBehaviour
         }
     }
 
+    public void SetPointsToZero()
+    {
+        score = theScore;
+        theScore = 0;
+        if (theScore > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", theScore);
+        }
+    }
+
     public void PowerUpSpawn()
     {
-        Instantiate(powerUpItem, testSpawnPoint.transform.position, Quaternion.identity);
+        int randomSpawnPoints = Random.Range(0, powerUpSpawnPoints.Length);
+        Instantiate(powerUpItem, powerUpSpawnPoints[randomSpawnPoints].transform.position, Quaternion.identity);
     }
 
     
