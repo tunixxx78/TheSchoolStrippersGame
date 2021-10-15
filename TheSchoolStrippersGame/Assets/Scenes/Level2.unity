@@ -2476,7 +2476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &504659462
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3728,6 +3728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1145086063}
+  scoreTextToWinScreen: {fileID: 871720718}
   pointBarrier: 1000
   powerUpSpawnPoints:
   - {fileID: 639137877}
@@ -4639,6 +4640,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4381569084345820146, guid: 2a451c4de315c4e4d98b881551bcefc3, type: 3}
   m_PrefabInstance: {fileID: 871720716}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &871720718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4381569084172434665, guid: 2a451c4de315c4e4d98b881551bcefc3, type: 3}
+  m_PrefabInstance: {fileID: 871720716}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &890846687
 GameObject:
   m_ObjectHideFlags: 0
@@ -5592,7 +5604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1508866293895691758, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 115.20001
+      value: 173
       objectReference: {fileID: 0}
     - target: {fileID: 1508866293895691758, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
       propertyPath: m_AnchoredPosition.y

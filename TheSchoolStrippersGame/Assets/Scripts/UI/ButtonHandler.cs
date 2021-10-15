@@ -78,6 +78,7 @@ public class ButtonHandler : MonoBehaviour
 
     public void StartLevelOne()
     {
+        FindObjectOfType<ScoringSystem>().SetPointsToZero();
         SceneManager.LoadScene("Level1");
         sounds.ButtonPress();
     }

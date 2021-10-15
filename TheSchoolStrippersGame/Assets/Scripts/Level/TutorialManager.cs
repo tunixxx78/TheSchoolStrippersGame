@@ -39,8 +39,13 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 1)
         {
             StartCoroutine(nextPopUp());
+            
         }
-        else if (popUpIndex == 2)
+        else if (popUpIndex == 2)  // Turo added for 4th sign.
+        {
+            StartCoroutine(FinalPopUp());
+        }
+        else if (popUpIndex == 3)
         {
             if (GameObject.Find("Canvas").transform.GetChild(1).GetComponent<Combo>().attackCounter == 1)
             {
@@ -50,11 +55,21 @@ public class TutorialManager : MonoBehaviour
                 popUps[2].SetActive(false); 
             }
         }
+        
 
-        IEnumerator nextPopUp()
+       IEnumerator nextPopUp()
         {
             yield return new WaitForSeconds(7f);
             popUpIndex = 2;
+            
+        }
+        IEnumerator FinalPopUp() // Turo added for 4th sign.
+        {
+            yield return new WaitForSeconds(7f);
+            popUpIndex = 3;
         }
     }
+
+
+
 }

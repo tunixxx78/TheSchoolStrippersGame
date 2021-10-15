@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class VolumeSlider : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
+    public AudioMixer sFXMixer; // turo added for sound effects slider.
 
 
     private bool muted = false;
@@ -77,4 +79,11 @@ public class VolumeSlider : MonoBehaviour
             Debug.Log("ei ole mutella");
         }
     }
+
+    public void SetSFXLevel(float sliderValue)  // Turo added this for sound effects slider.
+    {
+        sFXMixer.SetFloat("SFXVolume", Mathf.Log10(sliderValue) * 20);
+    }
+
+
 }

@@ -8,7 +8,7 @@ public class ScoringSystem : MonoBehaviour
     public static int theScore;
     public static int thePoints;
     public static int theMultiplierPoints;
-    [SerializeField] TMP_Text scoreText;
+    [SerializeField] TMP_Text scoreText, scoreTextToWinScreen;
     public float pointBarrier = 1000f;
     [SerializeField] GameObject [] powerUpSpawnPoints;
     [SerializeField] GameObject powerUpItem;
@@ -45,6 +45,7 @@ public class ScoringSystem : MonoBehaviour
         }
 
         scoreText.text = theScore.ToString();
+        scoreTextToWinScreen.text = theScore.ToString();
 
         if (thePoints >= pointBarrier)
         {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -15,8 +16,10 @@ public class GameController : MonoBehaviour
         if (currentStarValue > PlayerPrefs.GetInt("Lv" + levelIndex))
         {
             PlayerPrefs.SetInt("Lv" + levelIndex, _starNum);
-            Debug.Log("Nyt ggn iffissä");
+            Debug.Log("Nyt ggn iffiss?");
             Debug.Log(PlayerPrefs.GetInt("Lv" + levelIndex, _starNum));
         }
     }
+
+
 }
