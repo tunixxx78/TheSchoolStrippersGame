@@ -178,10 +178,10 @@ TextureImporter:
       name: Button Selected
       rect:
         serializedVersion: 2
-        x: 1186
-        y: 922
+        x: 1185
+        y: 970
         width: 750
-        height: 182
+        height: 126
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,10 +199,10 @@ TextureImporter:
       name: Button Blank
       rect:
         serializedVersion: 2
-        x: 1286
-        y: 712
-        width: 562
-        height: 175
+        x: 1186
+        y: 753
+        width: 752
+        height: 126
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,10 +283,10 @@ TextureImporter:
       name: Button Small Selected
       rect:
         serializedVersion: 2
-        x: 1103
-        y: 166
-        width: 389
-        height: 156
+        x: 1062
+        y: 192
+        width: 467
+        height: 126
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,10 +304,10 @@ TextureImporter:
       name: Button Small Blank
       rect:
         serializedVersion: 2
-        x: 1656
-        y: 173
-        width: 232
-        height: 160
+        x: 1664
+        y: 202
+        width: 214
+        height: 126
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
