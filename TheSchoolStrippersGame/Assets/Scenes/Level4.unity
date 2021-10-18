@@ -3541,7 +3541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cbb67592ab78814ebb470bf681c8283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelIndex: 3
+  levelIndex: 6
   currentStarValue: 0
 --- !u!4 &696329245
 Transform:
@@ -23677,6 +23677,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 349934117}
     m_Modifications:
+    - target: {fileID: 567215708, guid: e2b6b27488553a448a6eaf50e4ed4c84, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599931666, guid: e2b6b27488553a448a6eaf50e4ed4c84, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5377632089109408248, guid: e2b6b27488553a448a6eaf50e4ed4c84, type: 3}
       propertyPath: m_fontAsset
       value: 
