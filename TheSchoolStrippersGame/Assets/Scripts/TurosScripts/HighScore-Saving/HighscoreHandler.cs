@@ -19,7 +19,7 @@ public class HighscoreHandler : MonoBehaviour
         LoadHighscores();
     }
 
-    private void LoadHighscores()
+    public void LoadHighscores()
     {
         highscoreList = FileHandler.ReadFromJson<HighScoreElemt>(fileName);
 

@@ -23,6 +23,8 @@ public class Combo : MonoBehaviour
     // Turo Added
     public int bonusComboAmount = 500;
     public int bonusAddForCombobar = 1;
+    [SerializeField] GameObject highscoreCanvas;
+    public HighscoreHandler highscoreHandler;
 
 
     private void Awake()
@@ -32,6 +34,7 @@ public class Combo : MonoBehaviour
     private void Start()
     {
         mask.fillAmount = 0;
+        highscoreHandler = FindObjectOfType<HighscoreHandler>();
         
     }
    
@@ -104,7 +107,9 @@ public class Combo : MonoBehaviour
             // kolme t?hte?
             if(ScoringSystem.theScore >= 2500)
             {
+
                 Invoke("ThreeStars", wingameDelay);
+                highscoreHandler.LoadHighscores();
                 /*
                 // active win scene and stars
                 GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
@@ -144,7 +149,8 @@ public class Combo : MonoBehaviour
     void ThreeStars()
     {
         // active win scene and stars
-        GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
-        GameObject.Find("PopUps").transform.GetChild(2).transform.GetChild(0).gameObject.SetActive(true);      
+        //GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
+        //GameObject.Find("PopUps").transform.GetChild(2).transform.GetChild(0).gameObject.SetActive(true);
+        highscoreCanvas.SetActive(true);
     }
 }

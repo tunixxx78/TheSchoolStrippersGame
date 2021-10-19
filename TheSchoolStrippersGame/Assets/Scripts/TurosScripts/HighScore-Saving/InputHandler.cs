@@ -21,6 +21,12 @@ public class InputHandler : MonoBehaviour
         playerPoints.text = playerScore.ToString();
     }
 
+    private void Update()
+    {
+        playerScore = ScoringSystem.theScore;
+        playerPoints.text = playerScore.ToString();
+    }
+
     private void Start()
     {
         entries = FileHandler.ReadFromJson<InputEntry>(fileName);
