@@ -1399,6 +1399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2053853176}
+  scoreTextToWinScreen: {fileID: 0}
   pointBarrier: 1000
   powerUpSpawnPoints: []
   powerUpItem: {fileID: 0}
