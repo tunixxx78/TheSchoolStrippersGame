@@ -123,9 +123,13 @@ public class Combo : MonoBehaviour
             // kaksi t?hte?
             else if (ScoringSystem.theScore >= 1500)
             {
+                Invoke("TwoStars", wingameDelay);
+                highscoreHandler.LoadHighscores();
+
                 // active win scene and stars
-                GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
-                GameObject.Find("PopUps").transform.GetChild(2).transform.GetChild(1).gameObject.SetActive(true);
+                //GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
+                //GameObject.Find("PopUps").transform.GetChild(2).transform.GetChild(1).gameObject.SetActive(true);
+
                 // deactive players and dots
                 GameObject.Find("Player").transform.gameObject.SetActive(false);
                 GameObject.Find("Spawners").transform.gameObject.SetActive(false);
@@ -133,10 +137,14 @@ public class Combo : MonoBehaviour
             }
             // yksi t?hti
             else if (ScoringSystem.theScore < 1500)
-            { 
+            {
+                Invoke("OneStar", wingameDelay);
+                highscoreHandler.LoadHighscores();
+
                 // active win scene and stars
-                GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
-                GameObject.Find("PopUps").transform.GetChild(2).transform.GetChild(2).gameObject.SetActive(true);
+                //GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
+                //GameObject.Find("PopUps").transform.GetChild(2).transform.GetChild(2).gameObject.SetActive(true);
+
                 // deactive players and dots
                 GameObject.Find("Player").transform.gameObject.SetActive(false);
                 GameObject.Find("Spawners").transform.gameObject.SetActive(false);
@@ -151,6 +159,16 @@ public class Combo : MonoBehaviour
         // active win scene and stars
         //GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
         //GameObject.Find("PopUps").transform.GetChild(2).transform.GetChild(0).gameObject.SetActive(true);
+        highscoreCanvas.SetActive(true);
+    }
+
+    void TwoStars()
+    {
+        highscoreCanvas.SetActive(true);
+    }
+
+    void OneStar()
+    {
         highscoreCanvas.SetActive(true);
     }
 }
