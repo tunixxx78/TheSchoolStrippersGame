@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 98883730cef69644ba19503b19457f64
+guid: 1674699b765a2cb4d898169085bcbcbe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3684684507810642865
-    second: Book Arrows 1
-  - first:
-      213: -320886307284637890
-    second: Book Arrows_1
+      213: -3074713243817128295
+    second: Book - Play Button Hover_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -38,7 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 2
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -52,8 +49,8 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 225
+  spriteBorder: {x: 0, y: 66, z: 0, w: 72}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -71,7 +68,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 2
@@ -83,7 +80,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 2
@@ -97,43 +94,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Book Arrows 1
+      name: Book - Play Button Hover_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 7
-        width: 187
-        height: 116
+        x: 0
+        y: 66
+        width: 256
+        height: 117
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f44cf8266fe5ddcc0800000000000000
-      internalID: -3684684507810642865
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Book Arrows_1
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 136
-        width: 187
-        height: 116
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3723098a9bfb8bf0800000000000000
-      internalID: -320886307284637890
+      spriteID: 99e4714689c6455d0800000000000000
+      internalID: -3074713243817128295
       vertices: []
       indices: 
       edges: []
