@@ -21,6 +21,7 @@ public class ScoringSystem : MonoBehaviour
     {
         multiplierPoints = 0;
 
+        theScore = 0;
         //PlayerPrefs.SetString("highscoreTable", 0.ToString());
         
     }
