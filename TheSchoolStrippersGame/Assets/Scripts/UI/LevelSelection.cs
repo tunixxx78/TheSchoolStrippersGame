@@ -15,7 +15,7 @@ public class LevelSelection : MonoBehaviour
 
     private void Start()
     {
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
     }
     private void Update()
     {
@@ -38,7 +38,7 @@ public class LevelSelection : MonoBehaviour
             unlockImage.gameObject.SetActive(true);
             for(int i = 0; i < stars.Length; i++)
             {
-                //stars[i].gameObject.SetActive(false);
+                stars[i].gameObject.SetActive(false);
                 text.text = "???????";
             }
         }
@@ -47,7 +47,7 @@ public class LevelSelection : MonoBehaviour
             unlockImage.gameObject.SetActive(false);
             for(int i = 0; i < stars.Length; i++)
             {
-                //stars[i].gameObject.SetActive(true);
+                stars[0].gameObject.SetActive(true);
                 text.text = text.text;
             }
         }

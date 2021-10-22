@@ -110,11 +110,7 @@ public class Combo : MonoBehaviour
                 // Invoke lis?tty, ett? aikaa n?hd? laivan tuhoutuminen. Turo Lis?si.
                 Invoke("ThreeStars", wingameDelay);
                 highscoreHandler.LoadHighscores();
-                /*
-                // active win scene and stars
-                GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
-                GameObject.Find("Canvas").transform.GetChild(4).transform.GetChild(0).gameObject.SetActive(true);
-                */
+               
                 // deactive players and dots
                 GameObject.Find("Player").SetActive(false);
                 GameObject.Find("Spawners").SetActive(false);
@@ -127,10 +123,6 @@ public class Combo : MonoBehaviour
 
                 Invoke("TwoStars", wingameDelay);
                 highscoreHandler.LoadHighscores();
-
-                // active win scene and stars
-                //GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
-                //GameObject.Find("PopUps").transform.GetChild(2).transform.GetChild(1).gameObject.SetActive(true);
 
                 // deactive players and dots
                 GameObject.Find("Player").transform.gameObject.SetActive(false);
@@ -145,10 +137,6 @@ public class Combo : MonoBehaviour
                 Invoke("OneStar", wingameDelay);
                 highscoreHandler.LoadHighscores();
 
-                // active win scene and stars
-                //GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
-                //GameObject.Find("PopUps").transform.GetChild(2).transform.GetChild(2).gameObject.SetActive(true);
-
                 // deactive players and dots
                 GameObject.Find("Player").transform.gameObject.SetActive(false);
                 GameObject.Find("Spawners").transform.gameObject.SetActive(false);
@@ -161,8 +149,6 @@ public class Combo : MonoBehaviour
     void ThreeStars()
     {
         // active win scene and stars
-        //GameObject.Find("PopUps").transform.GetChild(2).gameObject.SetActive(true);
-        //GameObject.Find("PopUps").transform.GetChild(2).transform.GetChild(0).gameObject.SetActive(true);
         highscoreCanvas.SetActive(true);
     }
 

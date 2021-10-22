@@ -48,6 +48,7 @@ public class ButtonHandler : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
         sounds.ButtonPress();
+        Time.timeScale = 1;
     }
 
     public void QuitGame()
