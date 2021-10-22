@@ -22,7 +22,8 @@ public class ButtonHandler : MonoBehaviour
     public void PlayButton()
     {
         Invoke("NowReallyPlay", 0.5f);
-        
+
+        Time.timeScale = 1;
         sounds.ButtonPress();
     }
 
