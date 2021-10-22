@@ -15,7 +15,7 @@ public class LevelSelection : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
     }
     private void Update()
     {
@@ -25,7 +25,6 @@ public class LevelSelection : MonoBehaviour
     public void UpdateLevelStatus()
     {
         int previousLevelNum = level;
-        Debug.Log(PlayerPrefs.GetInt("Lv" + previousLevelNum));
         if (PlayerPrefs.GetInt("Lv" + previousLevelNum) > 0)
         {
             unlocked = true;
@@ -47,7 +46,7 @@ public class LevelSelection : MonoBehaviour
             unlockImage.gameObject.SetActive(false);
             for(int i = 0; i < stars.Length; i++)
             {
-                stars[0].gameObject.SetActive(true);
+                stars[i].gameObject.SetActive(true);
                 text.text = text.text;
             }
         }

@@ -12,12 +12,9 @@ public class GameController : MonoBehaviour
     {
         currentStarValue = _starNum;
 
-        Debug.Log("GGN if ulkopuolella" + currentStarValue + " stars + " + PlayerPrefs.GetInt("Lv" + levelIndex, _starNum));
         if (currentStarValue > PlayerPrefs.GetInt("Lv" + levelIndex))
         {
             PlayerPrefs.SetInt("Lv" + levelIndex, _starNum);
-            Debug.Log("Nyt ggn iffiss?");
-            Debug.Log(PlayerPrefs.GetInt("Lv" + levelIndex, _starNum));
         }
     }
 
