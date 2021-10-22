@@ -107,7 +107,7 @@ public class Combo : MonoBehaviour
             // kolme t?hte?
             if(ScoringSystem.theScore >= 2500)
             {
-
+                // Invoke lis?tty, ett? aikaa n?hd? laivan tuhoutuminen. Turo Lis?si.
                 Invoke("ThreeStars", wingameDelay);
                 highscoreHandler.LoadHighscores();
                 /*
@@ -123,6 +123,8 @@ public class Combo : MonoBehaviour
             // kaksi t?hte?
             else if (ScoringSystem.theScore >= 1500)
             {
+                // Invoke lis?tty, ett? aikaa n?hd? laivan tuhoutuminen. Turo Lis?si.
+
                 Invoke("TwoStars", wingameDelay);
                 highscoreHandler.LoadHighscores();
 
@@ -138,6 +140,8 @@ public class Combo : MonoBehaviour
             // yksi t?hti
             else if (ScoringSystem.theScore < 1500)
             {
+                // Invoke lis?tty, ett? aikaa n?hd? laivan tuhoutuminen. Turo Lis?si.
+
                 Invoke("OneStar", wingameDelay);
                 highscoreHandler.LoadHighscores();
 
