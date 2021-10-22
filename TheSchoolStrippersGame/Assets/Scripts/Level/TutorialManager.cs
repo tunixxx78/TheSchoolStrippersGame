@@ -7,7 +7,7 @@ public class TutorialManager : MonoBehaviour
     public GameObject[] popUps;
     private int popUpIndex;
     public GameObject spawner;
-    public GameObject arrow;
+    public GameObject arrow, obstacle, powerUpObject, powerUpImage;
 
     void Update()
     {
@@ -39,11 +39,15 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 1)
         {
             StartCoroutine(nextPopUp());
+            obstacle.SetActive(true);
             
         }
         else if (popUpIndex == 2)  // Turo added for 4th sign.
         {
             StartCoroutine(FinalPopUp());
+            obstacle.SetActive(false);
+            powerUpImage.SetActive(false);
+            powerUpObject.SetActive(true);
         }
         else if (popUpIndex == 3)
         {
