@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 19048197}
   - component: {fileID: 19048200}
   m_Layer: 5
-  m_Name: Level1
+  m_Name: Level2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -312,8 +312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc32ff9d8dfc75438541ef93c977cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 3
-  unlocked: 1
+  level: 2
+  unlocked: 0
   unlockImage: {fileID: 878467874}
   stars:
   - {fileID: 1394701804}
@@ -2027,7 +2027,7 @@ GameObject:
   - component: {fileID: 815054201}
   - component: {fileID: 815054204}
   m_Layer: 5
-  m_Name: Level2
+  m_Name: Level3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2166,7 +2166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc32ff9d8dfc75438541ef93c977cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 4
+  level: 3
   unlocked: 0
   unlockImage: {fileID: 332069749}
   stars:
@@ -3547,7 +3547,7 @@ GameObject:
   - component: {fileID: 1253886315}
   - component: {fileID: 1253886318}
   m_Layer: 5
-  m_Name: Level3
+  m_Name: Level4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3686,7 +3686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc32ff9d8dfc75438541ef93c977cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 5
+  level: 4
   unlocked: 0
   unlockImage: {fileID: 993684464}
   stars:
@@ -4656,7 +4656,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 148.75, y: 118.125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1520869600
@@ -5602,7 +5602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0, y: -0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1876430524
@@ -5951,7 +5951,7 @@ GameObject:
   - component: {fileID: 1971352905}
   - component: {fileID: 1971352908}
   m_Layer: 5
-  m_Name: Level4
+  m_Name: Level5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6090,7 +6090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc32ff9d8dfc75438541ef93c977cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 6
+  level: 5
   unlocked: 0
   unlockImage: {fileID: 662392986}
   stars:
@@ -6907,7 +6907,7 @@ GameObject:
   - component: {fileID: 2065771305}
   - component: {fileID: 2065771308}
   m_Layer: 5
-  m_Name: Level0
+  m_Name: Level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7045,7 +7045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc32ff9d8dfc75438541ef93c977cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 2
+  level: 1
   unlocked: 1
   unlockImage: {fileID: 1520869600}
   stars:
