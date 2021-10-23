@@ -32,7 +32,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HighScoreTest.unity
     guid: d505b325289e746cc9fd82c594bdc587
   m_configObjects: {}

@@ -31,7 +31,7 @@ public class ButtonHandler : MonoBehaviour
     {
         SceneManager.LoadScene("LevelSelection");
     }
-    private void NowReallyPlay()
+    public void NowReallyPlay()
     {
         SceneManager.LoadScene("LevelSelection");
     }

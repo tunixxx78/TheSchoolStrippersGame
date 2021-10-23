@@ -9,7 +9,7 @@ public class LevelTimer : MonoBehaviour
     public float timeRemaining = 10f;
     bool timerIsRuning = false;
     [SerializeField] TMP_Text timerText;
-    [SerializeField] GameObject gameOverText, player;
+    [SerializeField] GameObject gameOverText, player, smokeyPanel;
 
 
     private void Start()
@@ -32,6 +32,7 @@ public class LevelTimer : MonoBehaviour
                 timeRemaining = 0;
                 player.SetActive(false);
                 gameOverText.SetActive(true);
+                smokeyPanel.SetActive(true);
                 Time.timeScale = 0f;
             }
         }
