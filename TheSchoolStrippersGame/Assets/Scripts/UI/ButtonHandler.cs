@@ -63,7 +63,8 @@ public class ButtonHandler : MonoBehaviour
     }
     private void NowNextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("LevelSelection");
     }
 
     public void PauseButton()

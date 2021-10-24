@@ -313,7 +313,7 @@ public class MovingDots : MonoBehaviour
                 
                 FindObjectOfType<SFXManager>().CollectingOne();
                 Destroy(this.gameObject, 0.1f);
-                Instantiate(text, transform.position, Quaternion.identity);
+                //Instantiate(text, transform.position, Quaternion.identity);
 
                 Destroy(GameObject.FindGameObjectWithTag("BlueDotU"));
                 Destroy(GameObject.FindGameObjectWithTag("RedDotU"));
