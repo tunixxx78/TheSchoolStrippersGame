@@ -97,10 +97,10 @@ TextureImporter:
       name: AS Logo
       rect:
         serializedVersion: 2
-        x: 180
-        y: 76
-        width: 1449
-        height: 815
+        x: 350
+        y: 333
+        width: 2158
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
