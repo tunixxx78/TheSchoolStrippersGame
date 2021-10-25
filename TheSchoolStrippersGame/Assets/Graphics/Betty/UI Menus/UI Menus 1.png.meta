@@ -283,10 +283,10 @@ TextureImporter:
       name: Button Small Selected
       rect:
         serializedVersion: 2
-        x: 1062
-        y: 152
-        width: 467
-        height: 166
+        x: 1101
+        y: 155
+        width: 391
+        height: 164
       alignment: 9
       pivot: {x: 0.5, y: 0.62}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,10 +304,10 @@ TextureImporter:
       name: Button Small Blank
       rect:
         serializedVersion: 2
-        x: 1664
-        y: 162
-        width: 214
-        height: 166
+        x: 1580
+        y: 165
+        width: 391
+        height: 164
       alignment: 9
       pivot: {x: 0.5, y: 0.62}
       border: {x: 0, y: 0, z: 0, w: 0}
