@@ -10,7 +10,9 @@ public class AnimatorControllerForLevelThree : MonoBehaviour
 
     private void Awake()
     {
-        if(dataHolderForLevels.levelThree == true)
+        dataHolderForLevels = FindObjectOfType<DataHolderForLevels>();
+
+        if (dataHolderForLevels.levelThree == true)
         {
             lockAnimator.SetTrigger("break");
         }
