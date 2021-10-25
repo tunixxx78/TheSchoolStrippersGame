@@ -6,6 +6,7 @@ public class AnimatorControllerForLevelFour : MonoBehaviour
 {
     [SerializeField] Animator lockAnimator;
     public DataHolderForLevels dataHolderForLevels;
+    [SerializeField] GameObject lockImage;
 
     private void Awake()
     {
@@ -16,5 +17,24 @@ public class AnimatorControllerForLevelFour : MonoBehaviour
 
 
     }
-    
+
+    private void Update()
+    {
+        if (dataHolderForLevels.levelFour == true)
+        {
+            Invoke("AnimationForPlayed", 3f);
+
+        }
+        if (dataHolderForLevels.animationForLockFour == true)
+        {
+            lockImage.SetActive(false);
+        }
+    }
+
+    private void AnimationForPlayed()
+    {
+        dataHolderForLevels.animationForLockFour = true;
+        dataHolderForLevels.SaveData();
+    }
+
 }
