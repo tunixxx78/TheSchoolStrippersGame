@@ -10,12 +10,15 @@ public class DataHolderForLevels : MonoBehaviour
 
     public static DataHolderForLevels dataInstance;
 
-    public bool levelOne, levelTwo, levelThree, levelFour, levelFive;
-
+    public bool levelOne, levelTwo, levelThree, levelFour, levelFive, animationForLockOne, animationForLockTwo, animationForLockThree, animationForLockFour;
     
+
+
 
     private void Awake()
     {
+        
+
         LoadData();
 
         if(dataInstance != null && dataInstance != this)
@@ -28,10 +31,29 @@ public class DataHolderForLevels : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
+    private void Update()
+    {
+        // only for developement purposes.
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            levelOne = false;
+            levelTwo = false;
+            levelThree = false;
+            levelFour = false;
+            levelFive = false;
+            animationForLockOne = false;
+            animationForLockTwo = false;
+            animationForLockThree = false;
+            animationForLockFour = false;
+
+            SaveData();
+        }
+    }
+
     public void SaveData()
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/testdata.dat");
+        FileStream file = File.Create(Application.persistentDataPath + "/testdataa.dat");
         LevelData data = new LevelData();
 
         data.levelOne = levelOne;
@@ -40,16 +62,21 @@ public class DataHolderForLevels : MonoBehaviour
         data.levelFour = levelFour;
         data.levelFive = levelFive;
 
+        data.animationForLockOne = animationForLockOne;
+        data.animationForLockTwo = animationForLockTwo;
+        data.animationForLockThree = animationForLockThree;
+        data.animationForLockFour = animationForLockFour;
+
         bf.Serialize(file, data);
         file.Close();
     }
 
     public void LoadData()
     {
-        if(File.Exists(Application.persistentDataPath + "/testdata.dat"))
+        if(File.Exists(Application.persistentDataPath + "/testdataa.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/testdata.dat", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/testdataa.dat", FileMode.Open);
             LevelData data = (LevelData)bf.Deserialize(file);
 
             levelOne = data.levelOne;
@@ -57,6 +84,11 @@ public class DataHolderForLevels : MonoBehaviour
             levelThree = data.levelThree;
             levelFour = data.levelFour;
             levelFive = data.levelFive;
+
+            animationForLockOne = data.animationForLockOne;
+            animationForLockTwo = data.animationForLockTwo;
+            animationForLockThree = data.animationForLockThree;
+            animationForLockFour = data.animationForLockFour;
         }
     }
 
@@ -66,5 +98,6 @@ public class DataHolderForLevels : MonoBehaviour
 
 class LevelData
 {
-    public bool levelOne, levelTwo, levelThree, levelFour, levelFive;
+    public bool levelOne, levelTwo, levelThree, levelFour, levelFive, animationForLockOne, animationForLockTwo, animationForLockThree, animationForLockFour;
+    
 }

@@ -9,10 +9,9 @@ public class AnimatorController : MonoBehaviour
 
     private void Awake()
     {
-        if(dataHolderForLevels.levelOne == true)
-        {
+        
             lockAnimator.SetTrigger("break");
-        }
+        
 
 
     }
