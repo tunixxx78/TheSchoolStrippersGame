@@ -114,7 +114,7 @@ public class Combo : MonoBehaviour
                 // deactive players and dots
                 GameObject.Find("Player").SetActive(false);
                 GameObject.Find("Spawners").SetActive(false);
-                GameObject.Find("GameController").GetComponent<GameController>().WinLevel(3);
+                GameObject.Find("GameController").GetComponent<GameController>().WinLevel(2);
             }
             // kaksi t?hte?
             else if (ScoringSystem.theScore >= 1500)
@@ -127,7 +127,7 @@ public class Combo : MonoBehaviour
                 // deactive players and dots
                 GameObject.Find("Player").transform.gameObject.SetActive(false);
                 GameObject.Find("Spawners").transform.gameObject.SetActive(false);
-                GameObject.Find("GameController").GetComponent<GameController>().WinLevel(2);
+                GameObject.Find("GameController").GetComponent<GameController>().WinLevel(1);
             }
             // yksi t?hti
             else if (ScoringSystem.theScore < 1500)
@@ -140,7 +140,7 @@ public class Combo : MonoBehaviour
                 // deactive players and dots
                 GameObject.Find("Player").transform.gameObject.SetActive(false);
                 GameObject.Find("Spawners").transform.gameObject.SetActive(false);
-                GameObject.Find("GameController").GetComponent<GameController>().WinLevel(1);
+                GameObject.Find("GameController").GetComponent<GameController>().WinLevel(0);
             }
             yield return new WaitForSeconds(wingameDelay);
         }

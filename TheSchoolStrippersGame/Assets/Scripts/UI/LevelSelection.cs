@@ -9,7 +9,6 @@ public class LevelSelection : MonoBehaviour
 {
     public int level;
     [SerializeField] public bool unlocked;
-    public Image unlockImage;
     public GameObject[] stars;
     public TMP_Text text;
 
@@ -30,11 +29,11 @@ public class LevelSelection : MonoBehaviour
             unlocked = true;
         }
     }
+
     private void UpdateLevelImage()
     {
         if(!unlocked)
         {
-            unlockImage.gameObject.SetActive(true);
             for(int i = 0; i < stars.Length; i++)
             {
                 stars[i].gameObject.SetActive(false);
@@ -43,13 +42,13 @@ public class LevelSelection : MonoBehaviour
         }
         else
         {
-            unlockImage.gameObject.SetActive(false);
             for(int i = 0; i < stars.Length; i++)
             {
-                stars[i].gameObject.SetActive(true);
+                //stars[i].gameObject.SetActive(true);
                 text.text = text.text;
             }
         }
+       
     }
 
     public void PressSelection()

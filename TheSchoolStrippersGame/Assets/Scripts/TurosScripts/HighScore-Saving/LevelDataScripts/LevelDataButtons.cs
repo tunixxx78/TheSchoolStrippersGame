@@ -9,8 +9,8 @@ public class LevelDataButtons : MonoBehaviour
     
     public void LevelOneDone()
     {
-        
         DataHolderForLevels.dataInstance.levelOne = true;
+        
         DataHolderForLevels.dataInstance.SaveData();
     }
 
