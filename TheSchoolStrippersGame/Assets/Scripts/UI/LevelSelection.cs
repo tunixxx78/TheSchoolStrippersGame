@@ -12,6 +12,10 @@ public class LevelSelection : MonoBehaviour
     public GameObject[] stars;
     public TMP_Text text;
 
+    private float threeStars = 10000;
+    private float twoStars = 5000;
+    private float oneStar = 5000;
+
     private void Start()
     {
         //PlayerPrefs.DeleteAll();
@@ -32,23 +36,35 @@ public class LevelSelection : MonoBehaviour
 
     private void UpdateLevelImage()
     {
-        if(!unlocked)
+        int previousLevelNum = level;
+
+        if (!unlocked)
         {
-            for(int i = 0; i < stars.Length; i++)
-            {
-                stars[i].gameObject.SetActive(false);
-                text.text = "???????";
-            }
+            text.text = "???????";
         }
         else
         {
-            for(int i = 0; i < stars.Length; i++)
+            Debug.Log(PlayerPrefs.GetInt("Lv" + previousLevelNum) + " " + level);
+            text.text = text.text;
+
+            if (ScoringSystem.theScore <= oneStar && ScoringSystem.theScore > 0 && PlayerPrefs.GetInt("Lv" + previousLevelNum) == level)
             {
-                //stars[i].gameObject.SetActive(true);
-                text.text = text.text;
+                stars[1].SetActive(true);
+                Debug.Log("Haloo");
+            }
+            else if (ScoringSystem.theScore > twoStars && ScoringSystem.theScore > 0 && PlayerPrefs.GetInt("Lv" + previousLevelNum) < level)
+            {
+                stars[1].SetActive(true);
+                stars[2].SetActive(true);
+            }
+
+            else if (ScoringSystem.theScore >= threeStars && PlayerPrefs.GetInt("Lv" + previousLevelNum) < level)
+            {
+                stars[1].SetActive(true);
+                stars[2].SetActive(true);
+                stars[3].SetActive(true);
             }
         }
-       
     }
 
     public void PressSelection()
