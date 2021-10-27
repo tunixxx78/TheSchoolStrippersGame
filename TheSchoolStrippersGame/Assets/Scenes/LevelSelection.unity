@@ -3892,32 +3892,9 @@ PrefabInstance:
       propertyPath: m_text
       value: Tutorial
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1630458766, guid: a925fbd79e33f4e229be1703cb4a1f29, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a925fbd79e33f4e229be1703cb4a1f29, type: 3}
---- !u!1 &1532073373643132249 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1532073374448488293, guid: a925fbd79e33f4e229be1703cb4a1f29, type: 3}
-  m_PrefabInstance: {fileID: 1532073373643132248}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1532073373643132250 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1532073374448488216, guid: a925fbd79e33f4e229be1703cb4a1f29, type: 3}
-  m_PrefabInstance: {fileID: 1532073373643132248}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1532073373643132251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1532073373643132249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94ded95ec116c40f68b9ea612af3af69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lockAnimator: {fileID: 1532073373643132250}
-  dataHolderForLevels: {fileID: 338349175}
 --- !u!199 &4962176513535438773
 ParticleSystemRenderer:
   serializedVersion: 6
