@@ -27,6 +27,10 @@ public class Combo : MonoBehaviour
     public HighscoreHandler highscoreHandler;
 
 
+    private float threeStars = 10000;
+    private float twoStars = 5000;
+    private float oneStar = 5000;
+
     private void Awake()
     {
         shipScript = FindObjectOfType<DestroyShip>();
@@ -105,7 +109,7 @@ public class Combo : MonoBehaviour
         if(attackCounter == 4)
         {
             // kolme t?hte?
-            if(ScoringSystem.theScore >= 2500)
+            if(ScoringSystem.theScore >= threeStars)
             {
                 // Invoke lis?tty, ett? aikaa n?hd? laivan tuhoutuminen. Turo Lis?si.
                 Invoke("ThreeStars", wingameDelay);
@@ -114,10 +118,10 @@ public class Combo : MonoBehaviour
                 // deactive players and dots
                 GameObject.Find("Player").SetActive(false);
                 GameObject.Find("Spawners").SetActive(false);
-                GameObject.Find("GameController").GetComponent<GameController>().WinLevel(2);
+                GameObject.Find("GameController").GetComponent<GameController>().WinLevel(3);
             }
             // kaksi t?hte?
-            else if (ScoringSystem.theScore >= 1500)
+            else if (ScoringSystem.theScore >= twoStars)
             {
                 // Invoke lis?tty, ett? aikaa n?hd? laivan tuhoutuminen. Turo Lis?si.
 
@@ -127,10 +131,10 @@ public class Combo : MonoBehaviour
                 // deactive players and dots
                 GameObject.Find("Player").transform.gameObject.SetActive(false);
                 GameObject.Find("Spawners").transform.gameObject.SetActive(false);
-                GameObject.Find("GameController").GetComponent<GameController>().WinLevel(1);
+                GameObject.Find("GameController").GetComponent<GameController>().WinLevel(2);
             }
             // yksi t?hti
-            else if (ScoringSystem.theScore < 1500)
+            else if (ScoringSystem.theScore < oneStar)
             {
                 // Invoke lis?tty, ett? aikaa n?hd? laivan tuhoutuminen. Turo Lis?si.
 
@@ -140,7 +144,7 @@ public class Combo : MonoBehaviour
                 // deactive players and dots
                 GameObject.Find("Player").transform.gameObject.SetActive(false);
                 GameObject.Find("Spawners").transform.gameObject.SetActive(false);
-                GameObject.Find("GameController").GetComponent<GameController>().WinLevel(0);
+                GameObject.Find("GameController").GetComponent<GameController>().WinLevel(1);
             }
             yield return new WaitForSeconds(wingameDelay);
         }
