@@ -36,32 +36,33 @@ public class LevelSelection : MonoBehaviour
 
     private void UpdateLevelImage()
     {
-        int previousLevelNum = level - 1;
+        int previousLevelNum = level;
 
         if (!unlocked)
         {
             text.text = "???????";
-
         }
         else
         {
+            Debug.Log(PlayerPrefs.GetInt("Lv" + previousLevelNum) + " " + level);
             text.text = text.text;
-            if (ScoringSystem.theScore <= oneStar && ScoringSystem.theScore > 0 && PlayerPrefs.GetInt("Lv" + previousLevelNum) > level)
+
+            if (ScoringSystem.theScore <= oneStar && ScoringSystem.theScore > 0 && PlayerPrefs.GetInt("Lv" + previousLevelNum) == level)
             {
                 stars[1].SetActive(true);
+                Debug.Log("Haloo");
             }
-            else if (ScoringSystem.theScore > twoStars && ScoringSystem.theScore > 0 && PlayerPrefs.GetInt("Lv" + previousLevelNum) > level)
+            else if (ScoringSystem.theScore > twoStars && ScoringSystem.theScore > 0 && PlayerPrefs.GetInt("Lv" + previousLevelNum) < level)
             {
-                GetComponent<LevelSelection>().stars[1].SetActive(true);
-                GetComponent<LevelSelection>().stars[2].SetActive(true);
+                stars[1].SetActive(true);
+                stars[2].SetActive(true);
             }
 
-            else if (ScoringSystem.theScore >= threeStars && PlayerPrefs.GetInt("Lv" + previousLevelNum) > level)
+            else if (ScoringSystem.theScore >= threeStars && PlayerPrefs.GetInt("Lv" + previousLevelNum) < level)
             {
-
-                GetComponent<LevelSelection>().stars[1].SetActive(true);
-                GetComponent<LevelSelection>().stars[2].SetActive(true);
-                GetComponent<LevelSelection>().stars[3].SetActive(true);
+                stars[1].SetActive(true);
+                stars[2].SetActive(true);
+                stars[3].SetActive(true);
             }
         }
     }
