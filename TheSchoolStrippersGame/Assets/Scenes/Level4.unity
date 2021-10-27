@@ -1742,14 +1742,18 @@ PrefabInstance:
     - target: {fileID: 5377632089109408248, guid: e2b6b27488553a448a6eaf50e4ed4c84, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: c96965c290af66240a6f7b46006d2f2d, type: 2}
+      objectReference: {fileID: 11400000, guid: 8bf2a7ed6db3a47baa3ce917f41e3d4d, type: 2}
     - target: {fileID: 5377632089109408248, guid: e2b6b27488553a448a6eaf50e4ed4c84, type: 3}
       propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377632089109408254, guid: e2b6b27488553a448a6eaf50e4ed4c84, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5377632089109408255, guid: e2b6b27488553a448a6eaf50e4ed4c84, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 122
+      value: 142
       objectReference: {fileID: 0}
     - target: {fileID: 5377632089266928034, guid: e2b6b27488553a448a6eaf50e4ed4c84, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -13223,7 +13227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2363135242485391344, guid: 6a405685a54131f45b57705102397990, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 99.211
+      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 2363135242485391345, guid: 6a405685a54131f45b57705102397990, type: 3}
       propertyPath: m_text
@@ -13236,7 +13240,7 @@ PrefabInstance:
     - target: {fileID: 2363135242485391345, guid: 6a405685a54131f45b57705102397990, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: c96965c290af66240a6f7b46006d2f2d, type: 2}
+      objectReference: {fileID: 11400000, guid: 8bf2a7ed6db3a47baa3ce917f41e3d4d, type: 2}
     - target: {fileID: 2363135242485391345, guid: 6a405685a54131f45b57705102397990, type: 3}
       propertyPath: m_fontSizeBase
       value: 25
@@ -13244,23 +13248,31 @@ PrefabInstance:
     - target: {fileID: 2363135242485391345, guid: 6a405685a54131f45b57705102397990, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -2094012090501750643, guid: c96965c290af66240a6f7b46006d2f2d, type: 2}
+      objectReference: {fileID: 7518328382742420383, guid: 8bf2a7ed6db3a47baa3ce917f41e3d4d, type: 2}
+    - target: {fileID: 2363135242807849586, guid: 6a405685a54131f45b57705102397990, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2363135242807849596, guid: 6a405685a54131f45b57705102397990, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: c96965c290af66240a6f7b46006d2f2d, type: 2}
+      objectReference: {fileID: 11400000, guid: 8bf2a7ed6db3a47baa3ce917f41e3d4d, type: 2}
     - target: {fileID: 2363135242807849596, guid: 6a405685a54131f45b57705102397990, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -2094012090501750643, guid: c96965c290af66240a6f7b46006d2f2d, type: 2}
+      objectReference: {fileID: 7518328382742420383, guid: 8bf2a7ed6db3a47baa3ce917f41e3d4d, type: 2}
+    - target: {fileID: 2363135243206686077, guid: 6a405685a54131f45b57705102397990, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2363135243206686079, guid: 6a405685a54131f45b57705102397990, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: c96965c290af66240a6f7b46006d2f2d, type: 2}
+      objectReference: {fileID: 11400000, guid: 8bf2a7ed6db3a47baa3ce917f41e3d4d, type: 2}
     - target: {fileID: 2363135243206686079, guid: 6a405685a54131f45b57705102397990, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -2094012090501750643, guid: c96965c290af66240a6f7b46006d2f2d, type: 2}
+      objectReference: {fileID: 7518328382742420383, guid: 8bf2a7ed6db3a47baa3ce917f41e3d4d, type: 2}
     - target: {fileID: 2363135243332994490, guid: 6a405685a54131f45b57705102397990, type: 3}
       propertyPath: m_Name
       value: GameOver
