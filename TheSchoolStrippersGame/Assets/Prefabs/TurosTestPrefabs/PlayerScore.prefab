@@ -219,7 +219,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &1508866293177441423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +256,8 @@ MonoBehaviour:
   wingameDelay: 5
   bonusComboAmount: 500
   bonusAddForCombobar: 3
+  highscoreCanvas: {fileID: 0}
+  highscoreHandler: {fileID: 0}
 --- !u!1 &1508866293895691753
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7699797367086200770, guid: 8e46a0f967905e84cad4f6c4b1265639, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 511.00006
+      value: 509.7
       objectReference: {fileID: 0}
     - target: {fileID: 7699797367086200770, guid: 8e46a0f967905e84cad4f6c4b1265639, type: 3}
       propertyPath: m_AnchoredPosition.y
