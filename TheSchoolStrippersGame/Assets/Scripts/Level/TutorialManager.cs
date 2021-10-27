@@ -6,8 +6,15 @@ public class TutorialManager : MonoBehaviour
 {
     public GameObject[] popUps;
     private int popUpIndex;
-    public GameObject spawner;
+    public GameObject spawner, spawnPointForPowerUp;
     public GameObject arrow, obstacle, powerUpObject, powerUpImage;
+
+    SFXManager sfx;
+
+    private void Start()
+    {
+        sfx = FindObjectOfType<SFXManager>();
+    }
 
     void Update()
     {
@@ -47,7 +54,8 @@ public class TutorialManager : MonoBehaviour
             StartCoroutine(FinalPopUp());
             obstacle.SetActive(false);
             powerUpImage.SetActive(false);
-            powerUpObject.SetActive(true);
+            
+            
         }
         else if (popUpIndex == 3)
         {
@@ -63,14 +71,25 @@ public class TutorialManager : MonoBehaviour
 
        IEnumerator nextPopUp()
         {
+            
             yield return new WaitForSeconds(7f);
             popUpIndex = 2;
-            
+            PowerUp();
+
+
         }
         IEnumerator FinalPopUp() // Turo added for 4th sign.
         {
+            
             yield return new WaitForSeconds(7f);
             popUpIndex = 3;
+        }
+
+        void PowerUp()
+        {
+            Instantiate(powerUpObject, spawnPointForPowerUp.transform.position, Quaternion.identity);
+            sfx.ScreamingEagle();
+            Destroy(spawnPointForPowerUp);
         }
     }
 

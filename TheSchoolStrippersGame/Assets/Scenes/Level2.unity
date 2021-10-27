@@ -1884,10 +1884,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SFXManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5565304266541705476, guid: 5afa883a6556844a9ad0d4cd95dde2a1, type: 3}
-      propertyPath: m_Volume
-      value: 0.407
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5afa883a6556844a9ad0d4cd95dde2a1, type: 3}
 --- !u!1 &452833567

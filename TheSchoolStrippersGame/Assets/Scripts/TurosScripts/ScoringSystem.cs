@@ -17,8 +17,11 @@ public class ScoringSystem : MonoBehaviour
     public int points;
     public int multiplierPoints;
 
+    SFXManager sounds;
+
     private void Start()
     {
+        sounds = FindObjectOfType<SFXManager>();
         multiplierPoints = 0;
 
         theScore = 0;
@@ -68,6 +71,7 @@ public class ScoringSystem : MonoBehaviour
     {
         int randomSpawnPoints = Random.Range(0, powerUpSpawnPoints.Length);
         Instantiate(powerUpItem, powerUpSpawnPoints[randomSpawnPoints].transform.position, Quaternion.identity);
+        sounds.ScreamingEagle();
     }
 
     
