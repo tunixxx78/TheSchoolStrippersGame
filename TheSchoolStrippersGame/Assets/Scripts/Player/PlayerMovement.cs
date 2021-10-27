@@ -166,6 +166,7 @@ public class PlayerMovement : MonoBehaviour
         targetPosition = Player.position;
         
         mermaidAnimator.SetTrigger("Stun");
+        soundManager.GetHitByObstacle();
         yield return new WaitForSeconds(paralysedTime);
 
         Player.constraints = RigidbodyConstraints2D.None;

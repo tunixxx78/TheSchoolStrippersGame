@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 public class SFXManager : MonoBehaviour
 {
-    public AudioSource swim, breakingShip, collecting1, collecting2, button, wrongDot;
+    public AudioSource swim, breakingShip, collecting1, collecting2, button, wrongDot, taser;
 
     public void Swim()
     {
@@ -35,5 +35,10 @@ public class SFXManager : MonoBehaviour
     public void WrongDotSound()
     {
         wrongDot.Play();
+    }
+
+    public void GetHitByObstacle()
+    {
+        taser.Play();
     }
 }
