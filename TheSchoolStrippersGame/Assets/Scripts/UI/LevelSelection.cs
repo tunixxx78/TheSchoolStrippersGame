@@ -16,6 +16,8 @@ public class LevelSelection : MonoBehaviour
     private float twoStars = 5000;
     private float oneStar = 5000;
 
+    public DataHolderForLevels dataHolderForLevels;
+
     private void Start()
     {
         //PlayerPrefs.DeleteAll();
@@ -36,8 +38,7 @@ public class LevelSelection : MonoBehaviour
 
     private void UpdateLevelImage()
     {
-        int previousLevelNum = level;
-
+        Debug.Log(PlayerPrefs.GetInt("Boolean"));
         if (!unlocked)
         {
             text.text = "???????";
@@ -46,21 +47,25 @@ public class LevelSelection : MonoBehaviour
         {
             text.text = text.text;
 
-            if (ScoringSystem.theScore <= oneStar && ScoringSystem.theScore > 0 && level > PlayerPrefs.GetInt("Lv" + previousLevelNum))
+            if (PlayerPrefs.GetInt("Boolean") == 1)
             {
-                stars[1].SetActive(true);
-            }
-            else if (ScoringSystem.theScore > twoStars && ScoringSystem.theScore > 0 && level > PlayerPrefs.GetInt("Lv" + previousLevelNum))
-            {
-                stars[1].SetActive(true);
-                stars[2].SetActive(true);
-            }
 
-            else if (ScoringSystem.theScore >= threeStars && level > PlayerPrefs.GetInt("Lv" + previousLevelNum))
-            {
-                stars[1].SetActive(true);
-                stars[2].SetActive(true);
-                stars[3].SetActive(true);
+                if (ScoringSystem.theScore <= oneStar && ScoringSystem.theScore > 0)
+                {
+                    stars[1].SetActive(true);
+                }
+                else if (ScoringSystem.theScore > twoStars && ScoringSystem.theScore > 0)
+                {
+                    stars[1].SetActive(true);
+                    stars[2].SetActive(true);
+                }
+
+                else if (ScoringSystem.theScore >= threeStars)
+                {
+                    stars[1].SetActive(true);
+                    stars[2].SetActive(true);
+                    stars[3].SetActive(true);
+                }
             }
         }
     }
