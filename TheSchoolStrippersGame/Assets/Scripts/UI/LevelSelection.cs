@@ -44,21 +44,19 @@ public class LevelSelection : MonoBehaviour
         }
         else
         {
-            Debug.Log(PlayerPrefs.GetInt("Lv" + previousLevelNum) + " " + level);
             text.text = text.text;
 
-            if (ScoringSystem.theScore <= oneStar && ScoringSystem.theScore > 0 && PlayerPrefs.GetInt("Lv" + previousLevelNum) == level)
+            if (ScoringSystem.theScore <= oneStar && ScoringSystem.theScore > 0 && level > PlayerPrefs.GetInt("Lv" + previousLevelNum))
             {
                 stars[1].SetActive(true);
-                Debug.Log("Haloo");
             }
-            else if (ScoringSystem.theScore > twoStars && ScoringSystem.theScore > 0 && PlayerPrefs.GetInt("Lv" + previousLevelNum) < level)
+            else if (ScoringSystem.theScore > twoStars && ScoringSystem.theScore > 0 && level > PlayerPrefs.GetInt("Lv" + previousLevelNum))
             {
                 stars[1].SetActive(true);
                 stars[2].SetActive(true);
             }
 
-            else if (ScoringSystem.theScore >= threeStars && PlayerPrefs.GetInt("Lv" + previousLevelNum) < level)
+            else if (ScoringSystem.theScore >= threeStars && level > PlayerPrefs.GetInt("Lv" + previousLevelNum))
             {
                 stars[1].SetActive(true);
                 stars[2].SetActive(true);
