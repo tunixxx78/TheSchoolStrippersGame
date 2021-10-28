@@ -26,6 +26,7 @@ public class Combo : MonoBehaviour
     [SerializeField] GameObject highscoreCanvas;
     public HighscoreHandler highscoreHandler;
 
+    bool played = false;
 
     private float threeStars = 10000;
     private float twoStars = 5000;
@@ -106,7 +107,9 @@ public class Combo : MonoBehaviour
 
     public IEnumerator WinGame()
     {
-        if(attackCounter == 4)
+        PlayerPrefs.SetInt("Boolean", played ? 0 : 1);
+
+        if (attackCounter == 4)
         {
             // kolme t?hte?
             if(ScoringSystem.theScore >= threeStars)

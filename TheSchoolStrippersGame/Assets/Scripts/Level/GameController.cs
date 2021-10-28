@@ -7,7 +7,6 @@ public class GameController : MonoBehaviour
 {
     public int levelIndex;
     public int currentStarValue;
-
     public void WinLevel(int _starNum)
     {
         currentStarValue = _starNum;
