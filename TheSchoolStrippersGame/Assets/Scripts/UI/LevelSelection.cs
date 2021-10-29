@@ -48,19 +48,19 @@ public class LevelSelection : MonoBehaviour
 
             if (ScoringSystem.theScore <= oneStar && ScoringSystem.theScore > 0)
             {
-                stars[1].SetActive(true);
+                stars[0].SetActive(true);
             }
-            else if (ScoringSystem.theScore > twoStars && ScoringSystem.theScore > 0)
+            else if (ScoringSystem.theScore > twoStars && ScoringSystem.theScore > 0 && ScoringSystem.theScore < threeStars)
             {
+                stars[0].SetActive(true);
                 stars[1].SetActive(true);
-                stars[2].SetActive(true);
             }
 
             else if (ScoringSystem.theScore >= threeStars)
             {
+                stars[0].SetActive(true);
                 stars[1].SetActive(true);
                 stars[2].SetActive(true);
-                stars[3].SetActive(true);
             }
         }
     }
