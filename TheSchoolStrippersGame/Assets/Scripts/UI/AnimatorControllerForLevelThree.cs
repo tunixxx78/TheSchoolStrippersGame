@@ -15,6 +15,7 @@ public class AnimatorControllerForLevelThree : MonoBehaviour
         if (dataHolderForLevels.levelThree == true)
         {
             lockAnimator.SetTrigger("break");
+            GameObject.Find("Level4").GetComponent<LevelSelection>().UpdateLevelImage();
         }
 
     }

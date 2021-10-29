@@ -18,7 +18,7 @@ public class AnimatorControllerForLevelOne : MonoBehaviour
 
         if(dataHolderForLevels.levelTwo)
         {
-            GetComponent<LevelSelection>().UpdateLevelImage();
+            GameObject.Find("Level2").GetComponent<LevelSelection>().UpdateLevelImage();
         }
 
     }

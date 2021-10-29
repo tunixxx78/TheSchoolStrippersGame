@@ -25,7 +25,7 @@ public class LevelSelection : MonoBehaviour
     private void Update()
     {
         UpdateLevelStatus();
-        UpdateLevelImage();
+        //UpdateLevelImage();
     }
     public void UpdateLevelStatus()
     {
@@ -34,35 +34,33 @@ public class LevelSelection : MonoBehaviour
         {
             unlocked = true;
         }
-    }
-
-    private void UpdateLevelImage()
-    {
         if (!unlocked)
         {
             text.text = "???????";
         }
-        else
+    }
+
+    public void UpdateLevelImage()
+    {
+        text.text = text.text;
+
+        if (ScoringSystem.theScore <= oneStar && ScoringSystem.theScore > 0)
         {
-            text.text = text.text;
-
-            if (ScoringSystem.theScore <= oneStar && ScoringSystem.theScore > 0)
-            {
-                stars[0].SetActive(true);
-            }
-            else if (ScoringSystem.theScore > twoStars && ScoringSystem.theScore > 0 && ScoringSystem.theScore < threeStars)
-            {
-                stars[0].SetActive(true);
-                stars[1].SetActive(true);
-            }
-
-            else if (ScoringSystem.theScore >= threeStars)
-            {
-                stars[0].SetActive(true);
-                stars[1].SetActive(true);
-                stars[2].SetActive(true);
-            }
+            stars[0].SetActive(true);
         }
+        else if (ScoringSystem.theScore > twoStars && ScoringSystem.theScore > 0 && ScoringSystem.theScore < threeStars)
+        {
+            stars[0].SetActive(true);
+            stars[1].SetActive(true);
+        }
+
+        else if (ScoringSystem.theScore >= threeStars)
+        {
+            stars[0].SetActive(true);
+            stars[1].SetActive(true);
+            stars[2].SetActive(true);
+        }
+
     }
 
     public void PressSelection()
