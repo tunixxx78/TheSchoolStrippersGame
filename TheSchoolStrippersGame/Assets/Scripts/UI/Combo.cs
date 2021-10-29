@@ -107,7 +107,6 @@ public class Combo : MonoBehaviour
     {
         if (attackCounter == 4)
         {
-            DataHolderForLevels.dataInstance.isPlayed = true;
             // kolme t?hte?
             if (ScoringSystem.theScore >= threeStars)
             {

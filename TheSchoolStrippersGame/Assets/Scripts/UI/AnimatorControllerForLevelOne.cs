@@ -16,6 +16,11 @@ public class AnimatorControllerForLevelOne : MonoBehaviour
 
         Invoke("AnimationForPlayed", 3f);
 
+        if(dataHolderForLevels.levelTwo)
+        {
+            GetComponent<LevelSelection>().UpdateLevelImage();
+        }
+
     }
 
     private void Update()
