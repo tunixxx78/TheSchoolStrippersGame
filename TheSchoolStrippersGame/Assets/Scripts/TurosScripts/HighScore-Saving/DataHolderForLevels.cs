@@ -11,9 +11,8 @@ public class DataHolderForLevels : MonoBehaviour
     public static DataHolderForLevels dataInstance;
 
     public bool levelOne, levelTwo, levelThree, levelFour, levelFive, animationForLockOne, animationForLockTwo, animationForLockThree, animationForLockFour;
-    
 
-
+    public bool isPlayed;
 
     private void Awake()
     {
@@ -41,6 +40,7 @@ public class DataHolderForLevels : MonoBehaviour
             levelThree = false;
             levelFour = false;
             levelFive = false;
+            isPlayed = false;
             animationForLockOne = false;
             animationForLockTwo = false;
             animationForLockThree = false;
@@ -61,6 +61,7 @@ public class DataHolderForLevels : MonoBehaviour
         data.levelThree = levelThree;
         data.levelFour = levelFour;
         data.levelFive = levelFive;
+        data.isPlayed = isPlayed;
 
         data.animationForLockOne = animationForLockOne;
         data.animationForLockTwo = animationForLockTwo;
@@ -84,6 +85,7 @@ public class DataHolderForLevels : MonoBehaviour
             levelThree = data.levelThree;
             levelFour = data.levelFour;
             levelFive = data.levelFive;
+            isPlayed = data.isPlayed;
 
             animationForLockOne = data.animationForLockOne;
             animationForLockTwo = data.animationForLockTwo;
@@ -99,5 +101,5 @@ public class DataHolderForLevels : MonoBehaviour
 class LevelData
 {
     public bool levelOne, levelTwo, levelThree, levelFour, levelFive, animationForLockOne, animationForLockTwo, animationForLockThree, animationForLockFour;
-    
+    public bool isPlayed;
 }

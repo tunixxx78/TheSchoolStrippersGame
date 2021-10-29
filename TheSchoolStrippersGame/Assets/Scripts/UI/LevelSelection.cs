@@ -38,7 +38,6 @@ public class LevelSelection : MonoBehaviour
 
     private void UpdateLevelImage()
     {
-        Debug.Log(PlayerPrefs.GetInt("Boolean"));
         if (!unlocked)
         {
             text.text = "???????";
@@ -47,25 +46,21 @@ public class LevelSelection : MonoBehaviour
         {
             text.text = text.text;
 
-            if (PlayerPrefs.GetInt("Boolean") == 1)
+            if (ScoringSystem.theScore <= oneStar && ScoringSystem.theScore > 0)
             {
+                stars[1].SetActive(true);
+            }
+            else if (ScoringSystem.theScore > twoStars && ScoringSystem.theScore > 0)
+            {
+                stars[1].SetActive(true);
+                stars[2].SetActive(true);
+            }
 
-                if (ScoringSystem.theScore <= oneStar && ScoringSystem.theScore > 0)
-                {
-                    stars[1].SetActive(true);
-                }
-                else if (ScoringSystem.theScore > twoStars && ScoringSystem.theScore > 0)
-                {
-                    stars[1].SetActive(true);
-                    stars[2].SetActive(true);
-                }
-
-                else if (ScoringSystem.theScore >= threeStars)
-                {
-                    stars[1].SetActive(true);
-                    stars[2].SetActive(true);
-                    stars[3].SetActive(true);
-                }
+            else if (ScoringSystem.theScore >= threeStars)
+            {
+                stars[1].SetActive(true);
+                stars[2].SetActive(true);
+                stars[3].SetActive(true);
             }
         }
     }

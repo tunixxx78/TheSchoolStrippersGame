@@ -26,8 +26,6 @@ public class Combo : MonoBehaviour
     [SerializeField] GameObject highscoreCanvas;
     public HighscoreHandler highscoreHandler;
 
-    bool played = false;
-
     private float threeStars = 10000;
     private float twoStars = 5000;
     private float oneStar = 5000;
@@ -107,12 +105,11 @@ public class Combo : MonoBehaviour
 
     public IEnumerator WinGame()
     {
-        PlayerPrefs.SetInt("Boolean", played ? 0 : 1);
-
         if (attackCounter == 4)
         {
+            DataHolderForLevels.dataInstance.isPlayed = true;
             // kolme t?hte?
-            if(ScoringSystem.theScore >= threeStars)
+            if (ScoringSystem.theScore >= threeStars)
             {
                 // Invoke lis?tty, ett? aikaa n?hd? laivan tuhoutuminen. Turo Lis?si.
                 Invoke("ThreeStars", wingameDelay);
