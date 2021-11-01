@@ -15,7 +15,7 @@ public class AnimatorControllerForLevelTwo : MonoBehaviour
         if (dataHolderForLevels.levelTwo == true)
         {
             lockAnimator.SetTrigger("break");
-            GameObject.Find("Level3").GetComponent<LevelSelection>().UpdateLevelImage();
+            //GameObject.Find("Level3").GetComponent<LevelSelection>().UpdateLevelImage();
         }
     }
 

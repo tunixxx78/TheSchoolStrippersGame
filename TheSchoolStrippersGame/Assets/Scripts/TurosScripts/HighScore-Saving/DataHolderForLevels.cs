@@ -11,6 +11,7 @@ public class DataHolderForLevels : MonoBehaviour
     public static DataHolderForLevels dataInstance;
 
     public bool levelOne, levelTwo, levelThree, levelFour, levelFive, animationForLockOne, animationForLockTwo, animationForLockThree, animationForLockFour;
+    public int level1Score, level2Score, level3Score, level4Score;
 
     private void Awake()
     {
@@ -26,6 +27,8 @@ public class DataHolderForLevels : MonoBehaviour
 
         dataInstance = this;
         DontDestroyOnLoad(this);
+
+
     }
 
     private void Update()
@@ -42,9 +45,15 @@ public class DataHolderForLevels : MonoBehaviour
             animationForLockTwo = false;
             animationForLockThree = false;
             animationForLockFour = false;
+            level1Score = 0;
+            level2Score = 0;
+            level3Score = 0;
+            level4Score = 0;
 
             SaveData();
         }
+
+        
     }
 
     public void SaveData()
@@ -63,6 +72,11 @@ public class DataHolderForLevels : MonoBehaviour
         data.animationForLockTwo = animationForLockTwo;
         data.animationForLockThree = animationForLockThree;
         data.animationForLockFour = animationForLockFour;
+
+        data.level1Score = level1Score;
+        data.level2Score = level2Score;
+        data.level3Score = level3Score;
+        data.level4Score = level4Score;
 
         bf.Serialize(file, data);
         file.Close();
@@ -86,6 +100,11 @@ public class DataHolderForLevels : MonoBehaviour
             animationForLockTwo = data.animationForLockTwo;
             animationForLockThree = data.animationForLockThree;
             animationForLockFour = data.animationForLockFour;
+
+            level1Score = data.level1Score;
+            level2Score = data.level2Score;
+            level3Score = data.level3Score;
+            level4Score = data.level4Score;
         }
     }
 
@@ -96,4 +115,5 @@ public class DataHolderForLevels : MonoBehaviour
 class LevelData
 {
     public bool levelOne, levelTwo, levelThree, levelFour, levelFive, animationForLockOne, animationForLockTwo, animationForLockThree, animationForLockFour;
+    public int level1Score, level2Score, level3Score, level4Score;
 }

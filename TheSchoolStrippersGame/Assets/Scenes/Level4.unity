@@ -842,8 +842,7 @@ MonoBehaviour:
   - {fileID: 6863073603696904642, guid: dead5b99d3b934b568d5df564c445338, type: 3}
   - {fileID: 1415399577883082719, guid: 5a3adeca45e5349abb01a49bb7d3ad63, type: 3}
   - {fileID: 8826798557508913893, guid: 5342131c40b464ed4ab85a0b868319bd, type: 3}
-  - {fileID: 1350548179282820873, guid: 5a9597a08e21b4b14a8619ff1a95fd42, type: 3}
-  startTimeBtwSpawns: 15
+  startTimeBtwSpawns: 20
   decrreaseTime: 0
   minTime: 0
 --- !u!1001 &414447344
