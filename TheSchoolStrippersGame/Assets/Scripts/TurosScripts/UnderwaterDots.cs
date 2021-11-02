@@ -31,6 +31,8 @@ public class UnderwaterDots : MonoBehaviour
         }
     }
 
+    
+
     public void DestroyAllDots()
     {
         canDestroyAllDots = true;   

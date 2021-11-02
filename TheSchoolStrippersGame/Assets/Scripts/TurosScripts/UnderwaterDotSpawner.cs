@@ -59,6 +59,9 @@ public class UnderwaterDotSpawner : MonoBehaviour
         canSpawn = true;
     }
 
+
+    // tähän funktioon pitäisi saada jonkinlainen tarkistus, ettei orbit spawnaannu päälekäin.
+
     public void SpawnUnderwaterObjectsNow()
     {
         
@@ -86,6 +89,8 @@ public class UnderwaterDotSpawner : MonoBehaviour
 
     }
 
+   
 
-    
+
+
 }
