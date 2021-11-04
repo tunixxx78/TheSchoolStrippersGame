@@ -1075,7 +1075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1532073374568961644, guid: a925fbd79e33f4e229be1703cb4a1f29, type: 3}
       propertyPath: m_text
-      value: How to play
+      value: Story
       objectReference: {fileID: 0}
     - target: {fileID: 1532073374626644431, guid: a925fbd79e33f4e229be1703cb4a1f29, type: 3}
       propertyPath: m_IsActive
@@ -2355,7 +2355,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Add text here....
+  m_text: '"In Greek mythology, sirens were dangerous creatures, they lured the sailors
+    with their enchanting music and voices to shipwreck on the rocky coasts of their
+    islands.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c96965c290af66240a6f7b46006d2f2d, type: 2}
   m_sharedMaterial: {fileID: -2094012090501750643, guid: c96965c290af66240a6f7b46006d2f2d, type: 2}
@@ -2382,8 +2384,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
