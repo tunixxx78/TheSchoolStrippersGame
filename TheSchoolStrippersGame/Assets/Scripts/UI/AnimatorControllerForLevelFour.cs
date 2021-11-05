@@ -25,7 +25,7 @@ public class AnimatorControllerForLevelFour : MonoBehaviour
     {
         if (dataHolderForLevels.levelFour == true)
         {
-            Invoke("AnimationForPlayed", 3f);
+            Invoke("AnimationForPlayed", 2f);
 
         }
         if (dataHolderForLevels.animationForLockFour == true)

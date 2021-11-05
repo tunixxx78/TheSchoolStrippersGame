@@ -23,7 +23,7 @@ public class AnimatorControllerForLevelTwo : MonoBehaviour
     {
         if (dataHolderForLevels.levelTwo == true)
         {
-            Invoke("AnimationForPlayed", 3f);
+            Invoke("AnimationForPlayed", 2f);
 
         }
         if (dataHolderForLevels.animationForLockTwo == true)
