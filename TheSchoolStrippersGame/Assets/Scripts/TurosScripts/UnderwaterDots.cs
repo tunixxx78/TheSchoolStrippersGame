@@ -5,13 +5,17 @@ using UnityEngine;
 public class UnderwaterDots : MonoBehaviour
 {
     public float lifetime = 2f;
-    [SerializeField] Animator dotAnimator;
+    Animator dotAnimator;
     private bool onBeatSpot = false;
     [SerializeField] GameObject deathParticleFX;
     [SerializeField] GameObject[] correctParticleFX;
     bool canDestroyAllDots = false;
     public LayerMask underwaterdotLayer;
 
+    private void Awake()
+    {
+        dotAnimator = this.GetComponent<Animator>();
+    }
     private void Start()
     {
         //Destroy(this.gameObject, lifetime);
@@ -49,4 +53,14 @@ public class UnderwaterDots : MonoBehaviour
         Instantiate(deathParticleFX, position, Quaternion.identity);
     }
 
+    private void OnMouseEnter()
+    {
+        dotAnimator.SetBool("Hover", true);
+       
+    }
+
+    private void OnMouseExit()
+    {
+        dotAnimator.SetBool("Hover", false);
+    }
 }
