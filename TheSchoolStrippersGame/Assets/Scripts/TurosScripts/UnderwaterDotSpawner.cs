@@ -62,7 +62,7 @@ public class UnderwaterDotSpawner : MonoBehaviour
 
     // tähän funktioon pitäisi saada jonkinlainen tarkistus, ettei orbit spawnaannu päälekäin.
 
-    public void SpawnUnderwaterObjectsNow()
+    /*public void SpawnUnderwaterObjectsNow()
     {
         
         MeshCollider c = quad.GetComponent<MeshCollider>();
@@ -87,9 +87,48 @@ public class UnderwaterDotSpawner : MonoBehaviour
 
              }
 
+    }*/
+
+
+    public void SpawnUnderwaterObjectsNow()
+    {
+        MeshCollider c = quad.GetComponent<MeshCollider>();
+
+        float screenX, screenY;
+
+        Vector2 pos = new Vector2(0, 0);
+
+        int layerMask = LayerMask.GetMask("Dots");
+
+        for (int i = 0; i < spawnPool.Count; i++)
+        {
+            while (true)
+            {
+                screenX = Random.Range(c.bounds.min.x, c.bounds.max.x);
+                screenY = Random.Range(c.bounds.min.y, c.bounds.max.y);
+
+                var hit = Physics2D.CircleCast(new Vector2(screenX, screenY), 0.5f, Vector2.zero, Mathf.Infinity, layerMask);
+
+                if (!hit.collider)
+                {
+                    Debug.Log("Ei osunut toiseen pelinappulaan, spawnataan");
+                    break;
+                }
+                else
+                {
+                    Debug.Log("Osui toiseen pelinappulaan, arvotaan uusi screenX ja screenY");
+                }
+            }
+
+            pos = new Vector2(screenX, screenY);
+
+            var spawnPoint = Instantiate(spawnPool[i], pos, Quaternion.identity);
+
+            canSpawn = false;
+        }
     }
 
-   
+
 
 
 
