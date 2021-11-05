@@ -14,7 +14,7 @@ public class AnimatorControllerForLevelOne : MonoBehaviour
 
         lockAnimator.SetTrigger("break");
 
-        Invoke("AnimationForPlayed", 3f);
+        Invoke("AnimationForPlayed", 2f);
 
     }
 
