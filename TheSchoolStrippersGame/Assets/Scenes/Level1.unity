@@ -5870,6 +5870,10 @@ PrefabInstance:
       propertyPath: bonusAddForCombobar
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1508866293177441420, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1508866293177441422, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
       propertyPath: m_Name
       value: PlayerScore

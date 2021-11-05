@@ -13,7 +13,8 @@ public class Combo : MonoBehaviour
     public int current;
     public Image mask;
 
-    private int attackScore = 15;
+    [SerializeField]
+    private int attackScore;
 
     DestroyShip shipScript;
 

@@ -5076,6 +5076,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1508866293177441411, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
+      propertyPath: maximum
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508866293177441411, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
+      propertyPath: attackScore
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508866293177441411, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
       propertyPath: highscoreCanvas
       value: 
       objectReference: {fileID: 708426988}

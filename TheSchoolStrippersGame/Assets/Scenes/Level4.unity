@@ -2866,11 +2866,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1508866293177441411, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
       propertyPath: maximum
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1508866293177441411, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
       propertyPath: maxHealth
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508866293177441411, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
+      propertyPath: attackScore
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1508866293177441411, guid: 8139e3b38281948b99b6ba7131d5a650, type: 3}
       propertyPath: highscoreCanvas
