@@ -37,10 +37,10 @@ public class LevelTimer : MonoBehaviour
             }
         }
 
-        if (timeRemaining < 20f)
+        if (timeRemaining < 30f)
         {
-            timerText.color = Color.red;
-            timerText.fontSize = 25;
+            timerText.color = new Color32(237, 54, 15, 255);
+            timerText.fontSize = 19;
         }
     }
 
