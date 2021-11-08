@@ -1176,7 +1176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1532073374568961644, guid: a925fbd79e33f4e229be1703cb4a1f29, type: 3}
       propertyPath: m_text
-      value: Story
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1532073374626644431, guid: a925fbd79e33f4e229be1703cb4a1f29, type: 3}
       propertyPath: m_IsActive
@@ -1645,7 +1645,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.29803923}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2433,7 +2433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.11, y: -12.04}
+  m_AnchoredPosition: {x: -8, y: 13}
   m_SizeDelta: {x: 400.23, y: 306.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1543537839
@@ -2456,9 +2456,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"In Greek mythology, sirens were dangerous creatures, they lured the sailors
-    with their enchanting music and voices to shipwreck on the rocky coasts of their
-    islands.'
+  m_text: "Dive into a rhythmic adventure as an apprentice siren. \r\nYour quest
+    is to unlock new songs, evade enemies and sink ships by collecting voice orbs.\r\n\r\nRule
+    the seas and challenge your friends to beat your score!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c96965c290af66240a6f7b46006d2f2d, type: 2}
   m_sharedMaterial: {fileID: -2094012090501750643, guid: c96965c290af66240a6f7b46006d2f2d, type: 2}
@@ -2467,8 +2467,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4281549671
+  m_fontColor: {r: 0.4039216, g: 0.2627451, b: 0.20000002, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
