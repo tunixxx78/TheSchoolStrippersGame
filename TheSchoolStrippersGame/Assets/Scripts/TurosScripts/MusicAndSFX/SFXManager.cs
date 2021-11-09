@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 public class SFXManager : MonoBehaviour
 {
-    public AudioSource swim, breakingShip, collecting1, collecting2, button, wrongDot, taser, eagle;
+    public AudioSource swim, breakingShip, collecting1, collecting2, button, wrongDot, taser, eagle, lockOpening;
 
     public void Swim()
     {
@@ -45,5 +45,9 @@ public class SFXManager : MonoBehaviour
     public void ScreamingEagle()
     {
         eagle.Play();
+    }
+    public void OpeningLock()
+    {
+        lockOpening.Play();
     }
 }

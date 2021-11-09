@@ -18,14 +18,14 @@ public class TutorialManager : MonoBehaviour
 
     void Update()
     {
-        if (GameObject.Find("GreenDot(Clone)").GetComponent<MovingDots>().onBeatSpot)
+        /*if (GameObject.Find("GreenDot(Clone)").GetComponent<MovingDots>().onBeatSpot)
         {
             arrow.SetActive(true);
         }
         else
         {
             arrow.SetActive(false);
-        }
+        }*/
 
         for (int i = 0; i < popUps.Length; i++)
         {
@@ -69,26 +69,45 @@ public class TutorialManager : MonoBehaviour
                 }
             }
         }
+
         else if (popUpIndex == 2)  // Turo added for 4th sign.
         {
             obstacle.SetActive(false);
             powerUpImage.SetActive(false);
-            if (Input.GetMouseButton(0))
+            StartCoroutine(FinalPopUp());
+            if (Time.timeScale == 0)
             {
-                Time.timeScale = 1;
-
-                StartCoroutine(FinalPopUp());
+                if (Input.GetMouseButton(0))
+                {
+                    Time.timeScale = 1;
+                    popUpIndex++;
+                    StartCoroutine(WaitTime());
+                }
             }
 
         }
+
         else if (popUpIndex == 3)
+        {
+
+            StartCoroutine(FinalFinalPopup());
+            if (Input.GetMouseButton(0))
+            {
+                    Time.timeScale = 1;
+                    
+            }
+            
+        }
+
+        else if (popUpIndex == 4)
         {
             if (GameObject.Find("Canvas").transform.GetChild(1).GetComponent<Combo>().attackCounter == 1)
             {
                 arrow.SetActive(false);
-                Time.timeScale = 0;
+                
                 spawner.SetActive(true);
                 popUps[2].SetActive(false);
+                Time.timeScale = 0;
 
             }
         }
@@ -97,17 +116,23 @@ public class TutorialManager : MonoBehaviour
        IEnumerator nextPopUp()
         {
             
-            yield return new WaitForSeconds(7f);
+            yield return new WaitForSeconds(2);
             popUpIndex = 2;
-            PowerUp();
+            //PowerUp();
 
 
         }
         IEnumerator FinalPopUp() // Turo added for 4th sign.
         {
             
-            yield return new WaitForSeconds(7f);
+            yield return new WaitForSeconds(2);
             popUpIndex = 3;
+        }
+
+        IEnumerator FinalFinalPopup()
+        {
+            yield return new WaitForSeconds(2);
+            popUpIndex = 4;
         }
 
         void PowerUp()

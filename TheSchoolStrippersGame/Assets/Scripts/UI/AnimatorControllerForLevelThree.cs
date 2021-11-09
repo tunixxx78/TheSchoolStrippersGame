@@ -7,14 +7,17 @@ public class AnimatorControllerForLevelThree : MonoBehaviour
     [SerializeField] Animator lockAnimator;
     public DataHolderForLevels dataHolderForLevels;
     [SerializeField] GameObject lockImage;
+    SFXManager sFXManager;
 
     private void Awake()
     {
         dataHolderForLevels = FindObjectOfType<DataHolderForLevels>();
+        sFXManager = FindObjectOfType<SFXManager>();
 
-        if (dataHolderForLevels.levelThree == true)
+        if (dataHolderForLevels.levelThree == true && dataHolderForLevels.animationForLockThree == false)
         {
             lockAnimator.SetTrigger("break");
+            sFXManager.OpeningLock();
             //GameObject.Find("Level4").GetComponent<LevelSelection>().UpdateLevelImage();
         }
 
