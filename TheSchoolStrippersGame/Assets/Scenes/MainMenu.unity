@@ -1349,6 +1349,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 970300900485795343, guid: 677289f3503ce7c43a19be877019d0b3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 970300901550889441, guid: 677289f3503ce7c43a19be877019d0b3, type: 3}
       propertyPath: m_Name
       value: Backround objects

@@ -7,7 +7,7 @@ public class TutorialManager : MonoBehaviour
     public GameObject[] popUps;
     private int popUpIndex;
     public GameObject spawner, spawnPointForPowerUp;
-    public GameObject arrow, obstacle, powerUpObject, powerUpImage;
+    public GameObject arrow, obstacle, powerUpObject, powerUpImage, uDotsInGame;
 
     SFXManager sfx;
 
@@ -18,6 +18,7 @@ public class TutorialManager : MonoBehaviour
 
     void Update()
     {
+
         /*if (GameObject.Find("GreenDot(Clone)").GetComponent<MovingDots>().onBeatSpot)
         {
             arrow.SetActive(true);
@@ -55,17 +56,30 @@ public class TutorialManager : MonoBehaviour
         }
         else if (popUpIndex == 1)
         {
-            StartCoroutine(nextPopUp());
+            //StartCoroutine(nextPopUp());
             obstacle.SetActive(true);
 
             if (Time.timeScale == 0)
             {
                 if (Input.GetMouseButton(0))
                 {
-                    Time.timeScale = 1;
-                    popUpIndex++;
-                    PowerUp();
-                    StartCoroutine(WaitTime());
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+
+                    if (hit2D.collider.CompareTag("GreenDotU"))
+                    {
+                        StartCoroutine(nextPopUp());
+                        Debug.Log("Vihreeseen osui!");
+                        Time.timeScale = 1;
+                        popUpIndex++;
+                        PowerUp();
+                        StartCoroutine(WaitTime());
+                    }
+                    else
+                    {
+                        return;
+                    }
+                    
                 }
             }
         }
@@ -74,14 +88,27 @@ public class TutorialManager : MonoBehaviour
         {
             obstacle.SetActive(false);
             powerUpImage.SetActive(false);
-            StartCoroutine(FinalPopUp());
+            //StartCoroutine(FinalPopUp());
             if (Time.timeScale == 0)
             {
                 if (Input.GetMouseButton(0))
                 {
-                    Time.timeScale = 1;
-                    popUpIndex++;
-                    StartCoroutine(WaitTime());
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+
+                    if (hit2D.collider.CompareTag("GreenDotU"))
+                    {
+                        StartCoroutine(FinalPopUp());
+                        Debug.Log("Vihreeseen osui!");
+                        Time.timeScale = 1;
+                        popUpIndex++;
+                        StartCoroutine(WaitTime());
+                    }
+                    else
+                    {
+                        return;
+                    }
+                        
                 }
             }
 
@@ -90,10 +117,11 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 3)
         {
 
-            StartCoroutine(FinalFinalPopup());
+            //StartCoroutine(FinalFinalPopup());
             if (Input.GetMouseButton(0))
             {
-                    Time.timeScale = 1;
+                StartCoroutine(FinalFinalPopup());
+                Time.timeScale = 1;
                     
             }
             
@@ -104,7 +132,7 @@ public class TutorialManager : MonoBehaviour
             if (GameObject.Find("Canvas").transform.GetChild(1).GetComponent<Combo>().attackCounter == 1)
             {
                 arrow.SetActive(false);
-                
+                uDotsInGame.SetActive(false);
                 spawner.SetActive(true);
                 popUps[2].SetActive(false);
                 Time.timeScale = 0;
