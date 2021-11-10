@@ -34,7 +34,7 @@ public class DataHolderForLevels : MonoBehaviour
     private void Update()
     {
         // only for developement purposes.
-        if (Input.GetKeyDown(KeyCode.A))
+        /*if (Input.GetKeyDown(KeyCode.A))
         {
             levelOne = false;
             levelTwo = false;
@@ -51,7 +51,7 @@ public class DataHolderForLevels : MonoBehaviour
             level4Score = 0;
 
             SaveData();
-        }
+        }*/
 
         
     }

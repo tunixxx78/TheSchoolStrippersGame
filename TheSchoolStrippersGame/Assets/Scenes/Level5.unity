@@ -887,8 +887,48 @@ PrefabInstance:
       value: Credits
       objectReference: {fileID: 0}
     - target: {fileID: 7245476132669979725, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245476132669979725, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245476132705689825, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245476133327660044, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245476133434966253, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245476133644433484, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245476134010553099, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3219617631854050382, guid: 3fe99915bb5ecf44eac80b4c064c86a9, type: 3}
+    - target: {fileID: 7245476134010553099, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245476134010553101, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245476134010553101, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245476134104133222, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7245476134296454557, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -925,6 +965,18 @@ PrefabInstance:
     - target: {fileID: 7245476134296454557, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: ButtonHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245476134296454559, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245476134335804101, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245476134402042767, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c89dcb4dc70d418fa7a4ad9712aca81, type: 3}

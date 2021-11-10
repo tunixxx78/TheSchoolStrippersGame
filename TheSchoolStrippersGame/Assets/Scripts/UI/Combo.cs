@@ -46,11 +46,11 @@ public class Combo : MonoBehaviour
     {
         // Tama pitaa poistaa ------ vain devaajille ----------
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             current++;
             ModifyHealth();
-        }
+        }*/
 
         if (current >= attackScore)
         {

@@ -19,19 +19,15 @@
       <div id="unity-mobile-warning">
         WebGL builds are not supported on mobile devices.
       </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Apprentice Siren</div>
-      </div>
+      
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/ApprenticeSiren.loader.js";
+      var loaderUrl = buildUrl + "/apprenticeSiren.loader.js";
       var config = {
-        dataUrl: buildUrl + "/ApprenticeSiren.data",
-        frameworkUrl: buildUrl + "/ApprenticeSiren.framework.js",
-        codeUrl: buildUrl + "/ApprenticeSiren.wasm",
+        dataUrl: buildUrl + "/apprenticeSiren.data",
+        frameworkUrl: buildUrl + "/apprenticeSiren.framework.js",
+        codeUrl: buildUrl + "/apprenticeSiren.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "SchoolStrippers",
         productName: "Apprentice Siren",
@@ -42,7 +38,7 @@
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      //var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var mobileWarning = document.querySelector("#unity-mobile-warning");
 
       // By default Unity keeps WebGL canvas render target size matched with
@@ -74,9 +70,7 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
+          
         }).catch((message) => {
           alert(message);
         });
